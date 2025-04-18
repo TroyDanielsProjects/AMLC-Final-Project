@@ -47,7 +47,7 @@ class Parser():
                         wfile.write(line)
                     previous_line = line
 
-    def get_home_page_links(self, base_url="https://www.nhl.com", path="/news", depth=0, max_depth=100):
+    def get_home_page_links(self, base_url="https://www.nhl.com", path="/news", depth=0, max_depth=100, filter="/news"):
         print(depth)
         url = base_url + path
         html = self.get_html_from_url(url)
@@ -55,19 +55,50 @@ class Parser():
             soup = BeautifulSoup(html, "html.parser")
             for link in soup.find_all('a'):
                 ref = link.get('href')
-                if ref and ref.startswith("/news/topic/nhl-insider/"):
-                    if ref not in self.insider_ref_dict:
+                if ref and ref.startswith(filter):
+                    if ref and ref not in self.insider_ref_dict:
                         self.insider_ref_dict[ref] = 1
                         if depth < max_depth:
                             self.get_home_page_links(path=ref, depth=depth+1)
 
-    def write_out_insider_dict(self):
-        with open("data/insiderrefs.txt", 'w') as ofile:
+    def write_out_dict(self, path):
+        with open(path, 'w') as ofile:
             for key in self.insider_ref_dict:
                 ofile.write(key+"\n")
                     
     def get_insider_text(self):
+        self.get_home_page_links(filter="/news/topic/nhl-insider")
         with open("./data/nhlcominsidertext.txt", 'w') as ofile:
+                for ref in self.insider_ref_dict:
+                    url = f"https://www.nhl.com{ref}"
+                    html = self.get_html_from_url(url)
+                    if html:
+                        soup = BeautifulSoup(html, "html.parser")
+                        text_div = soup.find_all('div', class_="oc-c-markdown-stories")
+                        for match in text_div:
+                            text = match.get_text()
+                            ofile.write(text)
+                    else:
+                        continue
+
+    def get_edge_text(self):
+        self.get_home_page_links(filter="/news/topic/nhl-edge")
+        with open("./data/nhlcomedgetext.txt", 'w') as ofile:
+                for ref in self.insider_ref_dict:
+                    url = f"https://www.nhl.com{ref}"
+                    html = self.get_html_from_url(url)
+                    if html:
+                        soup = BeautifulSoup(html, "html.parser")
+                        text_div = soup.find_all('div', class_="oc-c-markdown-stories")
+                        for match in text_div:
+                            text = match.get_text()
+                            ofile.write(text)
+                    else:
+                        continue
+
+    def get_all_data(self):
+        self.get_home_page_links()
+        with open("./data/nhlcom.txt", 'w') as ofile:
                 for ref in self.insider_ref_dict:
                     url = f"https://www.nhl.com{ref}"
                     html = self.get_html_from_url(url)
@@ -82,7 +113,7 @@ class Parser():
 
 
 parser = Parser()
-parser.get_home_page_links()
-# parser.get_insider_text()
+parser.write_out_dict("data/alldatarefs.txt")
+parser.get_all_data()
 
 

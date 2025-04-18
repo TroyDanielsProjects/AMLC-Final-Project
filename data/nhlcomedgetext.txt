@@ -1,0 +1,858 @@
+
+NHL.com's fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we preview the 2025 Stanley Cup Playoffs, which begin Saturday, with an X-factor for each team.
+---
+Toronto Maple Leafs: Matthew Knies, F
+The Toronto Maple Leafs forward set NHL career highs in goals (29), assists (29) and points (58) this season and was one of four players in the entire League with at least 25 goals and 180 hits (182; others: Tom Wilson, Brady Tkachuk, Vincent Trocheck). Knies, who has been playing mostly with elite forwards Auston Matthews and Mitch Marner, ranks third on Toronto in even-strength goals (24). Knies had points in Games 5 (scored overtime goal) and 6 of the 2024 Eastern Conference First Round series against the Boston Bruins as the Maple Leafs staved off elimination in those games.
+EDGE stats: Knies ranks among the League leaders in high-danger goals (22; 98th percentile), high-danger shots on goal (81; 96th percentile) and top skating speed (23.13 miles per hour; 89th percentile). -- Troy Perlowitz
+Ottawa Senators: Jake Sanderson, D
+The Senators defenseman set NHL career highs in points (57; tied for 10th among defensemen), power-play points (30; second behind Cale Makar) and shots on goal (195; tied for seventh). Like teammate Brady Tkachuk, Sanderson will be making his Stanley Cup Playoff debut, and the Maple Leafs are allowing the eighth-most shots on goal per game (29.3) this season.
+EDGE stats: Sanderson is second among defensemen behind Makar in both 20-plus mph speed bursts (199) and miles skated on the power play (39.38). Sanderson also ranks highly among defensemen in top skating speed (23.53 mph; 10th), midrange shots on goal (41; 95th percentile), midrange goals (five; 94th percentile) and long-range SOG (94; 97th percentile). -- Chris Meaney
+---
+Tampa Bay Lightning: Brandon Hagel, F
+The Lightning forward is tied for 11th in the entire NHL in points (90) this season and ranks fifth in both even-strength goals (32) and even-strength points (72). Hagel is one of two NHL players this season to reach the 30-goal plateau without scoring any on the power play (other: Aliaksei Protas).
+EDGE stats: Hagel ranks among the League leaders in high-danger shots on goal (81; 96th percentile), high-danger goals (18; 94th percentile), midrange shots on goal (82; 94th percentile) and 20-plus mph speed bursts (191; 94th percentile). -- Perlowitz
+Florida Panthers: Matthew Tkachuk, F
+Although the Panthers wing has been out with a lower-body injury since playing for the United States in the 4 Nations Face-Off on Feb. 20, Tkachuk hopes to be ready for Game 1 of the postseason. He shared Floridaâs lead with eight multipoint games during the Panthersâ first-ever Stanley Cup championship run last postseason and has 57 points (22 goals, 35 assists) in 52 games this season prior to his injury. He ranks 10th in the entire NHL in points per game over the past four seasons combined (1.22).
+EDGE stats: Tkachuk was tied for third in high-danger shots on goal (29) during the 2024 playoffs and ranks in the 97th percentile in offensive zone time percentage (47.5) this season. -- Perlowitz
+---
+Washington Capitals: Pierre-Luc Dubois, F
+Acquired by the Capitals from the Los Angeles Kings in the offseason for goalie Darcy Kuemper, Dubois has set NHL career highs in assists (45) and points (65) this season. The only Washington skater with more even-strength points than Dubois (52) this season is Protas (60). Seven of Duboisâ 20 goals this season have come in the third period, and seven of his goals have given the Capitals the lead. The 26-year-old has 27 points (11 goals, 16 assists) in 43 career Stanley Cup Playoff games over six postseasons.
+EDGE stats: Dubois ranks highly at his position in high-danger shots on goal (68; 92nd percentile), top shot speed (92.81 mph; 91st percentile) and even-strength skating distance (198.55 miles; 89th percentile). -- Perlowitz
+Montreal Canadiens: Ivan Demidov, F
+The rookie forward, who signed his entry-level contract with the Canadiens late in the regular season after playing in the Kontinental Hockey League, comes with high expectations after being selected with No. 5 pick in the 2024 NHL Draft. Demidov, who is expected to play a top-six role for Montreal in the postseason, has a goal, an assist and five shots on goal over his first two NHL games.
+EDGE stats: Although itâs a small sample size, Demidov ranks in the 98th percentile in average shot speed (71.64) over his first 10 shots attempts and joins a Canadiens offense that is tied for fourth in the League in midrange goals (87) this season. -- Pete Jensen
+---
+Carolina Hurricanes: Frederik Andersen, G
+The Hurricanes goalie is 82-34-5 with a 2.23 goals-against average, .916 save percentage and nine shutouts over the past four seasons and 11-7 with a .910 save percentage in the playoffs over that span (since 2021-22). After he and the Hurricanes fell short against the New York Rangers in the Eastern Conference Second Round last year, Andersen will be relied upon even more heavily after they traded high-scoring forwards Martin Necas and then Mikko Rantanen this season. Andersen was 4-0 with a .918 save percentage against the New Jersey Devils in the 2023 playoffs.
+EDGE stats: Andersen is among the leaders in high-danger save percentage (.842; 92nd percentile) and percentage of games with a save percentage greater than .900 (66.7; 96th percentile). -- Jensen
+New Jersey Devils: Dougie Hamilton, D
+The Devils defenseman played 23:42 on Wednesday (Apr. 16) in his first game back since sustaining a lower-body injury on Mar. 4. Hamilton has 40 points (nine goals, 31 assists) in 64 games this season, including 15 on the power play. He has 29 points (nine goals, 20 assists) in 66 career playoff games and faces the Hurricanes, one of his former teams, this postseason.
+EDGE stats: Hamilton is in the 97th percentile among defensemen in midrange shots on goal (46), 93rd percentile in long-range SOG (86), 89th percentile in midrange goals (four), 94th percentile in offensive zone time percentage (45.8), 95th percentile in power-play offensive zone time percentage (62.7) and 92nd percentile in total miles skated on the power play (26.89). -- Meaney
+---
+Winnipeg Jets: Gabriel Vilardi, F
+The Jets wing has not played since March 23 because of an upper-body injury but could return for the playoffs. Vilardi played mostly on the top line and first power play with elite forwards Kyle Connor and Mark Scheifele and had the best points-per-game average (0.86; 61 in 71 games) of his career this season. With wing Nikolaj Ehlers (foot) out week to week, the Jets may need Vilardi back and producing to the level he was prior to injury to match the depth of the St. Louis Blues; Vilardi scored two goals in three games against the Blues this season.
+EDGE stats: Despite being limited to 71 of the Jetsâ 82 games this season, Vilardi ranks highly among forwards in high-danger shots on goal (74; 94th percentile) and high-danger goals (22; 97th percentile; tied for ninth in entire NHL). -- Jensen
+St. Louis Blues: Jordan Binnington, G
+Since the 4 Nations Face-Off, when Binnington led Canada to victory in the championship game against the United States (against Jets goalie Connor Hellebuyck), the Blues goalie is 13-3-1 with a .910 save percentage in his past 17 NHL games. Binnington won the Stanley Cup with the Blues in 2019; he was 16-10 with a .914 save percentage and one shutout during that run. With his team turning its season around after the coaching change to Jim Montgomery and trade for veteran defenseman Cam Fowler, Binnington looks to not only go toe-to-toe with Hellebuyck again but also contain the Jetsâ high-octane offense; Winnipeg has the best power-play percentage this season (28.9), while St. Louis is tied for the fourth-worst penalty kill percentage (72.4).
+EDGE stats: In terms of goals for average since the 4 Nations Face-Off, only Capitals goalie Logan Thompson (4.16 in 12 games) has seen more goal support per game than Binnington (3.86 in 17 games) among the 44 NHL goalies who have played at least 10 games over that span. -- Jensen
+---
+Dallas Stars: Thomas Harley, D
+The Stars defenseman broke out in his fourth NHL season with NHL career highs in goals (16), assists (34), points (50 in 78 games), shots on goal (171) and average ice time (23:23 per game) this season. Since defenseman Miro Heiskanen sustained an injury on Jan. 28, Harley is tied for fifth in the NHL at the position in points (27) and ranks third among D-men in power-play points (12) in 30 games over that span.
+EDGE stats: Harley ranks among the defenseman leaders in total skating distance (271.98 miles; 95th percentile), 20-plus mph speed bursts (73; 89th percentile), high-danger goals (four; 97th percentile), high-danger shots on goal (11; 93rd percentile), midrange goals (six; 96th percentile), midrange SOG (38; 93rd percentile), long-range goals (four; 92nd percentile) and long-range SOG (86; 93rd percentile). -- Meaney
+Colorado Avalanche: Valeri Nichushkin, F
+The Avalanche are 29-14 when Nichushkin (34 points in those 43 games) has been in the lineup this season, and he faces the Stars, his former team, this postseason. Nichushkin has left the Avalanche on two occasions during past postseasons (NHL/NHLPA player assistance program last season; personal reasons in 2023) but has an enormous offensive ceiling considering he had 15 points (nine goals, six assists) in 20 games during their 2022 Stanley Cup run. The Stars are allowing the most shots on goal per game (33.3 in 27 games) since the 4 Nations Face-Off break (Feb. 20).
+EDGE stats: Nichushkin is among the forward leaders in top skating speed (23.13 mph; 89th percentile) and high-danger goals (13; 84th percentile) this season. -- Jensen
+---
+Vegas Golden Knights: Pavel Dorofeyev, F
+The Golden Knights wing has NHL career highs in goals (35), points (52 in 82 games), power-play points (17), shots (253; tied for 11th in League) and average ice time (16:32 per game) this season. Dorofeyev led Vegas in goals and shots on goal, and his center linemate Tomas Hertl finished second on the Golden Knights in goals (32) and led them in power-play goals (14; one ahead of Dorofeyev). In three games against the Minnesota Wild this season, Dorofeyev had four points (two goals, two assists) and 14 shots on goal (third-most SOG he had against any team this season). Vegas has the second-best power-play percentage in the NHL this season (28.3), while Minnesota has the third-worst penalty kill percentage (72.4).
+EDGE stats: Dorofeyev is in the 97th percentile among forwards in midrange goals (14) and midrange shots on goal (95) and ranks among the leaders at the position in power-play offensive zone time percentage (64.0; 95th percentile), high-danger SOG (58; 85th percentile) and high-danger goals (13; 84th percentile). -- Meaney
+Minnesota Wild: Joel Eriksson Ek, F
+The Wild center scored five goals on 17 shots in four games since returning to the lineup and finished the season playing on the top line with elite wing Kirill Kaprizov (1.37 points per game; 5th in NHL) and wing Matt Boldy (leads team with 27 goals, 73 points). Eriksson Ek has 29 points (14 goals, 15 assists) in 46 games this season and reached the 60-point mark in the consecutive seasons prior.
+EDGE stats: Eriksson Ek finished in the 82nd percentile among forwards in high-danger shots (54) despite missing 36 games this season (ranked fourth in NHL with 130 high-danger shots last season). He also ranks in the 83rd percentile in long-range SOG (16) and among the leaders in power-play offensive zone time percentage (63.9; 94th percentile) this season. -- Meaney
+---
+Los Angeles Kings: Darcy Kuemper, G
+The Kings goalie has had a bounce-back season in his first year with the team; heâs 31-11-7 with a 2.02 goals-against average, .921 save percentage and five shutouts in 50 games. Kuemperâs home numbers have been even better (20-3-2, 1.67 GAA, .933 save percentage, four shutouts). Since Jan. 1, Kuemper is tied for second among goalies in wins (22), ranks first in GAA (1.81), first in save percentage (.928) and is tied for first in shutouts (four). The Edmonton Oilers are averaging the most shots on goal per game (32.0) this season.
+EDGE stats: Kuemper leads the NHL in high-danger save percentage (.863) this season and is second in percentage of games with a save percentage greater than .900 (68.0). -- Meaney
+Edmonton Oilers: Evander Kane, F
+The Oilers forward has not played since Game 2 of the 2024 Stanley Cup Final against the Florida Panthers after sports hernia and knee surgeries but could be nearing a return for the playoffs. Kane had three points (two goals, one assist) in the Oilersâ five-game series win against the Kings last postseason, including the game-opening goal in Game 5. Kane was tied with Nathan MacKinnon of the Avalanche for the NHL lead in goals during the 2022 postseason (13).
+EDGE stats: Kane joins an Oilers offense that leads the NHL in high-danger shots on goal (703) and ranks fourth in high-danger goals (139) this season. Kane ranked in the 94th percentile in high-danger shots on goal (78) during the 2023-24 regular season. -- Perlowitz
+---
+More NHL EDGE stats: Team comparisons
+
+NHL.com identifies players to watch in fantasy hockey and props with EDGE stats insights for upcoming games during the 2025 Stanley Cup Playoffs. For more coverage, visit NHL.com/Fantasy.
+
+MORE FANTASY COVERAGE:
+EDGE stats: X-factor for each playoff team
+Daily projected lineups, starting goalies
+Keeper / dynasty league top 100 rankings
+Pepsi Zero Sugar NHL Goalie Challenge
+
+SAT. APRIL 19
+Player to watch for goal, point and/or shots on goal in Game 1: Martin Necas, F, COL (at DAL)
+The Colorado Avalanche forward, who was acquired from the Carolina Hurricanes earlier this season, had NHL career highs in points (83 in 79 games) and assists (56) during the regular season. Since the Jan. 24 trade, Necas is among Colorado's leaders in goals (11; third), points (28 in 30 games; third), power-play goals (five; tied for second), power-play points (15; second) and shots on goal (81; third). Necas had four points (two goals, two assists) and 12 shots on goal in three games against the Dallas Stars this season, including one goal on eight SOG against them as a member of the Avalanche on March 16. The Stars are allowing the most shots on goal per game since the 4 Nations Face-Off break (33.3 in 27 games since Feb. 20). -- Pete Jensen
+---
+Others to consider for point separately or together:
+TBD
+Others to consider for goal and/or SOG:
+TBD
+Others to consider for assist:
+TBD
+Others to consider for SOG separately or together:
+TBD
+Line combos to consider:
+TBD
+---
+OTHER PROPS / FUTURES ANGLES
+Players to consider to lead series in goals:
+TBD
+Players to consider to lead series in points:
+TBD
+Players to consider for Conn Smythe Trophy:
+TBD
+
+---
+More: NHL EDGE Puck & Player Tracking Statistics
+
+NHL.com's fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at the advanced stats behind Columbus Blue Jackets goalie Jet Greaves during their late-season push.
+
+During a last-ditch effort by the Columbus Blue Jackets to make the Stanley Cup Playoffs, rookie goalie Jet Greaves has emerged as a possible answer to their questions at the position with strong advanced metrics.
+Greaves is 6-2-2 with a .934 save percentage and two shutouts in 10 games this season and now has a .922 save percentage in 20 career NHL games. This performance by Greaves down the stretch, with the Blue Jackets essentially facing elimination over their past four games (4-0-0 with a .976 save percentage in span) has opened eyes around the League, especially with that span including wins in both ends of a weekend back-to-back set against the Eastern Conference-leading Washington Capitals.
+The 24-year-old is making the case to be a potential long-term option who can help elevate a team that already has a top-10 offense (3.22 goals per game; ninth). And, although itâs a small sample size, Greavesâ performance under pressure and strong underlying metrics have kept the Blue Jackets in contention; they trail the Montreal Canadiens for the Eastern Conference second wild-card spot by two points with one game remaining for each team.
+Per NHL EDGE stats, Greaves ranks in the 99th percentile in both high-danger save percentage (.892; League average: .803) and midrange save percentage (.948; League average: .887). He has had greater than a .900 save percentage in six of his 10 games this season and is getting goal support from the Blue Jackets; he ranks in the 94th percentile in both goal differential per 60 minutes (plus-1.20) and points percentage (70.0).
+
+Greaves has stopped 38 of 39 high-danger shots faced (.974 high-danger save percentage), as well as 35 of 36 midrange shots faced (.972 midrange save percentage), over the Blue Jacketsâ four wins over the past six days. He ranks first among all NHL goalies in high-danger saves and midrange saves over that span.
+Although longtime starter Elvis Merzlikins is tied for 16th in wins (26 in 53 games) and 17th in start volume (52) this season, his underlying save percentage metrics are not nearly as strong compared to Greaves; Merzlikins ranks in the 72nd percentile on save percentage from high-danger areas (.816) and below the 50th percentile from midrange areas (.854). In terms of team save percentage, the Blue Jackets rank tied for 20th out of 32 teams (.890) with the trio of Merzlikins, Daniil Tarasov and Greaves this season.
+While it may not be a fair comparison given Merzlikinsâ heavy workload and the Blue Jacketsâ average shots on goal allowed (29.8 per game; sixth most in NHL), Greaves certainly gives them an in-house option to turn to more often in the years ahead. Greaves is in the first season of a two-year, two-way contract that ends after next season (2025-26), while Merzlikins has two more years left on his contract (ends after 2026-27 season).
+With a potent core of 25-and-under forwards including Adam Fantilli, Kirill Marchenko, Kent Johnson, Dmitri Voronkov and Yegor Chinakhov, along with 27-year-old defenseman Zach Werenski being one of the top contenders for the Norris Trophy, the Blue Jackets are riding the hot hand with Greaves and giving him a chance to parlay his success into next season.
+---
+More EDGE stats for Greaves | CBJ
+
+Miles Wood reached the top skating speed of this season and in the NHLâs puck and player tracking era at 24.82 miles per hour in the Colorado Avalancheâs 4-1 loss to the Vancouver Canucks on Thursday.
+The 29-year-oldâs end-to-end rush to chase down the puck on the forecheck at 7:45 in the third period surpassed the previous best mark from this season, which was held by Canucks defenseman Quinn Hughes (24.56 mph at New York Rangers on March 22). The mark also surpassed forward Denis Gurianov (24.60 for Dallas Stars at Boston Bruins on Oct. 16, 2021), which was previously the top skating speed of the puck and player tracking era (since 2021-22). No player in the NHL regular season or Stanley Cup Playoffs over the past four seasons has had a faster max speed than Wood.
+This impressive single-game feat adds to the list of Avalanche players with skating speed accolades this season. Per NHL EDGE stats, center Nathan MacKinnon leads the entire League in 22-plus mph speed bursts (83) and 20-plus mph bursts (547) this season, while defenseman Cale Makar leads his position in 22-plus mph speed bursts (27) and 20-plus mph bursts (206).
+Forward Martin Necas, who was acquired by the Avalanche from the Carolina Hurricanes earlier this season, is also one of the fastest players in the League; he ranks third in the entire NHL in 22-plus mph speed bursts (46), fifth in 20-plus mph bursts (358) and has the third-fastest max skating speed of the season (24.49 mph on Dec. 5, 2024 as member of Hurricanes against Avalanche).
+The Avalanche, as a team, lead the NHL in 22-plus mph speed bursts (210) and 20-plus mph bursts (2,448). Wood also ranks highly among forwards in the following EDGE stats categories:
+â¢ 20-plus mph speed bursts: 127 (80th percentile)
+â¢ 22-plus mph speed bursts: 22 (97th percentile)
+â¢ Average skating distance per 60 minutes: 10.08 miles (86th percentile)
+---
+More: EDGE stats for Wood | Avalanche
+
+NHL.com's fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at the advanced stats behind Montreal Canadiens forward Ivan Demidovâs NHL debut on Monday.
+
+The Montreal Canadiens, already one of the biggest surprises of the NHL season with an elite young core, signed forward Ivan Demidov to his entry-level contract on April 8 and immediately saw a glimpse of his advanced stats potential in his NHL debut.
+The 19-year-old, who was selected with the fifth pick in the 2024 NHL Draft, scored a goal, had a primary assist and three shots on goal while playing 16:56 in Montrealâs 4-3 shootout loss to the Chicago Blackhawks on Monday at Bell Centre. Per NHL EDGE stats, Demidovâs goal came on a high-danger shot, and he also had two midrange shots on goal.
+Demidov played mostly on the second line with center Alex Newhook and wing Joel Armia and on the second power play, and then Patrik Laine joined his line with Newhook at even strength in the third period. In the game against Chicago on Monday, Montrealâs leaders in shot attempts percentage at 5-on-5 were Laine (68.4), Newhook (65.3) and Demidov (62.9).
+
+His early impact in Montreal also included a few other advanced stats highlights: Demidov had four 20-plus mile per hour speed bursts in his debut, including a top skating speed of 20.61 mph. Demidov also had six shot attempts, five at 5-on-5, in his debut and an impressive average shot speed of 78.76 mph; although itâs a small sample size, he ranks in the 99th percentile among forwards in average shot speed.
+Demidov led SKA St. Petersburg of the Kontinental Hockey League in points during this regular season (49 in 65 games) and was tied for their most playoff points (five in six games) before signing with his NHL team.
+He now joins fellow 25-and-younger talent in top-line forwards Nick Suzuki, Cole Caufield and Juraj Slafkovsky and rookie defenseman and Calder Trophy front-runner Lane Hutson on the Canadiens this season. Montreal will also eventually integrate goalie prospect Jacob Fowler (signed entry-level contract April 4) down the road.
+The addition of Demidov should further elevate Montreal -- which is already closing in on an Eastern Conference wild-card spot this season under coach Martin St. Louis -- in the years ahead and potentially as soon as this yearâs Stanley Cup Playoffs.
+---
+More: EDGE stats for Demidov | MTL
+
+The Vancouver Canucks became the first team in NHL history to overcome a three-goal deficit in the final minute of regulation in their 6-5 overtime win against the Dallas Stars at American Airlines Center on Tuesday, and defenseman Quinn Hughes' advanced stats played a big part in the comeback.
+Per NHL EDGE stats, Hughes had the second-highest total skating distance (4.97 miles) in a single game this season in Vancouver's win Tuesday; only Columbus Blue Jackets defenseman Zach Werenski skated a higher single-game mileage (5.16 at New York Islanders on March 24).
+Of the top nine skating-distance games in the NHL this season, four have been by Hughes. This also marks the seventh time Hughes has skated at least 4.50 miles in a single game this season, tied with Werenski for the League lead in that category.
+Hughes played a season-high 31:28 on Tuesday and had two assists (one on power play), including the secondary helper on forward Pius Suter's game-tying goal with seven seconds left in regulation.
+When healthy, Hughes has been arguably one of the most-valuable players to his team in the entire League this season and has a well-rounded skating distance profile (percentile ranks among defensemen listed below):
+â¢ Total skating distance: 242.09 miles (91st percentile)
+â¢ Even-strength skating distance: 206.84 miles (90th percentile)
+â¢ Power-play skating distance: 34.09 miles (98th percentile)
+
+Hughes, in a separate game, had the second-highest even-strength skating distance (4.47 miles at St. Louis Blues on March 20) in a single game this season behind Minnesota Wild forward Kirill Kaprizov (4.55 miles against Vegas Golden Knights on Dec. 15, 2024). Hughes ranks third in the entire NHL in average ice time (25:40 per game) behind fellow elite defensemen in Werenski (26:58) and Cale Makar of the Colorado Avalanche (25:42).
+After winning the Norris Trophy last season, Hughes leads NHL defensemen in points per game (1.16; 74 in 64 games) this season and has the 12th-best shot attempts differential at 5-on-5 in the entire League (plus-293).
+The 25-year-old, who also has the fastest top skating speed in the entire NHL this season (24.56 miles per hour), is an EDGE stats powerhouse, ranking in the 90th percentile or better among defensemen in the following categories:
+â¢ Top skating speed: 24.56 mph (99th percentile)
+â¢ 20-plus mph speed bursts: 101 (96th percentile)
+â¢ Top shot speed: 95.62 mph (82nd percentile)
+â¢ Offensive zone time percentage, all strengths: 47.5 (98th percentile)
+â¢ Offensive zone time percentage, even strength: 45.6 (95th percentile)
+â¢ Midrange shots on goal: 34 (93rd percentile)
+â¢ Midrange goals: 5 (94th percentile)
+â¢ Long-range shots on goal: 99 (98th percentile)
+â¢ Long-range goals: 9 (99th percentile)
+---
+More EDGE stats for Q. Hughes | Canucks
+
+Each week during the regular season, here are the top 10 players to add off the fantasy hockey waiver wire with NHL EDGE stats highlights. For more coverage, visit NHL.com/Fantasy.
+
+MORE FANTASY COVERAGE:
+Picks/props | Proj. lineups, starting goalies
+Top 200 rankings | 100 'F' | 50 'D' | 25 'G'
+Schedule cheat sheet | Top 10 rookies
+Pepsi Zero Sugar NHL Goalie Challenge
+
+FORWARD
+Andrei Kuzmenko, LW/RW, LAK
+24 percent rostered in fantasy
+-11 points (5 goals, 6 assists) in past 10 games for Los Angeles Kings
+-Playing on top line and first power play with Anze Kopitar and Adrian Kempe
+-EDGE stats: Among forward leaders in top shot speed and offensive zone time percentage at all strengths
+Jackson Blake, RW, CAR
+8 percent rostered in fantasy
+-Ranks seventh in goals (15) and fifth in shots on goal (134) among NHL rookies
+-Playing on Carolina Hurricanes' top line and first power play with Sebastian Aho and Seth Jarvis
+-EDGE stats: Among forward leaders in offensive zone time percentage at all strengths and high-danger shots on goal
+Trevor Zegras, C/LW, ANA
+8 percent rostered in fantasy
+-13 points (4 goals, 9 assists) in past 15 games for Anaheim Ducks
+-Playing on line and power play with Mason McTavish
+-EDGE stats: 1 goal on 32 midrange shots (3.1 percent); NHL average midrange shooting percentage: 11.8
+Ivan Demidov, RW, MTL
+7 percent rostered in fantasy
+-Signed entry-level contract Tuesday; expected to join Montreal Canadiens this season
+-No. 5 pick in 2024 NHL Draft; could play top-six and power-play role
+-19 years old; 49 points (19 goals, 30 assists) in 65 Kontinental Hockey League games this season
+-Worth adding and stashing in keeper and dynasty leagues for future seasons
+Ryan Leonard, RW, WSH
+4 percent rostered in fantasy
+-1 goal, 6 shots on goal, 14 hits in first 4 NHL games with Washington Capitals
+-Playing on second line with Connor McMichael and Pierre-Luc Dubois; expanded role with Aliaksei Protas injured
+-Led NCAA in goals with 30 in 37 games for Boston College
+-EDGE stats: 6 speed bursts of 20-plus mph over past 3 games (none in NHL debut)
+Jimmy Snuggerud, RW, STL
+1 percent rostered in fantasy
+-2 assists in first 4 NHL games for St. Louis Blues
+-Seeing time on top line with Pavel Buchnevich and Robert Thomas and first power play
+-Tied for 6th in NCAA with 24 goals in 40 games for University of Minnesota
+-EDGE stats: 2 of his 4 shots on goal have come from high-danger areas
+Andre Burakovsky, LW, SEA
+1 percent rostered in fantasy
+-12 points (4 goals, 8 assists) in past 11 games for Seattle Kraken
+-Playing on line with Jared McCann and Shane Wright
+-EDGE stats: Among forward leaders in top shot speed and average skating distance per 60 minutes
+DEFENSEMAN
+Cam Fowler, STL
+24 percent rostered in fantasy
+-34 points (9 goals, 25 assists) in 48 games since trade to Blues
+-Playing on top pair and first power play
+-EDGE stats: Among defensemen leaders in high-danger shots on goal and long-range goals
+Mason Lohrei, BOS
+8 percent rostered in fantasy
+-Leads Boston Bruins defensemen in assists (28), points (33) and power-play points (16)
+-Playing on first power play with elite right wing David Pastrnak
+-EDGE stats: Among defensemen leaders in midrange goals and top skating speed
+GOALIE
+James Reimer, BUF
+6 percent rostered in fantasy
+-7-game winning streak with .921 save percentage in span for Buffalo Sabres
+-Sabres rank seventh in goals per game (3.27) this season
+-EDGE stat: Ranks highly in high-danger save percentage and midrange save percentage
+Other goalie to consider adding: Anton Forsberg, OTT
+
+---
+More: NHL EDGE Puck & Player Tracking Statistics
+
+Quinton Byfield scored a one-handed, highlight-reel goal for the Los Angeles Kings at 1:48 of the first period against the Seattle Kraken on Monday, and the advanced stats behind the goal's probability are eye-opening.
+Byfield set up on the doorstep, knocked the puck out of the air off a point shot from defenseman Kyle Burroughs and then shoveled it behind Kraken goalie Joey Daccord on his backhand -- all with one hand. Byfield turned a backhanded shot attempt from the boards by Burroughs, which was more than 50 feet away from the net, into a high-percentage scoring chance.
+NHL EDGE IQ, powered by Amazon Web Services, uses "Projected Goal Rate" (PGR) to estimate the likelihood of a shot attempt becoming a goal. The actual goal rate (AGR) of all shots this season across the League is 5.0 percent.
+Byfieldâs goal had a high PGR (58.0 percent). When Burroughs attempted his shot, the PGR was approximately only 1.61 percent based on his location on the ice at the time of the release (outside-left area). So the nifty play by Byfield drastically increased the quality of the scoring chance, with Byfieldâs hand-eye coordination making what started as a low-percentage attempt turn into a high-danger goal.
+There are three key reasons why Byfieldâs shot attempt registered such a high PGR:
+â¢ Goalie angle (Daccord was 57.99 degrees from the puck line)
+â¢ Goalie distance to cover on save attempt (Daccordâs furthest distance to travel to intercept the puck would be 4.94 feet)
+â¢ Shooter distance to goal line (Byfield was 4.50 feet from the goal line when he released the puck, his closest distance on a goal this season)
+For context, this goal had the second-highest PGR on a Kings' non-empty net goal this season, behind Anze Kopitarâs second-period goal against the Vegas Golden Knights on Oct. 30 (60.9 percent).
+Byfield, the No. 2 pick in the 2020 NHL Draft, matched his career high in goals (20) in the game. After starting the season with 23 points in his first 49 games, Byfield has shown breakout potential with 25 points in his past 28 games. He leads the Kings with nine goals over their past 18 games, including a six-game goal streak from March 5-15.
+It was Byfieldâs eighth high-danger goal of the season; 17 of his 20 goals last season were from high-danger areas (93rd percentile). Byfield became the second Kings player over the past 35 years to record multiple 20-goal seasons prior to turning 23 years old, joining Kopitar (four 20-goal seasons between 2006-07 and 2009-10).
+Byfield has been an advanced stats standout for the Kings all season; here are some more of his EDGE stats highlights, along with his percentile rankings among forwards:
+â¢ 98th percentile in total skating distance (250.40 miles)
+â¢ 98th percentile in 20-plus mph speed bursts (286); 10th among forwards
+â¢ 95th percentile in top skating speed (23.40 mph)
+â¢ 91st percentile in top shot speed (93.00 mph)
+â¢ 89th percentile in midrange goals (nine)
+â¢ 85th percentile in long-range shots (16)
+â¢ 81st percentile in high-danger shots (51)
+---
+More: NHL EDGE stats for Byfield
+
+NHL.comâs fantasy staff takes a look at eight key NHL EDGE puck and player tracker stats for Alex Ovechkin and the Washington Capitals during THE GR8 CHASE. Ovechkin scored his 895th career goal against the New York Islanders on Sunday to surpass Wayne Gretzky (894) for the most goals in NHL history.
+
+1. Goals by region (left side)
+Despite being limited to 61 of Washingtonâs 77 games this season because of a fractured fibula, Ovechkin leads the NHL in goals from the left-side regions (18) of the ice; that's a combination of his totals from the left point (two), left circle (nine; including record-breaking goal), left outside (five) and left net side (two) regions. Ovechkin's left-side goal total is one more than Steven Stamkos of the Nashville Predators and Patrik Laine of the Montreal Canadiens (17 each).
+
+2. Shot speed
+Ovechkin is among the forward leaders in top shot speed (98.96 miles per hour; tied for fourth) and average shot speed (67.94 mph; 97th percentile) this season and ranks second at the position in 90-plus mph shots (27) behind Tage Thompson of the Buffalo Sabres (51); no other forward has more than 15 such shots this season. The Capitals have the third-most 90-plus mph shots (99) behind the Edmonton Oilers (131) and Tampa Bay Lightning (111).
+Ovechkin's record-breaking goal at 7:26 of the second period on the power play against the Islanders -- the same club Gretzky scored his 894th and final goal against in 1999 -- on Sunday reached a speed of 85.79 mph.
+
+3. Skating distance on power play
+Ovechkinâs top skating distance game at all strengths this season (3.24 miles) came against the Calgary Flames on Feb. 25, 2025. His top power-play skating distance game of the season (1.30 miles against Ottawa on Jan. 30, 2025) ranks in the 97th percentile among forwards. Ovechkin (0.69) ranks second behind Oilers forward Leon Draisaitl in goals per game (0.73) this season, and 13 of his 42 goals have come on the power play. Ovechkinâs frequent center linemate Dylan Strome is among the leaders in miles skated on the power play this season (32.52; 95th percentile among forwards), as is Ovechkinâs longtime power-play defenseman John Carlson (31.68 miles; 97th percentile at position).
+
+4. Shots on goal and goals by location
+Ovechkin, despite missing time this season, ranks eighth in midrange shots on goal (102) and tied for ninth in midrange goals (14). Among forwards, Ovechkin ranks tied for sixth in long-range shots on goal (36) and is tied with Thompson and Owen Tippett of the Philadelphia Flyers for the NHL lead at the position with four long-range goals (in 61 games), the same total he had in 79 games last season.
+The Capitals are the only NHL team to rank in the top five of the League in goals from both high-danger areas (133; fourth) and midrange areas (83; tied for fourth) this season. Ovechkin has scored 12 high-danger goals (84th percentile), further showing how impressive his season has been considering many more of his goals (30) have come from outside the high-danger regions.
+
+5. Stromeâs helping hand
+Strome leads the Capitals in points (76 in 77 games), assists (51) and power-play points (31) this season and has assisted on 21 of Ovechkinâs 42 goals this season. Ovechkinâs teammates with the next-highest assist totals on his goals are Aliaksei Protas (11), followed by Carlson (eight).
+Strome assisted on Ovechkin's first 11 goals this season and became his second teammate to assist on 11 straight Ovechkin goals (Nicklas Backstrom also had 11 straight from April 6 to Dec. 15, 2011) and the first to do it in a single season. Backstrom has by far the most assists (279) on Ovechkin's career goals among his all-time teammates, with Carlson ranking second (158).
+
+6. Speed and other secondary forward highlights
+A big part of Washingtonâs surprising success, with or without Ovechkin, this season has been the depth and underlying metrics of their forward group. Here are some EDGE stats highlights of their secondary forwards, each of whom rank in the 85th percentile or better at the position in the following categories:
+Tom Wilson
+â¢ Top skating speed, 20-plus mph speed bursts, total skating distance, high-danger shots on goal, high-danger goals and midrange goals
+Connor McMichael
+â¢ 20-plus mph speed bursts, high-danger shots on goal and high-danger goals
+Aliaksei Protas
+â¢ Top skating speed, 20-plus mph speed bursts, high-danger goals and midrange goals
+Pierre-Luc Dubois (acquired from Los Angeles Kings in offseason)
+â¢ Top shot speed, 20-plus mph speed bursts, total skating distance, high-danger shots on goal, high-danger goals and long-range goals
+
+7. Capitals' supporting cast of defensemen, goalies
+Capitals goalie Logan Thompson, who is 31-6-6 in 43 games this season and signed a six-year, $35.1 million contract on Jan. 27 after being acquired from the Vegas Golden Knights in the offseason, ranks highly in both midrange save percentage (.912; tied for fifth) and high-danger save percentage (.822; just outside top 10), while he is third among goalies in goal differential (plus-61) trailing only Connor Hellebuyck of the Winnipeg Jets (plus-79) and Andrei Vasilevskiy of the Tampa Bay Lightning (plus-71). Along with backup Charlie Lindgren (.896 save percentage in 36 games), Washington's goaltending ranks 10th in team save percentage (.900) and, together with Ovechkin's goal-scoring prowess at 39 years old, have the Capitals (107 points) just behind the Jets (108 points) in the race for the Presidents' Trophy, with each team having five games remaining in their respective regular seasons.
+The offseason addition of defenseman Jakob Chychrun (acquired from Ottawa Senators; signed an eight-year, $72 million extension on March 25) and bounce-back season from Carlson have provided Ovechkin with plenty of support for his goal chase on both ends of the ice. Both defensemen have robust EDGE stats profiles, ranking in the 85th percentile or better at the position in the following categories:
+Jakob Chychrun
+â¢ Top shot speed, midrange shots on goal, midrange goals, long-range shots on goal and long-range goals
+John Carlson
+â¢ Top shot speed, total skating distance, high-danger shots on goal, midrange shots on goal, midrange goals and long-range shots on goal
+
+8. Goals above projected
+NHL EDGE IQ, powered by Amazon Web Services, uses "Projected Goal Rate" (PGR) to estimate the likelihood of a shot attempt becoming a goal. The NHL average PGR this season is approximately 5.0 percent across all shot attempts.
+Among the 401 inference shot attempts (excluding shots greater than 60 feet, those beyond the goal line and empty-net attempts) by Ovechkin this season entering April 4, his actual goal rate (6.98 percent) far exceeds his PGR (4.85 percent), given the goalie's positioning, puck movement and traffic at the time of release.
+The result is Ovechkin scoring 28 goals on those 401 inference shot attempts, while he was projected to score only 19.4 times. That mark of 8.6 goals above projected (GAP) so far this season ranks ninth in the NHL among skaters who are in the 50th percentile and above of shot attempts. Buffalo's Thompson leads that list at 17.6 goals above projected.
+---
+More NHL EDGE stats for WSH
+Alex Ovechkinâs EDGE profile
+
+NHL.com's fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at the advanced stats behind Colorado Avalanche defenseman Cale Makar's 30-goal season.
+---
+Cale Makar is in rare company after scoring 30 goals in a single season as a defenseman, and his brilliant advanced metrics have him on track for even more accolades down the road.
+The 26-year-old, who already has won the Stanley Cup with the Avalanche (2022), as well as the Conn Smythe Trophy as most valuable player of the playoffs (2022), the Norris Trophy as the League's best defenseman (2022) and the Calder Trophy as rookie of the year (2020), became the ninth defenseman in NHL history to reach the 30-goal mark and one of five ever at the position to have 30-plus goals and 60-plus assists in a season, joining Paul Coffey, Ray Bourque, Denis Potvin and Bobby Orr.
+Makar has the three highest single-season point totals by a defenseman in Avalanche/Quebec Nordiques history, topped by his 90 points this season (90 in 2023-24, 86 in 2021-22).
+His 90 points this season are second on the Avalanche, behind Nathan MacKinnon (114), he would lead 26 of the 31 other NHL franchises.
+Makar, who surpassed his previous NHL career high of 28 goals from 2021-22, is the first defenseman to score 30 in a season since Mike Green in 2008-09 (31 in 68 games); they are the only two at the position to reach that mark in the past 30 seasons. Makar is the front-runner for the Norris Trophy this season, and the Avalanche are one of the top contenders for the Stanley Cup -- with Makar checking almost every EDGE stats box along the way.
+Here are five advanced metrics that Makar has thrived in this season to help him reach new heights as a goal scorer:
+1. Skating speed
+Makar, who has played in all 77 of Colorado's games this season, leads NHL defensemen in speed bursts of 20-plus miles per hour (200). He also leads defensemen and is tied for ninth among all skaters in 22-plus mph bursts (27). Makar also ranks seventh among defensemen in top skating speed (23.63 mph) and is just outside top 10 among all skaters.
+2. Shot speed
+Makar reached his top shot speed of the season (98.42 mph) in the third period against the Vancouver Canucks on Dec. 16 and ranks in the 93rd percentile among defensemen in that category. Makar also ranks seventh at his position and eighth among all skaters in 90-plus mph shots (32).
+His 30th goal of the season came on a snap shot, his ninth such goal of the season. His tallies on other shot types include 17 wrist-shot goals (leads defensemen; tied for 12th in the NHL) and four slap-shot goals.
+3. Goals and shots by location
+Makar leads the NHL in long-range goals (10) this season, has the most midrange goals among defensemen (12) and is tied with Zach Werenski and Jackson LaCombe for the most high-danger goals (six each) at the position. In terms of shots on goal by location, Makar leads defensemen by a wide margin in midrange shots on goal (97), is second in high-danger shots on goal (29) behind Werenski (33) and also ranks highly in long-range shots on goal (82; just outside top 10 in the NHL).
+Makar also leads NHL defensemen in goals at each of the three strengths: even-strength goals (16), power-play goals (12) and shorthanded goals (two). Heâs tied for second at the position in scoring game-opening goals (four), go-ahead goals (eight) and game-winning goals (four).
+4. Offensive zone time percentage
+Makar excels as a two-way defenseman, and his combination of speed and skill helps him and MacKinnon exit their zone, burst into the offensive zone regularly and maintain possession. Makar ranks in the 93rd percentile among defensemen in offensive zone time percentage (45.5 percent), ranks second in the NHL in total skating distance at all strengths (291.60 miles) and also ranks in the League's top 10 in even-strength skating distance (231.96 miles; fifth) and power-play skating distance (40.78 miles; second behind MacKinnon's 40.90 miles).
+Makar ranks ninth among defensemen and 16th among all players in shot attempts differential at 5-on-5 (plus-334). The Avalanche as a team are fourth in the NHL in shot attempts percentage at 5-on-5 (53.6 percent) behind the Carolina Hurricanes (58.6 percent), Florida Panthers (54.8 percent) and Edmonton Oilers (53.9 percent).
+5. Goals above projected
+NHL EDGE IQ, powered by Amazon Web Services, uses "Projected Goal Rate" (PGR) to estimate the likelihood of a shot attempt becoming a goal. The NHL average PGR this season is approximately 5.0 percent across all shot attempts and 2.8 percent among defensemen.
+Entering Thursday, of the 509 inference shot attempts (excluding shots greater than 60 feet, those beyond the goal line and empty-net attempts) by Makar this season, his actual goal rate (5.30 percent) far exceeds his PGR (3.71 percent), given the goalie's positioning, puck movement and traffic at the time of release.
+The result is Makar scoring 27 goals on those 509 inference shot attempts, while he was projected to score only 18.9 times. That mark of 8.1 goals above projected (GAP) so far this season ranks first at his position and 10th among all skaters in the 50th percentile and above for shot attempts. The next-closest defensemen in GAP is Jakob Chychrun of the Washington Capitals (7.6).
+---
+More: NHL EDGE stats on Makar
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at the advanced stats behind Sidney Crosby's NHL-record 20th consecutive point-per-game season for the Pittsburgh Penguins.
+---
+In the midst of THE GR8 CHASE by Alex Ovechkin of the Washington Capitals for the most goals in NHL history, another legendary active player, Sidney Crosby, has already broken a different one of Wayne Gretzkyâs records: Crosbyâs 20 straight point-per-game seasons are the most in League history.
+Crosby, who has 15 points (eight goals, seven assists) during his current 10-game point streak, leads the Penguins with 81 points (27 goals, 54 assists) in 73 games this season. Pittsburgh has played 75 games this season, so Crosby, who can play a maximum of 80 games, clinched another point-per-game season by scoring a goal against the Buffalo Sabres on March 27. This is the 12th double-digit point streak of Crosbyâs career, tied for the sixth most in NHL history; Gretzky leads that list with 31 point streaks of at least 10 games.
+The 37-year-old Crosby, a three-time Stanley Cup champion, ranks ninth in NHL history in regular-season points (1,677 in 1,345 games; most among active players) and has the most postseason points among active players (201 in 180 games). His career points-per-game average (1.25) ranks second among active players behind Connor McDavid of the Edmonton Oilers (1.51) and tied for eighth all-time (minimum 150 games) in the category.
+Here are four underlying stats behind Crosby's continued offensive prowess:
+1. Skating speed
+Crosby, whose consecutive point-per-game seasons record spans his entire career and came while playing for the same team, ranks in the 88th percentile among forwards in 20-plus mile per hour speed bursts (148) this season. His total in that category has been consistent during the puck and player tracking era (since 2021-22), with his highest total coming last season:
+2021-22: 155 speed bursts of 20-plus mph in 69 games; 88th percentile
+2022-23: 134 speed bursts of 20-plus mph in 82 games; 83rd percentile
+2023-24: 189 speed bursts of 20-plus mph in 82 games; 94th percentile
+2024-25: 148 speed bursts of 20-plus mph in 73 games; 88th percentile
+2. Offensive zone time percentage
+Even with the Penguins likely to miss the Stanley Cup Playoffs for the third straight season, Crosby is among the NHLâs top forwards in offensive zone time percentage at all strengths (45.6; 90th percentile) this season. He also ranks highly at his position in offensive zone time percentage at even strength (42.9; 84th percentile) and on the power play (60.6; 80th percentile).
+In terms of total skating distance, Crosby is one of the heavyweights; he ranks just outside the top 10 forwards in total skating distance (242.01 miles; 97th percentile) and is fifth at his position in even-strength skating distance (210.65 miles). The only forwards who rank higher are Nathan MacKinnon (236.15) of the Colorado Avalanche, Connor Bedard (224.78) of the Chicago Blackhawks and the Winnipeg Jets duo of Mark Scheifele (220.76) and Kyle Connor (214.03). The average age of those four forwards is 27, a full decade younger than Crosby.
+3. Top shot speed
+Crosbyâs hardest shot attempt this season was clocked at 94.48 mph in the third period of a road game against the Tampa Bay Lightning on March 25, putting him in the 95th percentile among forwards in top shot speed. That was Crosbyâs hardest shot during the puck and player tracking era (since 2021-22); listed below is Crosbyâs top shot speed in each of the past four seasons:
+2021-22: 89.86 mph
+2022-23: 93.10 mph
+2023-24: 90.82 mph
+2024-25: 94.48 mph
+4. Goals and shots on goal by location
+Crosby also checks multiple advanced stats boxes in terms of his goal scoring and shot volume by location. He ranks in the 96th percentile in high-danger shots on goal (76) this season and also ranks highly in high-danger goals (12; 85th percentile) and midrange goals (seven; 84th percentile). Crosby ranks 14th in the entire NHL in high-danger shots on goal (345) during the puck and player tracking era (since 2021-22).
+Crosby quietly leads the NHL in 5-on-5 assists (39) this season and ranks third in 5-on-5 points (53) behind Nikita Kucherov of the Lightning (57) and Leon Draisaitl of the Oilers (54). And Crosbyâs most-frequent linemates Rickard Rakell (leads Penguins with 32 goals in 74 games this season) and Bryan Rust (third on Penguins with 26 goals in 64 games behind Rakell, Crosby) have provided Crosby with enough of a supporting cast to achieve this record milestone.
+---
+More: NHL EDGE stats on Crosby
+
+NHL.com's fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at the advanced stats for forward Brad Marchand ahead of his expected Florida Panthers debut.
+
+The Florida Panthers acquired Brad Marchand from the Boston Bruins on March 7, boosting their chances of repeating as Stanley Cup champions.
+Marchand assisted on the overtime goal and had four shots on goal on eight shot attempts in his Panthers debut against the Utah Hockey Club on Friday. Looking ahead to the Stanley Cup Playoffs, Marchand could give them a formidable second line if he and Matthew Tkachuk are healthy and playing on a unit with center Sam Bennett.
+Marchand, who will turn 37 years old on May 11, can become an unrestricted free agent after this season. Among active NHL players, Marchand ranks ninth in career regular-season goals (422) and fourth in career playoff goals (56).
+Per NHL EDGE stats, the Panthers are among the leaders in high-danger shots on goal (591; fourth) and midrange SOG (590; eighth) and incorporate Marchand, who ranks in the 94th percentile among forwards in high-danger SOG (68) and also highly in midrange goals (six; 80th percentile) and midrange SOG (50; 85th percentile) despite being limited to 62 games this season.
+The Panthers have won 11 of their 16 games (11-5-0) since the 4 Nations Face-Off despite Tkachuk sustaining a groin injury during the best-on-best tournament and being out for an extended time. Per NHL EDGE stats, Tkachuk is among the forward leaders in offensive zone time percentage (47.5 percent; 97th percentile), high-danger goals (13; 88th percentile) and high-danger shots on goal (52; 85th percentile). Marchand also ranks highly in offensive zone time percentage (45.1; 87th percentile) this season.
+Florida's supporting cast, even without Tkachuk for the time being, is a big upgrade around Marchand compared to in Boston, where he was playing mostly on a separate line from elite right wing David Pastrnak this season. Marchand, despite his high-danger shots on goal volume, only had nine high-danger goals with the Bruins this season (74th percentile), giving him a high-danger shooting percentage (13.6) well below both the NHL average (20.2) and his rate from last season (26.2; his 16 high-danger goals ranked in the 90th percentile).
+In his first game with the Panthers, Marchand played on a line with Bennett and rookie standout Mackie Samoskevich, who has been productive since the 4 Nations Face-Off break with 10 points, six on the power play, over his past 15 games (five goals, five assists). The trio combined for four points in Friday's 2-1 win and Bennett scored both goals. The Panthers, as a team, rank second in the League in 5-on-5 shot attempts percentage (54.6; behind Carolina Hurricanesâ 58.7).
+With Tkachuk still out, Marchand could factor into their first power-play unit down the stretch of the season. Despite missing time this season, Marchand ranks in the 84th percentile in power-play skating distance (24.91 miles) and, since 2016-17, is 12th in the NHL in power-play points (222). Over the past two seasons combined, the Panthers rank fourth in power-play goals (115).
+The Marchand trade wasnât the only big move by Florida this season; the Panthers acquired defenseman Seth Jones from the Chicago Blackhawks on March 1. Florida has recently been playing without Aaron Ekblad, who was suspended 20 games on March 10 for violating terms of the NHL/NHLPA Performance Enhancing Substances Program.
+Marchand should also help Florida's penalty kill; he leads active NHL players in career shorthanded goals (36; tied for eighth in League history), and the Panthers already rank second in shorthanded goals (12) this season behind the New York Rangers (14). Since Jan. 1, Florida and the Winnipeg Jets have allowed the fewest goals per game (2.21), and workhorse starter Sergei Bobrovsky ranks among the League leaders in wins (31 in 48 games; tied for fourth) and shutouts (five; tied for third) this season.
+The addition of Marchandâs physicality, goal-scoring ability and championship pedigree (won Stanley Cup with Bruins in 2011), along with the potential returns of Tkachuk and Ekblad in the playoffs, give the Panthers a chance to make the Stanley Cup Final for the third straight season. And the fact that the Panthers defeated the Bruins in each of the past two postseasons adds to the intrigue of them landing Boston's former captain to an already strong core.
+---
+More: NHL EDGE stats on Marchand
+
+Zach Werenski set the top skating distance in a single game (5.16 miles) by any NHL player this season in the Columbus Blue Jackets' 4-3 shootout win against the New York Islanders at UBS Arena on Monday.
+Werenski also tied his career-best mark (also skated 5.16 miles against Los Angeles Kings on March 4, 2022) for the third-longest distance total of any regular-season game during the puck and player tracking era (since 2021-22). The only players who have skating a longer distance in a regular-season game are Connor McDavid of the Edmonton Oilers (5.40 miles against St. Louis Blues on Dec. 15, 2022) and Thomas Chabot of the Ottawa Senators (5.20 miles at Philadelphia Flyers on Dec. 18, 2021).
+Werenski also leads the NHL in total skating distance this season (276.13 miles), and his single-game mark surpassed Nashville Predators defenseman Roman Josi, who skated 4.79 miles on Jan. 16 against the Chicago Blackhawks.
+The 27-year-old also skated 2.04 miles in the third period Monday, the highest total in a single period of a regular-season game and the second-highest of the tracking era (McDavid skated 2.25 miles in the third period against the Vancouver Canucks during the Stanley Cup Playoffs on May 12, 2024). Werenski surpassed Chabot's single-period regular-season skating distance mark of 2.01 miles from the third period against the San Jose Sharks on Oct. 21, 2021.
+Werenski, one of the top candidates for the Norris Trophy this season as the top defenseman in the NHL, played 33:44 on Monday, the most ice time of any player in the League this season and the third-highest single-game total in Blue Jackets regular-season history, behind two games by Jack Johnson in 2012-13 (34:59, 34:13).
+With the Blue Jackets in the thick of the Eastern Conference wild-card race, Werenski has been a dominant force all season and ranks among the best defensemen in many other key advanced stats categories:
+â¢ Top skating speed: 23.08 miles per hour (94th percentile)
+â¢ 20-plus mph speed bursts: 143 (99th percentile; 3rd in NHL behind Cale Makar, Jake Sanderson)
+â¢ High-danger shots on goal: 32 (99th percentile; 1st in NHL)
+â¢ High-danger goals: 6 (99th percentile; tied for 1st in NHL with Makar)
+â¢ Midrange shots on goal: 69 (99th percentile; 2nd in NHL behind Makar)
+â¢ Midrange goals: 10 (99th percentile; tied for 2nd in NHL behind Jakob Chychrun)
+â¢ Long-range shots on goal: 75 (93rd percentile)
+---
+More EDGE stats for Werenski
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at the advanced stats highlights of defenseman brothers Quinn Hughes and Luke Hughes.
+---
+Two of the best young defensemen in the NHL come from the same family in Quinn Hughes, the reigning Norris Trophy winner, and his younger brother Luke Hughes, whoâs thriving in a top-flight role for the New Jersey Devils.
+Although their other brother, Devils forward Jack Hughes (shoulder surgery), is out for the rest of this season, it will still be a pivotal matchup between Quinnâs Vancouver Canucks and Lukeâs New Jersey Devils at Prudential Center on Monday (7:30 p.m. ET; Disney+, HULU, ESPN+, Prime) with both teams in the thick of Stanley Cup Playoff contention.
+Quinn Hughes was selected by the Canucks with the seventh pick in the 2018 NHL Draft before Luke was selected fourth by the Devils in the 2021 NHL Draft. Quinn and Luke each played two seasons at the University of Michigan before making the jump to the NHL. Jack became the first player from the United States National Team Development Programâs under-18 team to go directly to the NHL (selected by Devils with No. 1 pick in 2019 NHL Draft).
+The 25-year-old Quinn is leading NHL defensemen in points per game (1.20; 67 in 56 games) this season, excels in EDGE stats categories like offensive zone time percentage (47.9 percent; 98th percentile) and top shot speed (95.62 mph; 82nd percentile) and is one of the most valuable players League-wide to his team. The 21-year-old Luke also has an enormous ceiling considering how well he has played in each of his first two seasons as the Devils have dealt with injuries to both his brother Jack, their top forward, and Dougie Hamilton, their top defenseman.
+Here are three advanced stats storylines surrounding the Hughes defenseman brothers:
+Skating speed
+Quinn Hughes reached the top skating speed of any NHL player this season at 24.56 miles per hour against the New York Rangers on Saturday. Per NHL EDGE stats, it was the fastest max skating speed speed by a defenseman in the puck and player tracking era (since 2021-22) and second-fastest of any player in the span trailing only forward Denis Gurianov (reached 24.60 mph with Dallas Stars against Boston Bruins on Oct. 16, 2021). It marked Quinn's fifth speed burst of at least 22 mph this season (95th percentile among defensemen).
+Luke's max skating speed of 23.58 mph (Dec. 6, 2024 against Seattle Kraken) is the seventh fastest among defensemen this season and one of his 13 bursts of at least 22 mph, third most at the position behind only Cale Makar of the Colorado Avalanche (24) and Jake Sanderson of the Ottawa Senators (16). Luke reached the fastest max speed by a defenseman last season (24.19 mph) as a rookie playing in all 82 regular-season games for the Devils.
+Luke, who finished third in the Calder Trophy voting last season, and Quinn, who finished second in 2020, are the first brothers in NHL history voted as finalists for that award.
+Skating distance
+Quinn has been limited to 56 of Vancouverâs 70 games this season because of injury but has been the clear-cut No. 1 defenseman for his team and its first power-play quarterback when healthy. Quinn ranks in the 87th percentile in total skating distance (209.41 miles) and is among the best in power-play skating distance (29.90 miles; 98th percentile). In terms of average ice time, Quinn (25:25 per game) ranks third in the entire NHL behind Zach Werenski of the Columbus Blue Jackets (27:00) and Makar (25:39).
+Luke, who has played in 62 of New Jerseyâs 71 games this season, also ranks highly in total skating distance (200.88 miles; 82nd percentile). Luke is tied for second among NHL defensemen in skating distance per 60 minutes (9.27 miles) behind Rasmus Dahlin (9.30) of the Buffalo Sabres; Quinn ranks in the 82nd percentile of that category (8.83). Luke ranks second on the Devils in average ice time (20:58) behind Brett Pesce (21:10).
+Shots/goals by location
+Although neither of the Hughes defenseman brothers has played the entire season, each still ranks in the 90th percentile or better at the position in various shots on goal and goals by location categories:
+Luke Hughes:
+â¢ High-danger shots on goal: 10 (93rd percentile)
+â¢ Midrange shots on goal: 31 (92nd percentile)
+âââ¢ Midrange goals: 4 (90th percentile)
+Quinn Hughes:
+â¢ Midrange shots on goal: 29 (90th percentile)
+â¢ Midrange goals: 5 (95th percentile)
+â¢ Long-range shots on goal: 89 (98th percentile; sixth in entire NHL)
+â¢ Long-range goals: 9 (99th percentile; tied with Makar for League lead)
+---
+More: NHL EDGE stats on Quinn Hughes | Luke Hughes
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at how the New Jersey Devils could still make the Stanley Cup Playoffs after season-ending injuries to forward Jack Hughes and defenseman Dougie Hamilton.
+The New Jersey Devils will be without top forward Jack Hughes (shoulder surgery) for the rest of the season and are expected to be without No. 1 defenseman Dougie Hamilton (lower body) for the rest of the regular season, putting their championship hopes, and even their Stanley Cup Playoff chances, in question.
+But with plenty of other advanced stats standouts, New Jersey still has some breathing room in the standings. Here are four reasons the Devils can hold onto a postseason spot and still be a formidable opponent if they qualify:
+1. Jesper Brattâs all-around prowess
+Bratt quietly has become one of the most consistently productive players in the NHL, regardless of linemates and the health of his teammates, in recent seasons; heâs had at least 73 points in four straight seasons (80 points in 69 games this season) and has averaged 1.00 points per game since 2021-22 (309 points in 309 games; tied for 20th in NHL).
+Bratt also has taken his game up a notch with his team facing adversity in recent weeks; heâs had points on 12 of the Devilsâ 20 goals in the seven games since Hughes was injured, including a stretch of three straight three-point games (third player to do that this season, along with David Pastrnak of the Boston Bruins and Roope Hintz of the Dallas Stars).
+Per NHL EDGE stats, Bratt is among the forward leaders in many key advanced stats categories and has become the Devilsâ most reliable scorer during their last-ditch effort to remain in playoff position.
+â¢ Midrange shots on goal: 66 (93rd percentile)
+â¢ Midrange goals: 10 (94th percentile)
+â¢ 20-plus mph speed bursts: 152 (93rd percentile)
+â¢ Total skating distance: 214.63 miles (95th percentile)
+â¢ Top shot speed: 91.32 mph (86th percentile)
+â¢ Offensive zone time percentage, power play: 63.3 percent (91st percentile)
+
+2. Goalie tandem
+The Devils are tied with the New York Rangers and Ottawa Senators for the most team shutouts (eight each; Jake Allen: four; Jacob Markstrom: three; Nico Daws: one) this season. Per NHL EDGE stats, Allen is one of three goalies to rank in the top 10 of high-danger save percentage (.830; seventh) and midrange save percentage (.929; third), joining Connor Hellebuyck of the Winnipeg Jets and Darcy Kuemper of the Los Angeles Kings. The Devils, as a team, are tied for fifth in team save percentage (.904).
+Markstrom, who missed time because of injury earlier in the season, still is among the leaders in goal differential (plus-23; tied for ninth in NHL). Although the Devils face an uphill battle ahead, itâs worth noting Markstrom led the NHL in high-danger save percentage last season with the Calgary Flames (.857; minimum 30 games), proving his high ceiling when facing pressure.
+3. Luke Hughes' elevated role
+The Devils defenseman, since the game when Hamilton was injured March 4, has seven points (one goal, six assists), including four power-play assists, during his past seven games. In addition to taking on a bigger role on both ends without Hamilton and his brother, Jack, Luke is tasked with maintaining the Devilsâ potent power play, which ranks fourth in the NHL (27.4 percent). Per NHL EDGE stats, New Jersey is tied for sixth in offensive zone time percentage with the man advantage (59.9 percent) this season.
+Hughes checks plenty of boxes among the defenseman EDGE stats leaders to show he has breakout potential for the rest of the season:
+â¢ Top skating speed: 23.58 mph (98th percentile; sixth among defensemen)
+â¢ 20-plus mph speed bursts: 106 (97th percentile; eighth among defensemen)
+â¢ Average skating distance per 60 minutes: 9.28 miles (99th percentile; tied for second among defensemen behind Rasmus Dahlinâs 9.29)
+â¢ High-danger shots on goal: 10 (94th percentile)
+â¢ Midrange shots on goal: 31 (93rd percentile)
+â¢ Midrange goals: 4 (91st percentile)
+
+4. Other secondary players stepping up
+The Devils have seen an uptick in production from wing Timo Meier since Jack Hughes and Hamilton were injured. Meier has six points (four goals, two assists) and 23 shots on goal in his past seven games and is sixth among forwards in 5-on-5 shot attempts since March 1 (47).
+Meier has excelled in midrange areas (63 midrange shots on goal, 92nd percentile; 11 midrange goals, 96th percentile), but his high-danger shooting percentage (11.5 percent; below 50th percentile) is low considering he ranks high in high-danger shots on goal (52; 88th percentile).
+Under new coach Sheldon Keefe this season, the Devils have had some depth players elevate their play at various points, most notably a sneaky offseason addition in forward Stefan Noesen. Noesen ranks among the forward leaders in high-danger shots on goal (81; 98th percentile) and high-danger goals (13; 90th percentile) and will be relied upon more heavily down the stretch.
+New Jersey, as a team, ranks sixth in high-danger shots on goal (549) but is shooting 18.0 percent from high-danger areas (sixth lowest in NHL); the Devils have scored 99 high-danger goals (tied for 13th). Although New Jersey is now without Jack Hughes and Hamilton, better shooting fortunes on higher-probability looks could help offset their absences.
+Captain Nico Hischier has a four-game point streak (two goals, two assists) on a line mostly with Meier and Noesen, and center Cody Glass (No. 6 pick in 2017 NHL Draft by Vegas Golden Knights; acquired from Pittsburgh Penguins on March 7) has been a surprise with five points (two goals, three assists) in five games since the trade while playing mostly on a line with Bratt and Erik Haula. Hischier, who has a career-high 12 power-play goals this season (tied for seventh in NHL), leads the team in high-danger shots on goal (83; eighth in NHL) and high-danger goals (19; tied for ninth).
+But in New Jerseyâs six games without both Jack Hughes and Hamilton since March 7, they have the seventh-worst shot attempts percentage at 5-on-5 (46.6 percent); they missed the playoffs last season under coaches Lindy Ruff and Travis Green when Hamilton was limited to 20 games and Jack Hughes was limited to 62 games.
+So in addition to Bratt, Luke Hughes and the goalie tandem, the Devils will need more from forwards Meier, Dawson Mercer and especially defenseman Simon Nemec (No. 2 pick in 2022 NHL Draft) to remain in a playoff spot down the stretch of the season.
+---
+More: NHL EDGE stats on Devils
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at the St. Louis Blues resurgence in the standings and upside if they make the Stanley Cup Playoffs.
+---
+After the St. Louis Bluesâ 4-1 win against the Chicago Blackhawks on Saturday, their season-high fifth straight victory, they are occupying the Western Conference Second Wild Card spot thanks to a 12-2-2 record in their past 16 games. The Blues extended their home point streak to eight games (7-0-1), marking their longest run since Nov. 18, 2021 to Jan. 13, 2022 (12-0-1).
+Rather than rebuilding after missing each of the past two postseasons, the Blues have aggressively retooled on the fly and benefited from an in-season coaching change. Here are five reasons the Blues are playoff contenders again and have sneaky appeal to pull off an upset if they qualify:
+1. Binningtonâs turnaround
+Goalie Jordan Binnington, who backstopped the Bluesâ Stanley Cup championship in 2019 with two clutch Game 7 victories, had an underwhelming start to this season. But his brilliance for Canada in the 4 Nations Face-Off, specifically in the winner-take-all championship game, has sparked a bounce-back performance for his NHL team down the stretch of the season.
+Although Binnington's save percentage in the NHL this season has remained the same before and after the best-on-best international tournament (.897 in each span), he is 7-2-0 in nine games after the 4 Nations Face-Off (which was played Feb. 12-20), including four games with a .920 or better SV%, compared to 15-19-4 in 39 games prior. Binnington is clearly benefiting from more goal support; since the Blues returned to action Feb. 22 after the 4 Nations break, they are second in the NHL in goals per game (3.93), trailing only the Washington Capitals (4.00).
+Per NHL EDGE stats, Binnington has a plus-13 goal differential with the Blues after the 4 Nations Face-Off compared to minus-17 prior to the tournament. Binnington has also improved in midrange save percentage after 4 Nations (.891) compared to before the tournament (.872); the League average in the category is .888.
+Binnington's improvement also extends to long-range save percentage (from 0.957 before tournament to 0.980 after; League average: .970), while reliable backup Joel Hofer ranks in the 87th percentile in that category (.986).
+2. Holloway's breakout season
+Acquired from the Edmonton Oilers by a successful offer sheet in the offseason, Dylan Holloway has been one of the breakout players of the NHL season. With expanded usage for the Blues (16:49 per game) compared to his first two seasons with the Oilers (11:22 last season; 9:35 as rookie in 2022-23), Holloway has shattered his previous career highs in goals (23; second on Blues), assists (34; second on team), points (57 in 70 games; tied for second), even-strength goals (17; second), even-strength points (44; tied for second), power-play goals (six; tied for first), power-play points (13; second) and shots on goal (163; second).
+Since Jan. 1, Holloway leads the Blues in points (31 in past 32 games). Per NHL EDGE stats, he ranks highly among forwards in various advanced metrics this season:
+â¢ 20-plus mile per hour speed bursts: 180 (95th percentile)
+â¢ Total skating distance: 206.73 miles (91st percentile)
+â¢ Top shot speed: 97.99 mph (98th percentile)
+â¢ Average shot speed: 61.61 mph (84th percentile)
+â¢ High-danger shots on goal: 47 (82nd percentile)
+â¢ High-danger goals: 12 (86th percentile)
+â¢ Midrange shots on goal: 58 (90th percentile)
+â¢ Midrange goals: 9 (90th percentile)
+â¢ Long-range shots on goal: 24 (95th percentile)
+3. Defensive additions
+Defensemen Cam Fowler, acquired from the Anaheim Ducks this season, and Philip Broberg, acquired from the Oilers in a separate successful offer sheet in the offseason, have helped the Blues overcome the injury absences of Torey Krug (ankle surgery; has not played all season) and, more recently, Colton Parayko (knee; out long term).
+The Blues are tied for sixth in the NHL with 17 long-range goals, with 13 of them being scored by defensemen (tied for sixth at position). Per NHL EDGE stats, Fowler, who has 25 points (seven goals, 18 assists) in 40 games since the trade to St. Louis, ranks fifth in the League in long-range goals (five). Veteran Justin Faulk is also among the defenseman leaders in midrange shots on goal (28; 90th percentile).
+Broberg, who scored an overtime goal to defeat the Vancouver Canucks on Thursday, has scored two high-danger goals (88th percentile) this season and is among the defenseman leaders in top skating speed (23.48 mph; 97th percentile) and 20-plus mph speed bursts (74; 92nd percentile). Parayko, despite his injury absence, is tied for third among defensemen in high-danger goals (five; behind only Cale Makar, Zach Werenski's six each).
+4. Forward depth
+Beyond their top offensive players, Jordan Kyrou, Robert Thomas and Holloway, the Blues have benefited from strong second halves by Jake Neighbours (playing on top line), captain Brayden Schenn (second line) and rookie Zack Bolduc (third line, first power play).
+Per NHL EDGE stats, Kyrou ranks 10th in the entire League in midrange shots on goal (88). Other standouts from the Blues forward group in midrange shots on goal include Holloway, Thomas (58; 90th percentile), Schenn (48; 85th percentile) and Pavel Buchnevich (46; 84th percentile). Not far behind Holloway, Thomas ranks in the 88th percentile in midrange goals (eight), and Buchnevich ranks in the 79th percentile in high-danger goals (10).
+In terms of high-danger shots on goal, Neighbours (57; 90th percentile) ranks ahead of Kyrou (53; 87th percentile) and Holloway. Bolduc ranks highly among forwards in average shot speed (61.31 mph; 83rd percentile), providing a new element to the first man-advantage unit.
+5. Coaching change
+The Blues are 27-16-6 since firing coach Drew Bannister on Nov. 24 and replacing him with Jim Montgomery, who was fired by the Boston Bruins on Nov. 19; Montgomery was previously an assistant with St. Louis earlier in his career. Since Montgomery took over, the Bluesâ offensive rankings have improved in terms of goals per game (3.22; seventh), power-play percentage (23.0; 15th) and 5-on-5 shooting percentage (10.5; second) compared to before the coaching change; from the start of the season to Nov. 24, the Blues ranked much lower in goals per game (2.36; 30th), power-play efficiency (16.7; 25th) and 5-on-5 shooting percentage (7.8; tied for 21st).
+Per NHL EDGE stats, the Blues, as a team, are one of the best at generating chances from midrange areas; they rank third in the League in midrange shots on goal (608) behind the Vegas Golden Knights (634) and Colorado Avalanche (629).
+---
+More: NHL EDGE stats on Blues
+
+NHL.com's fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at the reasons the Vegas Golden Knights appear primed for another long Stanley Cup Playoff run.
+---
+The Vegas Golden Knights, who were quieter than usual around the NHL Trade Deadline, remain one of the top Stanley Cup contenders this season with excellent underlying metrics.
+The Golden Knights, who won the Stanley Cup in 2023, came out of the 4 Nations Face-Off break tied with the Edmonton Oilers (72 points each as of Feb. 20) for the Pacific Division lead and only made one notable move to reacquire wing Reilly Smith. But, while Edmonton has struggled in its first 10 games back (3-7-0), Vegas (6-2-1 since break) has reminded the hockey world that it's still one of the League's elite teams without any glaring roster flaws.
+Here are four advanced stats categories that suggest the Golden Knights are equipped for another deep postseason run.
+1. Shot location versatility
+Vegas is the only NHL team to rank in the top 10 of the following shot/goal by location categories: the Golden Knights lead the NHL in midrange shots on goal (600) and midrange goals (78) and also rank highly in high-danger goals (103; eighth) and high-danger shots on goal (501; 10th). They also rank seventh in shot attempts percentage at 5-on-5 (51.5), a strong indicator a teamâs chances of making a deep Stanley Cup Playoff run.
+Vegasâ leading goal scorer, center Tomas Hertl (27 total; tied for 21st in NHL), is tied for fifth in the League in high-danger shots on goal (87) and tied for seventh in high-danger goals (19). Among the Leagueâs midrange goal leaders are wing Pavel Dorofeyev (11; 97th percentile) and center Jack Eichel (10; 94th percentile). Dorofeyev has been one of the breakout players of the season with 26 goals (second on team behind Hertl), including a team-leading four game-winning goals.
+In the Golden Knightsâ 4-0 road win against the Columbus Blue Jackets on Thursday, Eichel (79 points in 64 games) passed teammate William Karlsson (78 points in 2017-18) for the most points in a single season by a Vegas player. Eichel has a robust advanced stats profile that supports his status as one of the gameâs upper-echelon players:
+â¢ 20-plus mph speed bursts: 291 (99th percentile)
+â¢ Total skating distance: 218.27 miles (98th percentile)
+â¢ Top skating speed: 23.50 mph (96th percentile)
+â¢ Top shot speed: 94.11 mph (95th percentile)
+â¢ Average shot speed: 64.95 mph (94th percentile)
+2. Power-play success
+The Golden Knights have the second best power-play percentage in the NHL this season (29.0 percent; behind Winnipeg Jetsâ 31.5) and have scored eight power-play goals in 13 games since the start of February. Vegas has the Leagueâs best road power-play percentage (31.5) and offensive zone time percentage on the power play (62.9 percent).
+In terms of power-play goals, Hertl (12) and Dorofeyev (11) have combined for 23 this season; the only teammates in the League to combine for more are Tampa Bay Lightning forwards Jake Guentzel and Brayden Point (27 combined), Edmonton Oilers forwards Leon Draisaitl and Connor McDavid (24 combined) and Detroit Red Wings forwards Dylan Larkin and Alex DeBrincat (24 combined). Eichel has 30 power-play points (tied for fifth in the NHL), the most in a single season in Golden Knights history.
+3. Third-period domination
+In terms of third-period goal differential this season, the Golden Knights (plus-34) rank second behind the Washington Capitals (plus-43). Vegas also ranks first and tied for first, respectively, in winning percentage (.318) and wins (seven) when trailing entering the third period. Their 18 comeback wins this season are tied for third in the League.
+As good as the Golden Knights are at occupying space in front of their opponentâs net, they are just as good at defending that area in their own end. Vegas has allowed the second fewest high-danger shots on goal (425) and is tied for the sixth fewest high-danger goals allowed (83). This is especially true in the third period where the Golden Knights have allowed only 19 high-danger goals; only the Los Angeles Kings (16) have allowed fewer. Vegas' high-danger save percentage in the third period also ranks third best (.861) behind the Kings (.887) and Minnesota Wild (.862).
+Goalie Adin Hill, who stopped all 27 shots faced against Columbus on Thursday for his 11th NHL shutout (six have come with Vegas), is 5-1-0 with a .940 save percentage and two shutouts over his past six starts. Hill burst onto the scene during the Golden Knightsâ 2023 Stanley Cup run, leading the NHL in save percentage (.932) that postseason and playing every minute of their five-game series win against the Florida Panthers in the Stanley Cup Final. Per NHL EDGE stats, Hill ranked second in high-danger save percentage (.893) that postseason.
+4. Scoring by defensemen
+Golden Knights defensemen have combined for 151 points (32 goals, 119 assists) this season to rank fifth in the NHL. Shea Theodore (48), Noah Hanifin (32) and Alex Pietrangelo (27) make Vegas one of only three teams (others: Buffalo Sabres and Pittsburgh Penguins) with a trio of defensemen having more than 25 points this season. Theodore, who has missed all nine of Vegasâ games since the 4 Nations Face-Off after sustaining an upper-body injury in the tournament opener, is week to week and could return for the playoffs.
+Vegas defensemen also rank highly in both midrange shots on goal (124; fourth) and midrange goals (14; tied for sixth); Hanifin is tied for seventh at his position in midrange goals (six). Hanifin, like Hertl, is a potential difference-maker in the playoffs who was acquired prior to last yearâs trade deadline; neither player was a part of the 2023 championship run.
+The Golden Knights play with structure, allowing their defensemen to jump into the play and create offense. At even strength, their defensemen rank fourth in total skating distance (993.42 miles) and ninth in offensive zone time percentage (42.9 percent). With a deep defense, potent forward group and stability in net (Hill signed six-year contract Friday), Vegas could have the most complete team, if healthy, this postseason.
+---
+More: NHL EDGE stats on Golden Knights
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at three sneaky NHL Trade Deadline movers who can become high-impact players with their new teams.
+---
+Logan Stankoven, F, CAR
+The 22-year-old rookie, who was playing mostly in a bottom-six role with the Dallas Stars prior to the trade, scored a power-play goal in his Carolina Hurricanes debut and played on the top line and first power-play unit with forwards Sebastian Aho and Andrei Svechnikov. Stankoven had inconsistent usage and production this season with Dallas but is still tied for fifth among rookies in points (30 in 60 games) and tied for second in his class in shots on goal (150) behind Macklin Celebrini of the San Jose Sharks (186; No. 1 pick in 2024 NHL Draft).
+Per NHL EDGE stats, Stankoven has been a standout in shots on goal by location this season, ranking in the 80th percentile or better in all three categories, and is a candidate to be a difference-maker for the Hurricanes down the stretch and in the Stanley Cup Playoffs.
+â¢ High-danger shots on goal: 42 (81st percentile)
+â¢ Midrange shots on goal: 52 (89th percentile)
+â¢ Long-range shots on goal: 13 (82nd percentile)
+Stankoven has scored eight of his 10 goals this season from high-danger areas and is due for better shooting fortunes from midrange areas (no midrange goals despite 52 midrange SOG).
+Josh Norris, F, BUF
+The 25-year-old center has overcome having three shoulder injuries earlier in his NHL career and has high upside with the Buffalo Sabres given his early lineup placement; he is playing on the top line and first power play with elite goal scorer Tage Thompson (0.58 goals per game; fourth in League) and also brings exposure to wings JJ Peterka and Alex Tuch in different situations. Norris assisted on Thompsonâs game-winning goal in Buffaloâs upset victory against the Edmonton Oilers on Monday.
+Norris has scored 20 goals in 55 games this season and had an NHL career-high 35 in 66 games for the Ottawa Senators during the 2021-22 season. While the Senators improved on the other side of the Norris trade with forward Dylan Cozens, Norris brings a ton of speed to the Sabres offense and has excelled in shots on goal and goals by location among forwards:
+â¢ Top skating speed: 23.76 mph (98th percentile)
+â¢ 20-plus mph speed bursts: 172 (95th percentile)
+â¢ High-danger shots on goal: 45 (83rd percentile)
+â¢ High-danger goals: 10 (83rd percentile)
+â¢ Midrange goals: 8 (90th percentile)
+
+Spencer Knight, G, CHI
+The 23-year-old goalie is 2-1-0 with a .941 save percentage over his first three games with the rebuilding Chicago Blackhawks and has been especially efficient facing the most-difficult shots; per NHL EDGE stats, Knight has stopped 30 of 32 high-danger shots faced with his new team for a .938 high-danger save percentage. For context, the NHL leader in high-danger save percentage among qualifying goalies is Andrei Vasilevskiy of the Tampa Bay Lightning (.853); Knight ranks in the 84th percentile in the category this season (.829; League average: .806).
+Even after Seth Jones was traded to the Florida Panthers in the deal to acquire Knight, the Blackhawks could play spoiler down the stretch and have two young building blocks on defense in front of him; Alex Vlasic and Artyom Levshunov (No. 2 pick in 2024 NHL Draft; three shots on goal, 20:55 in NHL debut Monday). Vlasic is taking on a bigger role after the departure of Jones and is an EDGE stats standout among defensemen in the following categories:
+â¢ Top skating speed: 22.80 mph (91st percentile)
+â¢ 20-plus mph speed bursts: 61 (91st percentile)
+â¢ Total skating distance: 212.27 miles (95th percentile)
+â¢ Top shot speed: 101.92 mph (99th percentile; fifth at position)
+---
+More: NHL EDGE stats Player Comparisons
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at the impact of the Dallas Stars acquiring forward Mikko Rantanen prior to the 2025 NHL Trade Deadline.
+---
+The Dallas Stars landed elite forward Mikko Rantanen from the Carolina Hurricanes on Friday prior to the NHL Trade Deadline and signed him to an eight-year contract, giving them the deepest forward group in the League and making them the front-runner to win the Stanley Cup.
+The 28-year-old, who ranks fourth in points (437 in 351 games) over the past five regular seasons combined, won the Stanley Cup with the Colorado Avalanche in 2022 and brings a robust advance stats profile to the Stars. Dallas has lost in the conference finals or later in three of the past five seasons and hasnât won a championship since 1999.
+Per NHL EDGE stats, Rantanen is among the forward leaders in offensive zone time percentage (47.6; 97th percentile), midrange shots on goal (70; 97th percentile), midrange goals (10; 95th percentile), total skating distance (199.10 miles; 96th percentile) and top shot speed (92.09 mph; 89th percentile). He is expected to be a fixture on the top line and first power play and regain his elite scoring form from his years in Colorado.
+The Rantanen trade follows another significant move by Dallas to acquire Mikael Granlund from the San Jose Sharks on Feb. 1, another Finland-born player -- joining fellow countrymen in forward Roope Hintz, defensemen Miro Heiskanen (currently out with knee injury) and Esa Lindell.
+Since Jan. 1, the Stars rank first in the NHL in wins (19), points (39), goal differential (plus-28), goals per game (3.69), power-play percentage (35.3 percent) and penalty kill percentage (83.8 percent). Of the 10 NHL players with at least 30 points over that 26-game span, four play for the Stars: Jason Robertson (36; fifth), Wyatt Johnston (34; sixth), Matt Duchene and Hintz (30 each; tied for eighth).
+Per NHL EDGE stats, the Stars have scored 115 high-danger goals on 541 high-danger shots this season, second in both cateoges to only the Tampa Bay Lightning's 116 high-danger goals and the Edmonton Oilers' 547 high-danger shots. They have five skaters with at least 10 high-danger goals: Johnston (16), Hintz (15), Robertson (13), Duchene (11) and Jamie Benn (10). Only the Lightning (seven) and Oilers (six) have more such players in the NHL.
+Per NHL EDGE stats, Granlund ranks among the forward leaders in total skating distance (194.03 miles; 94th percentile), long-range shots on goal (18; 93rd percentile) and long-range goals (three; 98th percentile).
+With the midrange prowess of Rantanen and long-range success of Granlund, the Stars hope they're strengthening what could be considered a weakness in terms of their shot and goals by location. Per NHL EDGE stats, Dallas ranks ninth in midrange goals (55) and 18th in midrange shots (505) as well as 32nd in long-range goals (five) and 23rd in long-range shots (353). In addition, the Stars rank in the bottom half of the League in offensive zone time percentage at all strengths (41.9 percent; 18th) and at even strength (41.3 percent; 20th), metrics that Rantanen can also help them improve.
+In terms of playoff experience, Rantanen ranks fourth among active NHL players in career playoff points per game (1.25) behind Edmonton Oilers forwards Connor McDavid (1.58), Leon Draisaitl (1.46) and his former teammate Nathan MacKinnon (1.30). Granlund, who's 33 years old, has made nine Stanley Cup Playoff appearances and has 32 points (11 goals, 21 assists) in 59 career playoff games.
+Especially if the Stars get Heiskanen and/or forward Tyler Seguin (hip) back from long-term injured reserve in the postseason, theyâll have a chance to break through after their big splashes at the deadline.
+---
+More: EDGE stats for Stars | Trade Deadline recap
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at the impact of the Tampa Bay Lightning acquiring forwards Oliver Bjorkstrand and Yanni Gourde.
+---
+The Tampa Bay Lightning acquired forwards Oliver Bjorkstrand and Yanni Gourde from the Seattle Kraken on Wednesday, reopening their Stanley Cup window with two advanced stats standouts joining their championship-winning core.
+Gourde, who won the Stanley Cup twice with Tampa Bay in 2020 and 2021, rejoins the championship core of forwards Nikita Kucherov, Brayden Point, defenseman Victor Hedman and goalie Andrei Vasilevskiy, as well as coach Jon Cooper. Since Gourdeâs departure to Seattle in the 2021 Expansion Draft, the Lightning no longer have veteran Steven Stamkos but have acquired and signed high-scoring wings Jake Guentzel and Brandon Hagel.
+Bjorkstrand has untapped potential having never played within such a potent offense in his career; he is a five-time 20-goal scorer and played his first seven seasons with the Columbus Blue Jackets before spending the past three with the Kraken. Bjorkstrand is likely best suited for a second-line wing role, while Gourde will likely reassume his third-line role from Tampa Bayâs championship years and be a valuable two-way presence for face-offs and on the penalty kill.
+Here are three key NHL EDGE stats surrounding Bjorkstrand and Gourde with Tampa Bay:
+High-danger goals
+Per NHL EDGE stats, the addition of Bjorkstrand gives the Lightning the most players of any team with at least 10 high-danger goals (seven) this season at the time of the trade:
+â¢ Brayden Point (22 high-danger goals)
+â¢ Jake Guentzel (17)
+â¢ Brandon Hagel (15)
+â¢ Nikita Kucherov (13)
+â¢ Nick Paul (13)
+â¢ Anthony Cirelli (12)
+â¢ Oliver Bjorkstrand (11)
+As a team, the Lightning have scored 113 high-danger goals at the time of the trade, tied with the Dallas Stars for the most in the NHL this season. Tampa Bayâs offense is led by Kucherov, who won his second Art Ross Trophy (144 points) last season and ranked third in points (90) this season at the time of the trade, and features four players among the Leagueâs top 15 in goals:
+â¢ Point (32; tied for fourth)
+â¢ Hagel (30; tied for ninth)
+â¢ Guentzel (29; tied for 12th)
+â¢ Kucherov (28; 15th)
+At the time of the trade, Bjorkstrand had scored 11 of his 16 goals this season from high-danger areas (86th percentile), more than double his total from last season (five in 82 games). Gourde, who's been limited to 36 of Seattleâs 62 games this season, had scored half of his goals (three of six) from high-danger areas at the time of the trade. Eight of Gourdeâs 11 goals last season were from high-danger areas.
+Shot speed
+The Lightning have 88 shot attempts this season of at least 90 miles per hour at the time of the trade, second most in the NHL behind the Edmonton Oilers (98), with all but five of those shots coming from their defensemen. Hedman ranks second in the entire NHL in 90-plus mph shots (49; behind Oilers defenseman Evan Bouchardâs 60), while his Tampa Bay teammate Darren Raddysh ranks sixth in the League (29).
+At the time of the trade, Bjorkstand ranked in the 88th percentile among forwards in average shot speed (62.27 mph) this season and frequently shoots on net from distance; he ranks in the 84th percentile in midrange shots on goal (41) and is among the forward leaders in long-range shots on goal (24; 97th percentile).
+Skating distance and speed on special teams
+Gourde, who returned to Seattleâs lineup against the Minnesota Wild on Tuesday after a two-month absence (sports hernia surgery), had an assist and won 8-of-9 faceoffs. Only Jared McCann scored more shorthanded goals (six) than Gourde (four) during his time with the Kraken since 2021-22.
+Last season, Gourde ranked in the 94th percentile among forwards in total skating distance on the penalty kill (23.98 miles) and 92nd percentile at the position in 20-plus mph speed bursts (176). This season, the Lightning ranked 10th in penalty kill percentage (81.1 percent) and third in shorthanded goals (10) at the time of the trade.
+Over the past two seasons combined, Bjorkstrand led the Kraken in power-play goals (12), was tied for their most power-play points (33) and ranked second on the team in shots on goal (310). Despite Seattle ranking in the bottom half of the League in power-play opportunities (168; 20th) this season at the time of the trade, Bjorkstrand ranks in the 80th percentile in total power-play skating distance (19.68 miles).
+With Gourde returning to Tampa Bay, Bjorkstrand boosting the secondary scoring and Vasilevskiy (9-1-1 with .946 save percentage, two shutouts in past 11 games at time of trade) and his fellow elite teammates still at the top of their game, the Lightning could be poised for a deep playoff run after consecutive first-round exits.
+---
+More: EDGE stats for Lightning
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at five advanced stats standouts who could be moved before the 2025 NHL Trade Deadline on March 7 at 3 p.m. ET.
+
+Mikko Rantanen, F, CAR
+The Carolina Hurricanes wing, who was already traded by the Colorado Avalanche earlier this season, can become an unrestricted free agent after this season. Per NHL EDGE stats, the 28-year-old ranks highly in the following categories:
+â¢ Top skating speed: 22.89 (80th percentile)
+â¢ Total skating distance: 195.65 miles (95th percentile)
+â¢ Top shot speed: 92.09 (89th percentile)
+â¢ High-danger shots on goal: 46 (86th percentile)
+â¢ Midrange shots on goal: 68 (96th percentile)
+â¢ Midrange goals: 10 (95th percentile; just outside Leagueâs top 10)
+â¢ Long-range shots on goal: 13 (83rd percentile among forwards)
+â¢ Offensive zone time percentage: 47.7 (97th percentile; just outside top 10 forwards)
+
+Brock Nelson, F, NYI
+The New York Islanders center can become an unrestricted free agent after this season. Per NHL EDGE stats, the 33-year-old ranks highly in the following categories:
+â¢ 20-plus mph speed bursts: 131 (90th percentile)
+â¢ Total skating distance: 202.72 miles (97th percentile)
+â¢ High-danger shots on goal: 53 (92nd percentile)
+â¢ High-danger goals: 11 (86th percentile)
+â¢ Midrange shots on goal: 68 (96th percentile)
+â¢ Midrange goals: 8 (90th percentile)
+
+Brock Boeser, F, VAN
+The Vancouver Canucks wing can become an unrestricted free agent after this season. Per NHL EDGE stats, the 28-year-old ranks highly in the following categories:
+â¢ Top shot speed: 94.86 mph (97th percentile)
+â¢ Average shot speed: 63.35 mph (91st percentile)
+â¢ High-danger goals: 14 (94th percentile)
+â¢ Offensive zone time percentage: 44.9 (86th percentile)
+
+Ryan Donato, F, CHI
+The Chicago Blackhawks forward can become an unrestricted free agent after this season. Per NHL EDGE stats, the 28-year-old ranks highly in the following categories:
+â¢ Top even-strength skating distance game: 3.68 miles (96th percentile)
+â¢ High-danger goals: 13 (92nd percentile)
+â¢ Midrange shots on goal: 51 (90th percentile)
+â¢ Midrange goals: 8 (90th percentile)
+
+Jason Zucker, F, BUF
+The Buffalo Sabres wing can become an unrestricted free agent after this season. Per NHL EDGE stats, the 33-year-old ranks highly in the following categories:
+â¢ High-danger shots on goal: 44 (83rd percentile)
+â¢ High-danger goals: 16 (97th percentile; just outside Leagueâs top 10)
+â¢ Offensive zone time percentage: 44.6 (82nd percentile)
+---
+More: NHL EDGE Stats Player Comparisons
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at the surging Anaheim Ducks and their young core.
+---
+The Anaheim Ducks have missed the Stanley Cup Playoffs in six straight seasons, but their young core has accelerated their rebuild and is helping them quietly join the Western Conference Wild Card race.
+The Ducks are 9-3-1 in their past 13 games after a 6-2 road win against the Edmonton Oilers on Tuesday and are tied for fifth in goals per game (3.54) over that span since Jan. 23. The contributions of defenseman Jackson LaCombe (six-game point streak with nine points in span), forwards Leo Carlsson (consecutive multipoint games; 11 points in past nine games), Mason McTavish (10 goals in past 14 games) and rookie Cutter Gauthier (six points in past five games) have helped the roster show a glimpse of its long-term potential.
+LaCombe, whoâs 24 years old and was selected with the 39th pick (second round) in the 2019 NHL Draft, is tied for seventh in goals (11) among defensemen and tied for 14th in even-strength points (27) at the position. Since Dec. 12, LaCombe has 27 points (seven goals, 20 assists) in 33 games, tied for sixth among defensemen over that span; he also leads the Ducks in average ice time (21:18 per game) this season.
+Per NHL EDGE stats, LaCombe ranks among the leaders at his position in high-danger goals (four; fourth), high-danger shots on goal (18; third) and 20-plus mile per hour speed bursts (72; 95th percentile).
+Carlsson, whoâs 20 years old and was the No. 2 pick in the 2023 NHL Draft, has seen his best stretch of the season coincide with the return from the 4 Nations Face-Off, during which he played for Sweden. Per NHL EDGE stats, Carlsson is tied for third in average skating distance per 60 minutes at all strengths (10.67 miles) behind only Lukas Reichel of the Chicago Blackhawks (11.02) and Ryan McLeod of the Buffalo Sabres (11.00)
+McTavish, whoâs 22 years old and was the No. 3 pick in the 2021 NHL Draft, is playing mostly on a line with Gauthier, whoâs 21 years old and was the No. 5 pick in the 2022 NHL Draft (acquired from Philadelphia Flyers on Jan. 8, 2024). That duo, along with more experienced forwards Troy Terry and Frank Vatrano, has provided the Ducks with a deep forward group and even more strong underlying metrics.
+McTavish has excelled in top shot speed (91.28 mph; 86th percentile) and high-danger shots on goal (44; 83rd percentile), while Gauthier is showcasing his high ceiling for the years to come in the following EDGE stats categories:
+â¢ Top skating speed: 23.37 mph (95th percentile)
+â¢ 20-plus mph speed bursts: 130 (89th percentile)
+â¢ Top shot speed: 93.22 mph (93rd percentile)
+â¢ Average shot speed: 62.88 (89th percentile)
+â¢ Midrange shots on goal: 51 (90th percentile)
+Vatrano, who has produced through thick and thin for the Ducks over the past two seasons, leads them in goals (18) and shots on goal (190) this season and also has a robust advanced stats profile:
+â¢ Top skating speed: 23.39 mph (95th percentile)
+â¢ 20-plus mph speed bursts: 136 (92nd percentile)
+â¢ Top shot speed: 91.31 mph (86th percentile)
+â¢ High-danger shots on goal: 54 (92nd percentile)
+â¢ Midrange shots on goal: 66 (95th percentile)
+The Ducks are still far from a finished product and could come back down to Earth during the stretch run due to subpar possession numbers (46.1 shot attempts percentage at 5-on-5; third worst in NHL) and an offensive zone time percentage (39.7) below the League average (42.2).
+But Anaheimâs efficient goalie tandem of Lukas Dostal and John Gibson has helped mask some of the teamâs inconsistencies; each goalie has a .911 save percentage on the season, and the Ducksâ 5-on-5 save percentage (.923) ranks sixth in the NHL. Per NHL EDGE stats, Dostal is tied with Connor Hellebuyck of the Winnipeg Jets for eighth in high-danger saves (257), while Gibson is tied for fifth in long-range save percentage (.989).
+With the Ducks only six points behind the Calgary Flames for the second wild card spot in the Western Conference with one game in hand, the present and future are looking bright in coach Greg Croninâs second season. Anaheimâs ability to stockpile highly drafted players is starting to translate to on-ice progress, and its signature win Tuesday certainly put the rest of the Western Conference on notice.
+---
+More: EDGE Stats for Ducks
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at Seth Jonesâ upside after being traded to the Florida Panthers.
+
+The Florida Panthers acquired defenseman Seth Jones from the Chicago Blackhawks on Saturday, giving them a potential new No. 1 option at the position and boosting their chances of defending their Stanley Cup title.
+Jones has had a heavy workload for the Blackhawks this season (24:30 per game; 12th in NHL) and also in the past for multiple other teams and brings a robust advanced stats profile to the Panthers, who are currently leading the Atlantic Division standings (37-21-3; 77 points) but missing one of their best players in forward Matthew Tkachuk (lower body).
+Here are three significant NHL EDGE stats surrounding Jonesâ outlook with the Panthers:
+
+Shot speed
+Per NHL EDGE stats, Jones ranked among the defenseman leaders in average shot speed (73.36 miles per hour; 89th percentile) and top shot speed (96.35 mph; 85th percentile) at the time of the trade.
+Although Jonesâ shots on goal volume is down this season (1.93 per game) compared to last season (2.57; eighth among NHL defensemen), there is obvious bounce-back appeal in that category joining one of the top offenses in the NHL (3.28 goals per game; seventh). At the time of the trade, the Panthers were tied with the Edmonton Oilers for the most shots on goal per game (32.0) this season and ranked second in 5-on-5 shot attempts percentage (55.2) behind the Carolina Hurricanes (59.1).
+
+Midrange production
+Despite the Blackhawks being a non-contending team this season, Jones has dominated midrange areas of the ice relative to others at his position. Jones ranked in the 98th percentile among defensemen in midrange goals (six) and 92nd percentile in midrange shots on goal (26) at the time of the trade.
+Jonesâ goal-scoring prowess has also been clear on the power play; at the time of the trade, he was tied for second among NHL defensemen in power-play goals (five) behind Cale Makar of the Colorado Avalanche (nine). Four of Jones' six midrange goals have come on the power play.
+
+Offensive zone time percentage on power play
+At the time of the trade, the Panthers ranked second in offensive zone time percentage at all strengths (44.6) behind the Hurricanes (47.0) and sixth in that category on the power play (59.7). Jones, who was tied for 15th among NHL defensemen in power-play points (15) this season at the time of the trade, has taken a step back in power-play offensive zone time percentage (58.3; 68th percentile) compared to last season (61.1; 85th percentile) playing for rebuilding Chicago.
+But Jones, after the trade, has a chance to improve his power-play zone time rate and give Florida a new quarterback with the man advantage after the departure of Brandon Montour to the Seattle Kraken last offseason. The Panthers, who have been playing mostly Aaron Ekblad (nine power-play points this season) on their first power-play unit, rank 13th on the power play (22.8 percent) at the time of the trade, slightly worse than last season (23.5; eighth). Itâs also worth noting Jones ranked in the 95th percentile among defensemen in top skating speed (23.18 mph) last season, an attribute he could showcase more often with a much-improved supporting cast in Florida.
+---
+More: EDGE stats for Jones
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we identify five key advanced stats trends to preview the 2025 Navy Federal Credit Union NHL Stadium Series at Ohio Stadium on Saturday (6 p.m. ET; ESPN, ESPN+, Disney+, TVAS-D, FX-CA).
+---
+1. Werenskiâs case for Norris Trophy
+Blue Jackets defenseman Zach Werenski leads the NHL at his position in even-strength goals (13) and points (40), ranks second at the position in goals (18) and points (62 in 58 games) and leads all skaters in average ice time (26:50 per game). He is a bonafide Norris Trophy candidate with the Blue Jackets in Stanley Cup Playoff contention and also led the entire 4 Nations Face-Off in points (six; all assists) and defensemen in shots on goal (13 in four games).
+Werenski also has one of the most robust NHL EDGE stats profiles (below are his rankings among defensemen in key advanced stats categories):
+-20-plus mile per hour speed bursts: 125 (3rd)
+-Total skating distance: 229.17 miles (1st)
+-Midrange shots on goal: 59 (2nd)
+-High-danger shots on goal: 31 (1st)
+-High-danger goals: 5 (tied for 1st)
+-Midrange goals: 10 (2nd)
+NHL EDGE IQ, powered by Amazon Web Services, uses âProjected Goal Rateâ (PGR) to estimate the likelihood of a shot attempt becoming a goal. The NHL average PGR this season for a defenseman is approximately 2.80 percent across all inferenced shot attempts.
+Of the 364 inference shot attempts (excluding shots greater than 60 feet, those beyond the goal line and empty-net attempts) by Werenski this season, his average projected goal rate is 3.95 percent, given the goalie's positioning, puck movement and traffic at the time of release. That is the third highest mark among NHL defensemen (who rank in the 80th percentile and above for shot attempts), trailing only a pair who have far fewer attempts than he does: Travis Sanheim of the Philadelphia Flyers (4.23 percent on 168 attempts) and Owen Power of the Buffalo Sabres (3.99 percent on 188 attempts).
+
+2. Marchenkoâs full-fledged breakout
+Blue Jackets wing Kirill Marchenko has already set NHL career highs in points (60 in 56 games) and power-play points (16) while playing in all but three of their games this season. Marchenko leads Columbus in goals over the past two seasons combined (47) and has taken his playmaking to another level this season; Marchenkoâs 36 assists trail only Werenski (44) for the Blue Jackets lead this season, and his 23 primary assists are tied for 19th among NHL forwards.
+Per NHL EDGE stats, Marchenko ranks in the Leagueâs 93rd percentile in 20-plus mph speed bursts (138) and has excelled with his shot at or above the tops of the circles. He ranks highly in midrange shots on goal (59; 93rd percentile), midrange goals (11; 98th percentile) and long-range shots on goal (21; 96th percentile among forwards).
+3. Raymond's midrange goals
+Since Jan. 1, Red Wings forward Lucas Raymond leads all players from either team taking part in the NHL Stadium Series in points (25 in 22 games; tied for 10th in League over span). Raymond leads Detroit in points (63) and assists (41) this season, and his 82 points (35 goals, 47 assists) in 82 games during the 2024 calendar year marked the most by a Red Wings skater in a calendar year since Pavel Datsyuk in 2009 (86 in 86 games).
+Per NHL EDGE stats, Raymond is tied with Artemi Panarin of the New York Rangers for League lead in midrange goals (14) and ranks in the 96th percentile in midrange shots on goal (64). Each of those marks already exceeds his outputs from 82 games last season (nine midrange goals on 48 midrange shots on goal).
+
+4. Columbusâ center depth
+The Blue Jackets are right behind the Red Wings in the Eastern Conference Wild Card race despite injuries to center Sean Monahan (41 points in 41 games) and wing Yegor Chinakhov (14 in 21 games); neither has played since Jan. 7. Captain Boone Jenner (shoulder) missed the first 56 games of the season but has since returned (five points in three games) to a lineup that has relied on its youth.
+Of the Blue Jacketsâ five forwards with at least 30 points this season, four are under the age of 25: Marchenko (60 points; 24 years old), Kent Johnson (41 points; 22 years old), Dmitri Voronkov (39 points; 24 years old) and Adam Fantilli (36 points; 20 years old).
+Voronkov has 27 points (12 goals, 15 assists) in his past 29 games since Dec. 15, including a team-leading five power-play goals over that span. Per NHL EDGE stats, Voronkov ranks highly in high-danger shots on goal (59; 95th percentile) and high-danger goals (13; 93rd percentile).
+Johnson ranks second in the League in 5-on-5 goals per 60 minutes (1.61) this season behind only Tage Thompson of the Sabres (1.84) and just ahead of Alex Ovechkin of the Washington Capitals (1.57). Per NHL EDGE stats, Johnson ranks in the Leagueâs 94th percentile in midrange goals (nine).
+Fantilli has 13 points (six goals, seven assists) in his past 12 games since Jan. 22, a stretch that began with his first NHL hat trick against his hometown Toronto Maple Leafs. Per NHL EDGE stats, Fantilli is tied for seventh in 22-plus mph speed bursts (23) this season.
+5. Detroit's power-play success
+Red Wings have seen a spark from their in-season coaching change and have a chance to end their eight-season playoff drought. Since replacing Derek Lalonde with Todd McLellan, the Red Wings are 17-6-2 since Dec. 27, tied for the second-best points percentage (.720) in the League over that span, and have the best power-play percentage (38.2).
+Per NHL EDGE stats, Detroitâs offensive zone time percentage on the power play (62.7) is tied for second best in the League behind only the Vegas Golden Knights (62.9 percent). Only nine NHL players have had at least 12 power-play points since the NHLâs holiday break (when Detroit made its coaching change); five of them play on the Red Wingsâ first power-play unit: forwards Raymond (15; tied for first in League over span), Patrick Kane (14; tied for third), Dylan Larkin, Alex DeBrincat and defenseman Moritz Seider (12 each; tied for sixth).
+---
+More EDGE stats: Red Wings | Blue Jackets
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we identify the leaders in key advanced metrics during the 4 Nations Face-Off, a best-on-best tournament that concluded with reigning Conn Smythe Trophy winner Connor McDavid scoring in overtime to secure a Canadian championship at the inaugural event.
+
+Skating speed leader: Adrian Kempe, SWE
+The Sweden wing had the max skating speed at the 4 Nations Face-Off, reaching 23.83 miles per hour in overtime during their round-robin loss to Finland. Kempe, who plays for the Los Angeles Kings, ranks in the League's 94th percentile in max skating speed (23.26 mph) and 97th percentile in 20-plus mph speed bursts (172) during the NHL season. Kempe scored against Canada in the 4 Nations Face-Off opener, and his 10 shots on goal in three games led Sweden and was tied for third through the end of the round robin portion of the tournament. Kempe also led Sweden in 20-plus mph speed bursts (11).
+
+Speed bursts leader: Connor McDavid, CAN
+The Canada forward led the 4 Nations Face-Off in 20-plus mph speed bursts (27; four more than any other skater in tournament). That includes a max skating speed of 22.67 mph reached prior to his goal against the United States in the round robin, the fifth fastest of the 4 Nations Face-Off and one of his 11 speed bursts of 20-plus mph in that game. United States forward Jack Eichel (23 bursts of 20-plus mph) and Canada forward link-placeholder-1 rank second and third, respectively, behind McDavid.
+McDavid, who plays for the Edmonton Oilers, was one of two skaters at the 4 Nations Face-Off to record points in all four of their team's games (other: Zach Werenski of the United States). McDavid became the second player to score an overtime goal to clinch an NHL International Tournament, following Darryl Sittler at the 1976 Canada Cup. McDavid ranks second in the NHL with 57 bursts of 22-plus mph this NHL season, trailing only his Canadian teammate MacKinnon (64) in that category.
+
+Shot speed leader: J.T. Miller, USA
+The United States forward had the hardest shot attempt of the entire 4 Nations Face-Off (98.51 mph) in their roud-robin loss against Sweden. Miller led 4 Nations Face-Off forward participants in max shot speed (98.22 mph) during the NHL season. Sweden defenseman Victor Hedman is the only player in the tournament with multiple 90-plus mph shot attempts (two). All six 90-plus mph shot attempts in the round-robin portion of the 4 Nations Face-Off came from the United States and Sweden (three each).
+Canada defensemen have the two hardest shots on goal of the tournament, one by Colton Parayko (92.38 mph against the United States in the championship game) and the other by Josh Morrissey (89.73 mph against Finland in the round-robin); both were saved by the opposing goalie.
+
+High-danger saves leader: Jordan Binnington, CAN
+The St. Louis Blues goalie was the only player to backstop every second for a country in the 4 Nations Face-Off. Binnington stopped 31 of 33 shots in the championship game including multiple momentum-shifting saves in overtime. His 29 high-danger saves were two more than United States goalie Connor Hellebuyck (27) had in the tournament, though the Winnipeg Jets netminder had the advantage in high-danger save percentage (.931; 27 saves on 29 shots) compared to Binnington (.906; 29 saves on 32 shots).
+Sweden's Samuel Ersson, who plays for the Philadelphia Flyers, stopped all nine high-danger shots faced against the United States in the final Round Robin game (1.000 high-danger save percentage) of the tournament.
+
+High-danger shots on goal leader: Matthew Tkachukand Jake Guentzel, USA
+The United States wings shared the lead for the most high-danger shots on goal in the 4 Nations Face-Off with seven. However, Tkachuk of the Florida Panthers and Guentzel of the Tampa Bay Lightning combined for only one high-danger goal (by Tkachuk in tournament opener against Finland).
+Brady Tkachuk of the Ottawa Sentors and MacKinnon, the tournament MVP, were the only plyers to score multiple high-danger goals (two each) at the event. Fittingly, those two players also co-led the tournament in shots on goal (15) while MacKinnon led the field in goals (four).
+
+---
+More: 4 Nations Face-Off stats | EDGE stats for USA vs. CAN
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we break down Jordan Binningtonâs advanced metrics in the 4 Nations Face-Off, specifically his heroics in Canadaâs two overtime victories.
+---
+Jordan Binningtonâs high-danger heroics for Canada helped it win the 2025 4 Nations Face-Off Championship, with the clinching victory against the United States at TD Garden on Thursday coming in the same building and similar fashion to his road triumph in Game 7 of the 2019 Stanley Cup Final for the St. Louis Blues against the Boston Bruins.
+Per NHL EDGE stats, Binnington stopped 29 of 32 high-danger shots faced in the tournament (.906 high-danger save percentage; second behind United States goalie Connor Hellebuyckâs .931). Binnington led the tournament in high-danger saves, and his extra two high-danger saves compared to Hellebuyck (27) made all the difference.
+Binningtonâs overtime heroics in the championship game against the United States, specifically his save on Auston Matthews, and the tournament opener against Sweden on Feb. 12, specifically his save on Mika Zibanejad, were two of the most monumental moments of Canadaâs latest international title.
+
+NHL EDGE IQ, powered by Amazon Web Services, uses âProjected Goal Rateâ (PGR) to estimate the likelihood of a shot attempt becoming a goal. Among Binningtonâs saves in the tournament on inference shots attempts (excluding shots greater than 60 feet, those beyond the goal line and empty-net attempts), the highest PGR (27.94 percent) was on Zibanejadâs wrist shot at 8:05 in overtime in the Canada-Sweden game. Canada scored 4:11 later to win its tournament opener.
+Binningtonâs stop on Matthewsâ point-blank attempt at 17:09 in overtime of the United States-Canada rematch had a PGR of 18.78 percent (the fifth-highest PGR on his saves in the tournament); Canada scored 5:27 later to win the championship in sudden-death fashion. For context, anything at or above a PGR of 12.0 percent is considered a high-probability attempt, and the NHL average PGR this season is approximately 5.0 percent across all shot attempts. The average PGR on Binningtonâs overtime saves during the tournament was 7.60 percent, higher than any of the three other frames; he played in all four 4 Nations Face-Off games for Canada.
+In terms of âSaves Above Projected,â another advanced metric from NHL EDGE IQ, powered by AWS, Binningtonâs best period of the tournament was overtime (plus-1.444 saves above projected; compared to differentials of plus-0.794 in second periods, plus-0.205 in first periods, minus-0.232 in third periods). Although his overtime save total (stopped all 10 shots faced in two games) was a smaller sample size than the other periods, those saves were high-magnitude, high-pressure situations where Binnington rose to the occasion.
+Binnington made eight saves in the tournament against shots with a 15.0 percent or greater PGR, with six of those stops coming in third period or overtime. In terms of Binnington's less-difficult shots faced in the tournament, he stopped all 22 long-range shots on goal. Hellebuyck, comparatively, allowed one long-range goal. The margin for error was that slim.
+The clutch performance not only drew comparisons to the 2019 Stanley Cup Playoffs (Binnington combined to stop 61 of 63 shots faced in two Game 7 wins that postseason, including all 12 in crucial first period of championship clincher) but also proved to be much better than his advanced metrics this NHL season for St. Louis.
+Per NHL EDGE IQ, powered by AWS, Binningtonâs save percentage on high-probability attempts (12.0 percent or greater PGR) was much better in the 4 Nations Face-Off (.769) compared to this NHL season (.651). Binnington is below the NHL average this season in save percentages on high-danger (.804; League average: .806), midrange (.872; average: .889) and long-range (.957; average: .971) shots on goal.
+More improved play from Binnington down the stretch of the NHL season, stemming from this best-on-best tournament prowess, could perhaps propel the Blues (25-26-6; 56 points through 57 games) back into the Western Conference postseason race; coming out of the 4 Nations break with a shootout loss to the Winnipeg Jets, they are now seven points behind the Vancouver Canucks (63 in 56 games) for the second wild card spot. But, regardless of what happens from here, Binnington's individual performances in winner-take-all games in 2019 and 2025 were as good as it gets.
+---
+More: EDGE stats for Binnington
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we identify the most compelling advanced metrics surrounding the 4 Nations Face-Off championship game between Canada and the United States at TD Garden on Thursday (8 p.m. ET; ESPN, ESPN+, Disney+, SN, TVAS).
+---
+1. Shot speed
+The United States has twice as many 80-plus mile per hour shot attempts (18) compared to Canada (nine) in the 4 Nations Face-Off. U.S. forward J.T. Miller has the top shot speed of the entire tournament (98.51 mph) so far; Canadaâs shot speed leader is defenseman Josh Morrissey (89.73 mph). The U.S. has three 90-plus mph shots (Miller; Zach Werenski's 91.62; Dylan Larkin's 91.24) in the tournament, while Canada has none.
+2. Save percentage by shot location
+Canada goalie Jordan Binnington, who has played all three games for the country, has a slightly better high-danger save percentage (.963; 26 saves on 27 shots faced) than United States goalie Connor Hellebuyck (.941 in two games; 16 saves on 17 shots faced). In their first matchup of the tournament, Canada had 11 high-danger shots on goal, compared to the United Statesâ seven; Binnington stopped all seven shots faced, while Hellebuyck saved 10 of 11.
+But Hellebuyck has been perfect on the midrange attempts heâs seen in the tournament, stopping all eight midrange shots faced (1.000 midrange save percentage). Binnington has struggled on those attempts, allowing four goals on 13 midrange shots faced (.692 midrange save percentage).
+
+3. Shots on goal by location
+The United States has more high-danger shots on goal (30 in three games) than Canada (24 in three games) in the 4 Nations Face-Off. In terms of individual high-danger shots on goal leaders, U.S. forwards Matthew Tkachuk (seven in two games) and Jake Guentzel (six in three games) rank first and second, respectively; Canadaâs leaders in the category, Nathan MacKinnon, Mark Stone and Brayden Point, have four high-danger SOG each. Connor McDavid leads the entire tournament in midrange shots on goal (five).
+4. High-danger goals
+Canadaâs MacKinnon is the only player in the 4 Nations Face-Off to score multiple high-danger goals (two). Other players who will take part in the championship game who have scored a high-danger goal in the tournament include the Matt Boldy, Matthew and Brady Tkachuk of the United States, as well as Canadaâs McDavid, Point and Brad Marchand.
+5. Speed
+Canadaâs McDavid has the highest max skating speed (23.12 mph) among players who will take part in the championship game, while the United Statesâ Jack Eichel is second among such players in the category (22.82 mph). Canada has 112 speed bursts of at least 20 mph in the 4 Nations Face-Off, compared to 92 for the United States.
+Canada has three of the top four individual skaters in terms of 20-plus mph speed bursts: McDavid (23; first), MacKinnon (19; second) and Point (16; fourth), while Eichel leads the U.S. (18; third). In their first matchup of the tournament, Canada had 43 such speed bursts, compared to 28 for the U.S.
+---
+More: EDGE stats leaders in 4 Nations Face-Off
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we identify the 10 most compelling advanced metrics surrounding the 4 Nations Face-Off, a best-on-best tournament from Feb. 12-20.
+---
+RELATED: 4 Nations Face-Off fantasy rankings | Picks/props
+---
+1. Speed bursts
+Canada forward Nathan MacKinnon leads the NHL in 20-plus mile per hour speed bursts (408), while his teammate Connor McDavid has the second most (312).
+Of the top seven defensemen in 20-plus mph speed bursts, six are set to participate in the 4 Nations Face-Off, including each of the top five: Canadaâs Cale Makar (139; first), Colton Parayko (113; fourth), Travis Sanheim (93; seventh), the United Statesâ Jake Sanderson (124; second), Zach Werenski (121; third) and Swedenâs Erik Karlsson (106; fifth). Additionally, Jaccob Slavin of the United States has reached the highest max skating speed among 4 Nations Face-Off defensemen (24.19 mph).
+2. Offensive zone time percentage
+Finland forward Sebastian Aho has the highest offensive zone time percentage at even strength (48.6 percent; tied for second in NHL) among 4 Nations Face-Off participants. Joining Aho among the top five at the position in this category is Canadaâs McDavid (47.2; tied for fourth).
+In addition, three of the NHL top 10 in offensive zone time percentage at all strengths among defensemen are set to compete in the tournament: the United Statesâ Adam Fox (47.0; tied for sixth), Canada's Shea Theodore (46.7; eigth) and Sweden's Mattias Ekholm (46.5; 10th).
+3. Games with >.900 save percentage and midrange saves
+United States goalie Connor Hellebuyck leads the NHL in games with greater than a .900 save percentage (32) while fellow countryman Jake Oettinger is tied for fourth in that category (24). Hellebuyck (74.4 percent; first) and Swedenâs Filip Gustavsson (67.6; third) are among the best in the NHL in highest percentage of such games. Each also ranks among the NHL's top five in mid-range saves; Gustavsson is third (296), while Hellebuyck is fifth (285).
+4. High-danger save percentage and saves
+Canada goalie Sam Montembeault leads the NHL and 4 Nations Face-Off goalies in high-danger saves (264), ahead of Finland goalie Juuse Saros (254; third). Hellebuyck (U.S.) leads 4 Nations Face-Off goalies in high-danger save percentage (.840; tied for fourth in NHL), while Sweden's Linus Ullmark (.830; ninth) is also among the best in that category.
+
+5. High-danger goals
+Canada forward Brayden Point (21; tied for first in NHL) has the most high-danger goals this season among 4 Nations Face-Off participants. United States forward Dylan Larkin and Sweden forward Rickard Rakell are tied for the second-most high-danger goals (17 each; tied for sixth) this season among 4 Nations Face-Off participants.
+6. Midrange goals
+Sweden forward Lucas Raymond is second in the NHL in midrange goals (13), while fellow countryman William Nylander and the United States' Kyle Connor (12 each; tied for third in League) are close behind in that category.
+7. 90-plus mph shots and max shot speed
+Sweden defenseman Victor Hedman leads 4 Nations Face-Off participants in 90-plus mile per hour shots (46), while fellow countryman Gustav Forsling leads tournament selections in max shot speed (100.81 mph). J.T. Miller of the United States leads 4 Nations Face-Off forwards in max shot speed (98.22 mph).
+8. Total skating distance
+The NHLâs top six players in total skating distance this season are set to participate in the 4 Nations Face-Off:
+-Cale Makar (Canada): 217.78 miles
+-Zach Werenski (U.S.): 217.61
+-Nathan MacKinnon (Canada): 212.70
+-Jack Hughes (U.S.): 211.42
+-Travis Sanheim (Canada): 208.67
+-Josh Morrissey (Canada): 199.97
+9. Long-range goals and saves
+Canada's Makar is tied for the NHL lead in long-range goals (eight). Sweden's Nylander and Finland forward Mikael Granlund are tied for second in the NHL at their position in long-range goals (three).
+In terms of long-range saves, U.S. goalies Hellebuyck (306; leads NHL) and Oettinger (256; second) are tops in the League; their fellow countryman Jeremy Swayman and Sweden's Gustavsson (.996 long-range save percentage each; tied for first in NHL) have both allowed only one long-range goal.
+10. Shot on goal locations
+United States forward Brady Tkachuk has the most high-danger shots on goal (80; fourth in NHL) among 4 Nations Face-Off participants, followed by fellow countryman Jake Guentzel (74; sixth). MacKinnon (Canada) has the most midrange shots on goal (95) in the NHL, while Forsling (Sweden) has the most long-range shots on goal (100; leads NHL) among 4 Nations Face-Off participants.
+---
+More: NHL EDGE stats player, goalie, team comparisons
+
+NHL.comâs fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we look at the Toronto Maple Leafs goalie tandem of Anthony Stolarz and Joseph Woll.
+The spotlight usually shines brightest on key positions for marquee sports franchises, and the goalie of the Toronto Maple Leafs is a title that is always under intense pressure and scrutiny.
+Facing the longest Stanley Cup drought in history (57 years entering this season), the Maple Leafs are splitting the spotlight role between two goalies. Anthony Stolarz, who signed with Toronto in the offseason after winning a championship with the Florida Panthers last season, and Joseph Woll, who had a strong rookie performance for the Maple Leafs last season, have formed arguably the best goalie tandem in the NHL this season when healthy.
+The Maple Leafs, despite Stolarz missing nearly two months because of a knee injury, have the identical number of standings points through 54 games this season (68 points; 33-19-2) as they did last season (68 points; 30-16-8). The duo of Stolarz, who stopped 26 of 27 shots faced in a 3-1 win against the Seattle Kraken on Thursday in his first start since Dec. 12, and Woll have the Maple Leafs ranked eighth in team save percentage (.902) after being tied for 23rd in the category last season (.893). Toronto is tied for fifth in the League in 5-on-5 save percentage (.924) trailing only one other Eastern Conference team (New York Islanders' .925).
+The Maple Leafs sit firmly in Stanley Cup Playoff position, trailing the Panthers by one point for the Atlantic Division lead, and have the second-best points percentage in the Eastern Conference (.630) behind the Washington Capitals (.731). The performance of Torontoâs goalies through shot location metrics, along with Stanley Cup-winning coach Craig Berubeâs impact on the defense and structure have the Maple Leafs looking as formidable as they have since the last time they won multiple rounds in a single postseason (2004).
+Here are five key EDGE metrics surrounding the Maple Leafsâ goalie tandem:
+1. High-danger and long-range save percentages
+Per NHL EDGE stats, the Maple Leafs goalies have a high-danger save percentage that ranks seventh in the League (.822), much improved compared to last season (.803; 17th). Toronto also ranks in the top 10 in long-range save percentage (.976; ninth) this season. Toronto is one of three teams to rank in the top 10 in save percentage from both high-danger and long-range areas (others: Carolina Hurricanes, New York Islanders).
+While Woll has been solid against long-range shots (.960 long-range save percentage), Stolarz has been nearly perfect on shots from that area. In fact, the lone goal he allowed in Thursdayâs return to action was the first he has allowed from long-range this season. His .991 long-range save percentage (112 saves on 113 shots) ranks in the Leagueâs 91st percentile.
+2. High-danger shots on goal allowed
+The Maple Leafs have allowed 377 high-danger shots on goal this season, 70 fewer than they had allowed at this same point last season (447). The Maple Leafs have allowed 15 fewer goals through 54 games this season than last season, clearly a result of them giving up fewer quality scoring chances.
+Toronto allowed only two high-danger shots on goal in their win against the Kraken on Thursday, tied for their second fewest in a single game this season. It was the third time they allowed two or fewer high-danger shots in 2024-25 after not having any such games last season.
+3. Midrange save percentage
+Per NHL EDGE stats, Woll ranks fourth among qualifying goalies in midrange save percentage (.916). Woll has outperformed Stolarz in that category, but the latterâs midrange save percentage (.901) is still better than the League average (.889).
+Individually, Stolarz (.929 save percentage, 2.08 goals-against average) leads all goalies in save percentage (minimum 15 games) this season and trails only reigning Vezina Trophy winner Connor Hellebuyck of the Winnipeg Jets (2.04) in goals-against average. Stolarz is on pace to have the best save percentage by a Maple Leafs goalie in a single season since Hockey Hall of Famer Jacques Plante in 1970-71 (.944 in 40 games).
+Woll (.909 save percentage, 2.67 save percentage) won 11 of his 18 starts while Stolarz was injured and has already eclipsed his rookie totals in starts (28 this season), wins (19) and saves (756). Wollâs win against the Calgary Flames on Tuesday was the 40th of his career (65th appearance), the fewest appearances to reach 40 wins among goalies to debut with Toronto.
+4. Consistency and holding leads
+Both Stolarz (72.3 percent; 93rd percentile) and Woll (53.6 percent; 51st percentile) have had greater than .900 save percentage in the majority of their starts. Dependable goaltending has allowed the Maple Leafs to hold onto their leads in the third period; Toronto is 23-0-0 when leading after two periods this season, the most wins without a loss in that scenario in the League.
+5. Goal differential
+In terms of goal support, Woll and Stolarz each have strong differentials. Through 29 games, Woll has a plus-18 goal differential (79th percentile) and differential per 60 minutes of 0.63 (79th percentile). Through 18 games, Stolarz has a plus-13 goal differential (71st percentile) and differential per 60 minutes of 0.75 (81st percentile).
+The combination of stronger play in the defensive zone, the perennial elite forward core of Auston Matthews, Mitch Marner, William Nylander and John Tavares and two goalies playing at an elite level has the Maple Leafs bringing a different style of play that could finally translate to more postseason success.
+---
+More: NHL EDGE stats player, goalie, team comparisons
+
+NHL.com's fantasy staff continues to cover the latest trends and storylines in the League through the lens of NHL EDGE puck and player tracker stats. Today, we take a look at the New York Islanders' recent surge and their underlying numbers.
+---
+The New York Islanders, as they did last season, are making a strong second-half push under coach Patrick Roy -- and excelling in various advanced metrics along the way.
+The Islanders have won six straight games after their 3-0 road win against the Philadelphia Flyers on Thursday. And with recent injury returns and additions to the lineup, are charging back into the race for a wild card into the Stanley Cup Playoffs in the Eastern Conference.
+New York has made the playoffs in each of the past two seasons but lost in the first round to the Carolina Hurricanes each time. That said, the Islanders have been among the final four teams twice in the past five seasons (2020, 2021) with many of their core players from those deep runs still on the roster, giving them dark horse potential if they make the postseason.
+Here are five key EDGE stats for the Islanders entering the stretch run of the season:
+1. Ilya Sorokin
+Goalie Ilya Sorokin had his third shutout of the season Thursday, and since entering the NHL in 2020-21, is second in the category (21 in 228 games), behind Connor Hellebuyck of the Winnipeg Jets (23 in 276 games). With injuries to key skaters including forwards Mathew Barzal and Anthony Duclair and defensemen Noah Dobson, Ryan Pulock and Adam Pelech at different points in the season, Sorokin has not had nearly as much goal support (plus-5 goal differential; 51st percentile) as some of the other elite goalies around the League.
+But the 29-year-old has been a workhorse in terms of games played (36; tied for seventh) and saves (891; 10th in NHL), especially in the injury absence of teammate Semyon Varlamov, who has not played since Nov. 29. Sorokin has made most of his saves on low-percentage shots on goal (.987 long-range save percentage; eighth in NHL) and has had greater than a .900 save percentage in 22 of his games (62.9 percent; seventh-best rate in League).
+2. Anders Lee's bounce-back season
+Last season, Lee had his lowest point total in a full season (37 in 81 games) since 2015-16 (36 in 80 games). But the 34-year-old wing has rebounded in a big way for New York, especially in helping to keep his team afloat on the top line during Barzal's absence earlier this season.
+Lee, in terms of points (39 in 50 games), already has exceeded his total from last season in far fewer games; he leads the Islanders in points, goals (22), plus/minus (plus-18), even-strength goals (18), even-strength points (33) and power-play goals (four). Per NHL EDGE stats, Lee is near the top of the League in high-danger shots on goal (77; tied for second behind Zach Hyman's 82) and high-danger goals (18; fifth), and has remained on the top line with center Bo Horvat even after Barzal's return.
+3. Horvat's prowess and face-off success
+Horvat, who leads the Islanders in goals since Jan. 1 (eight in 12 games), has been a do-it-all force for the Islanders, regardless of linemates and the state of the team at different points of the season. Here is a look at Horvatâs robust EDGE stats profile:
+Top skating speed: 23.53 miles per hour (97th percentile)
+20-plus mph speed bursts: 185 (98th percentile)
+Total skating distance: 158.29 miles (94th percentile)
+Top shot speed: 92.79 mph (92nd percentile)
+High-danger shots on goal: 43 (90th percentile)
+High-danger goals: 10 (90th percentile)
+Midrange shots on goal: 52 (94th percentile)
+Horvat also has remained an elite center in terms of face-offs: among players to take at least 300 face-offs, he leads the NHL in face-off win percentage (60.6 percent). The Islanders, as a team, lead the League in face-off win percentage (55.3 percent).
+4. Speed bursts and Barzal's return
+Barzal, who has been limited to 29 of New York's 50 games this season, has been productive with 14 points (four goals, 10 assists), a plus-12 rating and 53 shots on goal in 19 games since returning (Islanders are 11-8-0 during that span). Barzal also leads New York in shot attempts differential at 5-on-5 (plus-139) this season.
+The Islanders are in the middle of the pack in shot attempts percentage at 5-on-5 (49.3 percent, 18th) but rank ahead of many playoff contenders in the category, including fringe teams in the East like the New York Rangers (49.0 percent), Montreal Canadiens (48.3 percent), Detroit Red Wings (48.3 percent), Boston Bruins (48.0 percent) and Columbus Blue Jackets (47.8 percent).
+Barzal, known for his skating speed, has helped the Islanders rank eighth in 20-plus mph speed bursts (1,179); Despite missing significant time, Barzal still is in the 86th percentile in the category (99). Horvat leads New York in 20-plus mph speed bursts and ranks just outside the top 10 of the entire League, and center Brock Nelson also ranks highly in the category (105; 88th percentile).
+5. Defenseman reinforcements
+The Islanders are playing their best hockey of the season despite a stretch that has seen Dobson and Pulock sustain injuries. Defenseman Alexander Romanov has stepped up in the absence of those top defensemen, and the recent additions of Tony DeAngelo (signed one-year contract) and Scott Perunovich (acquired from St. Louis Blues) also have helped New York stay afloat.
+Although the Islanders' penalty kill is tied with the Red Wings for the worst in the NHL (69.8 percent) this season, it has shown drastic improvement this month; New York leads the League on the PK in January (91.3 percent through 12 games). DeAngelo is averaging 25:11 of ice time in his first three games since joining the Islanders, and Romanov has four points (two goals, two assists), 10 shots on goal, 17 hits and 14 blocked shots in his past four games. Perunovich has had assists in consecutive games since the trade.
+It's a small sample size, but DeAngelo's offensive zone time percentage on the power play (70.3 percent; 99th percentile) has been off the charts and could help the Islanders improve their League-worst man-advantage unit (11.7 percent) down the stretch. The Islanders also claimed defenseman Adam Boqvist, who had an outstanding offensive zone time percentage at all strengths (47.8; 98th percentile) with the Florida Panthers this season, on Friday.
+---
+More: NHL EDGE stats for NYI
