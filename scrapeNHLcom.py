@@ -110,10 +110,16 @@ class Parser():
                             ofile.write(text)
                     else:
                         continue
+    def count_tokens(self, path):
+        total = 0
+        with open(path, 'r') as ofile:
+            for line in ofile:
+                tokens = line.split(" ")
+                total += len(tokens)
+        return total
 
 
 parser = Parser()
-parser.write_out_dict("data/alldatarefs.txt")
-parser.get_all_data()
-
+tokens = parser.count_tokens("data/nhlcomedgetext.txt")
+print(tokens)
 
