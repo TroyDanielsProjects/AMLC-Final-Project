@@ -1,4 +1,5 @@
 import re
+from webScraper import Webscraper
 
 # Class representing a single Buzz data entry
 class BuzzDataPoint():
@@ -51,6 +52,15 @@ nhl_teams = {
 
 # Class for cleaning and processing NHL Buzz data
 class DataCleaner():
+
+    def run(self, clean=True, load=True):
+        data = None
+        if clean:
+            self.proccess_nhl_buzz_data()
+            self.remove_empty_dates()
+        if clean and load:
+            data = self.load_data()
+        return data
 
     # Function to clean unwanted characters from a file and write cleaned text to another file
     def clean_data_charaters(self, path, path_to_write):
@@ -131,8 +141,6 @@ class DataCleaner():
             data_point.text = text
             inputs.append(data_point)
         return inputs
-
-    
                     
                     
                         
@@ -140,7 +148,7 @@ class DataCleaner():
 
 # Main script execution
 if __name__ == "__main__":
+    ws = Webscraper()
+    ws.run()
     dc = DataCleaner()
-    inputs = dc.load_data()
-    for input in inputs:
-        print(input)
+    dc.run(load=False)
