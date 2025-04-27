@@ -92,7 +92,7 @@ class DataCleaner():
         print(f"Total tokens found in {path}: {total}")
 
     # many of the entries have a date with no text. Remove them
-    def remove_empty_dates(self, path="./clean_nhl_buzz_data.txt", path_to_write="./usable_buzz_data.txt"):
+    def remove_empty_dates(self, path="./clean_data/clean_nhl_buzz_data.txt", path_to_write="./clean_data/usable_buzz_data.txt"):
         with open(path, 'r') as ofile:
             with open(path_to_write, 'w') as wfile:
                 string_to_write = ""
@@ -105,7 +105,7 @@ class DataCleaner():
                         wfile.write(string_to_write)
                         string_to_write = ""
     
-    def load_data(self, path="./usable_buzz_data.txt"):
+    def load_data(self, path="./clean_data/usable_buzz_data.txt"):
         inputs = []
         data_point = None
         text = ""
