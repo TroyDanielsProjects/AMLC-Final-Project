@@ -1,9 +1,7 @@
 import re
-from os import listdir
-from os.path import isfile, join
-import datetime
-from tqdm import tqdm
+from webScraper import Webscraper
 from google.cloud import storage
+
 
 class BuzzDataPoint:
     """
@@ -23,36 +21,15 @@ class BuzzDataPoint:
         self.month = month
         self.day = day
         self.text = None   
-        self.team = None 
+        self.team = None
+        self.bucket_name = "modelsbucket-amlc"
+        self.storage_client = storage.Client()
+        self.bucket = self.storage_client.bucket(self.bucket_name)
 
     def __str__(self):
         """String representation of the data point."""
         return f"Date: {self.month}-{self.day}-{self.year}\n{self.team}\n{self.text}\n"
-
-class PodcastDataPoint:
-    """
-    Represents a single Podcast.
-    Contains date information and episode transcription.
-    """
-    def __init__(self, year, month, day, episode):
-        """
-        Initialize data point with date information.
-        
-        Args:
-            year: Year of the Podcast
-            month: Month of the Podcast
-            day: Day of the Podcast
-        """
-        self.year = year
-        self.month = month
-        self.day = day
-        self.episode= episode
-        self.text = None   
-
-    def __str__(self):
-        """String representation of the data point."""
-        return f"Date: {self.month}-{self.day}-{self.year}\n{self.episode}\n{self.text}\n"
-
+    
 # Dictionary of all NHL teams for identification in text
 nhl_teams = {
     "Anaheim Ducks": 1,
@@ -94,7 +71,7 @@ class DataCleaner:
     Cleans and processes NHL Buzz data for training.
     Handles text cleaning, formatting, and data loading.
     """
-    def run(self, clean=True, load=True):
+    def run(self, get=True, clean=True, load=False):
         """
         Execute data cleaning and loading workflow.
         
@@ -106,6 +83,8 @@ class DataCleaner:
             List of BuzzDataPoint objects if load is True, None otherwise
         """
         data = None
+        if get:
+            Webscraper().run()
         if clean:
             self.proccess_nhl_buzz_data()
             self.remove_empty_dates()
@@ -121,8 +100,10 @@ class DataCleaner:
             path: Input file path
             path_to_write: Output file path
         """
-        with open(path, 'r') as ofile:
-            with open(path_to_write, 'w') as wfile:
+        blob = self.bucket.blob(path)
+        with blob.open("r") as ofile:
+            blob = self.bucket.blob(path_to_write)
+            with blob.open("w") as wfile:
                 for line in ofile:
                     text = self.clean_line(line)  # Clean each line
                     wfile.write(text + "\n")  # Write cleaned line to output file
@@ -157,7 +138,8 @@ class DataCleaner:
             path: Path to the file
         """
         total = 0
-        with open(path, 'r') as ofile:
+        blob = self.bucket.blob(path)
+        with blob.open("r") as ofile:
             for line in ofile:
                 tokens = line.split(" ")
                 total += len(tokens)
@@ -171,8 +153,10 @@ class DataCleaner:
             path: Input file path
             path_to_write: Output file path
         """
-        with open(path, 'r') as ofile:
-            with open(path_to_write, 'w') as wfile:
+        blob = self.bucket.blob(path)
+        with blob.open("r") as ofile:
+            blob = self.bucket.blob(path_to_write)
+            with blob.open("w") as wfile:
                 string_to_write = ""
                 for line in ofile:
                     # If line is a date pattern
@@ -247,44 +231,5 @@ class DataCleaner:
                 
         return inputs
 
-    @staticmethod
-    def load_pod_data(path="./podcast_scraper/spittin-chiclets"):
-        """
-        Load and parse NHL Buzz data into structured objects.
-        
-        Args:
-            path: Path to cleaned data file
-            
-        Returns:
-            List of BuzzDataPoint objects
-        """
-        inputs = []
-        data_point = None
-        text = ""
-        month = None
-        day = None
-        year = None
-        
-        podcast_files = [f for f in listdir(path) if isfile(join(path, f))]
-        
-        for file in tqdm(podcast_files[0:2], desc="Loading Files into Dataset"):
-            with open(join(path, file), 'r') as ofile:
-                #get date from file-name
-                episode= file.split("|")[0]
-                date= file.split("|")[1][0:-4]
-                
-                date_dt= datetime.datetime.strptime(date, '%Y-%m-%d')
-            
-                # Extract date components
-                month = date_dt.month
-                day = date_dt.day
-                year = date_dt.year
-                
-                data_point = PodcastDataPoint(year=year, month=month, day=day, episode=episode)
-                for line in ofile:
-                    line = line.strip()
-                    # Accumulate text content
-                    text+=line
-                data_point.text=text
-                inputs.append(data_point)
-        return inputs   
+cleaner = DataCleaner()
+cleaner.run()

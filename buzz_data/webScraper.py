@@ -2,12 +2,19 @@ from bs4 import BeautifulSoup
 import requests
 import time
 import random
+from google.cloud import storage
 
 # Class to scrape NHL and ESPN hockey articles
 class Webscraper():
 
+
     ref_dict = {}  # Dictionary to track visited URLs
     articles_found = 0
+
+    def __init__(self):
+        self.bucket_name = "modelsbucket-amlc"
+        self.storage_client = storage.Client()
+        self.bucket = self.storage_client.bucket(self.bucket_name)
 
     # Run different scraping tasks based on provided flags
     def run(self, run_nhl_sections=True, run_full_nhl=False, run_full_espn=False, run_nhl_subsection = False):
@@ -47,7 +54,8 @@ class Webscraper():
         for year in years:
             months = [("January", 31), ("February", 28), ("March", 31), ("April", 30), ("May", 31), ("June", 30),
                       ("July", 31), ("August", 31), ("September", 30), ("October", 31), ("November", 30), ("December", 31)]
-            with open("./data/nhl_buzz_data.txt", 'w') as ofile:
+            blob = self.bucket.blob("./data/nhl_buzz_data.txt")
+            with blob.open("w") as ofile:
                 for month, days_in_month in months:
                     for day in range(1, days_in_month + 1):
                         url = f"https://www.nhl.com/news/nhl-buzz-news-and-notes-{month}-{day}-{year}"
@@ -84,13 +92,15 @@ class Webscraper():
 
     # Generalized method to get article data given a URL, path, and HTML class
     def get_data(self, url, path, filter, path_to_write, html_class):
-        with open(path_to_write, 'w') as ofile:
+        blob = self.bucket.blob(path_to_write)
+        with blob.open("w") as ofile:
             self.get_home_page_links(ofile, html_class, base_url=url, path=path, filter=filter)
 
     # Count and print number of tokens (words) in a given file
     def count_tokens(self, path):
         total = 0
-        with open(path, 'r') as ofile:
+        blob = self.bucket.blob(path)
+        with blob.open("r") as ofile:
             for line in ofile:
                 tokens = line.split(" ")
                 total += len(tokens)
@@ -152,3 +162,4 @@ class Webscraper():
         self.get_data(url, path, filter, path_to_write, html_class)
         self.count_tokens(path_to_write)
         print("Finished fetching story data")
+

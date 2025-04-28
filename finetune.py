@@ -3,7 +3,7 @@ import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from cleanAndLoadData import DataCleaner
-from webScraper import Webscraper
+from buzz_data.webScraper import Webscraper
 from podcastScraper import PodScraper
 from dotenv import load_dotenv
 import os
