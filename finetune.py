@@ -4,6 +4,7 @@ from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from cleanAndLoadData import DataCleaner
 from webScraper import Webscraper
+from accelerate import Accelerator
 import os
 
 os.environ["BNB_CUDA_VERSION"] = "123"
@@ -121,6 +122,8 @@ class Trainer:
         self.quantization_config = BitsAndBytesConfig(load_in_4bit=True)
         self.model = self.load_model()
         self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=5e-5)
+        self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=1, gamma=0.99)
+        self.accelerator = Accelerator()
         self.dataset = None
         self.dataloader = None
         # Space for LoRA implementation
@@ -191,6 +194,10 @@ class Trainer:
         self.dataset = BuzzDataset(DataCleaner.load_buzz_data(), self.tokenizer)
         self.dataset.set_max_length(self.largest_tokenization(self.dataset)) 
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True) 
+        self.model, self.optimizer, self.dataloader = self.accelerator.prepare(self.model, self.optimizer, self.dataloader)
+        self.accelerator.register_for_checkpointing(self.scheduler)
+        self.accelerator.save_state(output_dir="./models/checkpoints")
+        print(self.accelerator.device)
         
     def setup_lora(self):
         """
