@@ -146,15 +146,16 @@ class Trainer:
             return device
     
     def load_model(self):
+        model = None
         try:
             model = AutoModelForCausalLM.from_pretrained("./models/finetuned_model", device_map="auto")
             print("Saved model successfully loaded")
         except Exception as e:
             print(f"Failed to load model: {e}")
+        if model is None:
             model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", device_map="auto", quantization_config=self.quantization_config)
             print("Loading new model")
-        finally:
-            return model
+        return model
     
     @staticmethod    
     def largest_tokenization(dataset):
