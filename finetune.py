@@ -4,6 +4,11 @@ from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from cleanAndLoadData import DataCleaner
 from webScraper import Webscraper
+from podcastScraper import PodScraper
+from dotenv import load_dotenv
+import os
+from huggingface_hub import login
+from tqdm import tqdm
 from accelerate import Accelerator
 import os
 
@@ -102,7 +107,104 @@ class BuzzDataset(Dataset):
             'attention_mask': attention_mask,
             'labels': labels,  # Teacher forcing: labels are the same as input_ids
         }
+
+class PodCastDataset(Dataset):
+    """
+    Custom dataset for Spittin Chiclets Podcast data.
+    Formats data into prompt-response pairs for fine-tuning.
+    """
+    def __init__(self, data, tokenizer):
+        """
+        Initialize dataset with podcast data and tokenizer.
+        
+        Args:
+            data: List of Spittin Chiclets objects
+            tokenizer: HuggingFace tokenizer
+        """
+        self.data = data
+        self.tokenizer = tokenizer
+        self.max_length = None
+
+    def __len__(self):
+        """Return the total number of samples in the dataset."""
+        return len(self.data)
     
+    def set_max_length(self, max_length):
+        """
+        Set maximum sequence length for padding.
+        
+        Args:
+            max_length: Maximum token length for sequences
+        """
+        self.max_length = max_length
+    
+    def __getitem__(self, index):
+        """
+        Get a tokenized training sample at the specified index.
+        
+        Creates a prompt-response pair from hockey news data and converts
+        to model inputs with appropriate labels for teacher forcing.
+        
+        Args:
+            index: Sample index
+            
+        Returns:
+            Dict containing input_ids, attention_mask, and labels
+        """
+        # Extract data fields from the data point
+        data_point = self.data[index]
+ 
+        year = data_point.year
+        month = data_point.month
+        day = data_point.day
+        text = data_point.text
+        
+        # Create a prompt asking for podcast information
+        prompt = f"Today is {month}-{day}-{year}, tell me about some interesting stuff happening in the NHL."
+
+
+        # Tokenize the prompt separately
+        prompt_encoding = self.tokenizer(prompt, return_tensors="pt")
+        #squeeze to drop batch dimension
+        prompt_ids = prompt_encoding['input_ids'].squeeze(0)
+        prompt_attention_mask = prompt_encoding['attention_mask'].squeeze(0)
+
+        # Tokenize the response with optional padding/truncation
+        # Dynamically adjusted padding to ensure uniform padding for batch
+        if self.max_length:
+            response_encoding = self.tokenizer(
+                text, 
+                return_tensors="pt", 
+                max_length=(self.max_length - prompt_ids.shape[0]), 
+                padding='max_length', 
+                padding_side='right'
+            )
+        else:
+            response_encoding = self.tokenizer(text, return_tensors="pt")
+        input_ids = response_encoding['input_ids'].squeeze(0)
+        attention_mask = response_encoding['attention_mask'].squeeze(0)
+
+        # Concatenate prompt and response tokens
+        encoding = torch.concat((prompt_ids, input_ids), 0)
+        attention_mask = torch.concat((prompt_attention_mask, attention_mask), 0)
+        
+        # Create labels: mask prompt tokens with -100 (ignored in loss calculation)
+        labels = encoding.clone()
+        labels[:prompt_ids.shape[0]] = -100
+
+        # Truncate if exceeding maximum context length
+        if encoding.shape[0] > 8192:
+            encoding = encoding[:8192]
+            attention_mask = attention_mask[:8192]
+            labels = labels[:8192]  # Also truncate labels
+
+        return {
+            'input_ids': encoding,
+            'attention_mask': attention_mask,
+            'labels': labels,  # Teacher forcing: labels are the same as input_ids
+        }
+  
+
 class Trainer:
     """
     Handles model training for the NHL Buzz news generation task.
@@ -112,9 +214,10 @@ class Trainer:
         Initialize trainer with model, tokenizer, and optimizer.
         """
         self.device = self.determine_device()
-        self.webscrapper = Webscraper()
-        self.dataCleaner = DataCleaner()
+
         if get_data:
+            self.webscrapper = Webscraper()
+            self.dataCleaner = DataCleaner()
             # self.webscrapper.run()
             self.dataCleaner.run()
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
@@ -140,7 +243,7 @@ class Trainer:
         try:
             if torch.cuda.is_available():
                 device = "cuda"
-            elif torch.mps.is_available(): 
+            elif torch.backends.mps.is_built() or torch.mps.is_available(): 
                 device = "mps"
             else:
                 device = "cpu" 
@@ -177,7 +280,7 @@ class Trainer:
             int: Maximum token length found
         """
         largest = 0
-        for i in range(len(dataset)):
+        for i in tqdm(range(len(dataset)), desc=f"Finding Max Length"):
             size = dataset[i]['input_ids'].shape[0]
             if size > largest:
                 largest = size
@@ -198,6 +301,23 @@ class Trainer:
         self.accelerator.register_for_checkpointing(self.scheduler)
         self.accelerator.save_state(output_dir="./models/checkpoints")
         print(self.accelerator.device)
+        
+
+    def load_in_podcast_data(self, batch=4):
+        """
+        Load and prepare Spittin Chiclets data for training.
+        
+        Args:
+            batch: Batch size for training
+        """
+        self.dataset = PodCastDataset(DataCleaner.load_pod_data(), self.tokenizer)
+        print("AT LINE 294")
+        self.dataset.set_max_length(self.largest_tokenization(self.dataset)) 
+        print("AT LINE 296")
+        self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True)
+        print("AT LINE 298")
+
+
         
     def setup_lora(self):
         """
@@ -248,6 +368,46 @@ class Trainer:
         self.model.save_pretrained("./models/finetuned_model")
         self.tokenizer.save_pretrained("./models/finetuned_model")
 
+    def train_podcast(self, epochs=3):
+        """
+        Train the model on chiclets podcast data.
+        
+        Args:
+            epochs: Number of training epochs
+        """
+        self.model.train()
+        for epoch in range(epochs):
+            total_loss = 0
+            for i, batch in enumerate(tqdm(self.dataloader, desc=f"Epoch {epoch+1}/{epochs}")):
+                # Move batch to device
+                input_ids = batch['input_ids'].to(self.device)
+                attention_mask = batch['attention_mask'].to(self.device)
+                labels = batch['labels'].to(self.device)
+
+                # Zero gradients
+                self.optimizer.zero_grad()
+
+                # Forward pass
+                outputs = self.model(
+                    input_ids=input_ids,
+                    attention_mask=attention_mask,
+                    labels=labels 
+                )
+
+                loss = outputs.loss
+                loss.backward()  # Backward pass
+                self.optimizer.step()  # Update weights
+
+                total_loss += loss.item()
+                print(f"Finished batch: {i} - batch loss: {loss.item() / len(batch)} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
+
+            # Report epoch results
+            avg_loss = total_loss / len(self.dataloader)
+            print(f"Epoch {epoch + 1}/{epochs} - Loss: {avg_loss:.4f}")
+            
+        # Save the fine-tuned model and tokenizer
+        self.model.save_pretrained("./models/finetuned_model")
+        self.tokenizer.save_pretrained("./models/finetuned_model")
     def infernece(self, prompt):
         tokenized_prompt = self.tokenizer(prompt, return_tensors="pt").to(self.device)
         outputs = self.model.generate(**tokenized_prompt, max_length=800)
@@ -260,7 +420,13 @@ class Trainer:
 
 
 if __name__ == "__main__":
-    trainer = Trainer()
-    trainer.load_in_buzz_data()
-    trainer.train_buzz()
+    load_dotenv()
+    access_token = os.getenv("HF_TOKEN")
+    login(token=access_token)
+    trainer = Trainer(get_data=False)
+
+    trainer.load_in_podcast_data()
+    trainer.train_podcast()
+    #trainer.load_in_buzz_data()
+    #trainer.train_buzz()
     trainer.test_inference()
