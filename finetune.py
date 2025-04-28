@@ -224,7 +224,7 @@ class Trainer:
             self.dataCleaner.run()
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
         # quantization implementation
-        #self.quantization_config = BitsAndBytesConfig(load_in_4bit=True)
+        self.quantization_config = BitsAndBytesConfig(load_in_4bit=True)
         print("LAURA")
         self.lora_config = LoraConfig(init_lora_weights="gaussian")
         self.model = self.load_model()
@@ -265,8 +265,7 @@ class Trainer:
         except Exception as e:
             print(f"Failed to load model: {e}")
         if model is None:
-            #quantization_config=self.quantization_config
-            quant_model = AutoModelForCausalLM.from_pretrained("google/gemma-2b",).to(self.device)
+            quant_model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config).to(self.device)
             model = get_peft_model(quant_model, self.lora_config)
             print("Loading new model")
             model.save_pretrained("./models/finetuned_model")
@@ -378,7 +377,8 @@ class Trainer:
 
                 # Zero gradients
                 self.optimizer.zero_grad()
-
+                print(input_ids, attention_mask, labels)
+                print(input_ids.shape, attention_mask.shape, labels.shape)
                 # Forward pass
                 outputs = self.model(
                     input_ids=input_ids,
