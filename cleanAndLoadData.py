@@ -1,5 +1,8 @@
 import re
 from webScraper import Webscraper
+from os import listdir
+from os.path import isfile, join
+import datetime
 
 class BuzzDataPoint:
     """
@@ -24,7 +27,31 @@ class BuzzDataPoint:
     def __str__(self):
         """String representation of the data point."""
         return f"Date: {self.month}-{self.day}-{self.year}\n{self.team}\n{self.text}\n"
-    
+
+class PodcastDataPoint:
+    """
+    Represents a single Podcast.
+    Contains date information and episode transcription.
+    """
+    def __init__(self, year, month, day, episode):
+        """
+        Initialize data point with date information.
+        
+        Args:
+            year: Year of the Podcast
+            month: Month of the Podcast
+            day: Day of the Podcast
+        """
+        self.year = year
+        self.month = month
+        self.day = day
+        self.episode= episode
+        self.text = None   
+
+    def __str__(self):
+        """String representation of the data point."""
+        return f"Date: {self.month}-{self.day}-{self.year}\n{self.episode}\n{self.text}\n"
+
 # Dictionary of all NHL teams for identification in text
 nhl_teams = {
     "Anaheim Ducks": 1,
@@ -218,3 +245,47 @@ class DataCleaner:
                 inputs.append(data_point)
                 
         return inputs
+
+    @staticmethod
+    def load_pod_data(path="./podcast_scraper/spittin-chiclets"):
+        """
+        Load and parse NHL Buzz data into structured objects.
+        
+        Args:
+            path: Path to cleaned data file
+            
+        Returns:
+            List of BuzzDataPoint objects
+        """
+        inputs = []
+        data_point = None
+        text = ""
+        month = None
+        day = None
+        year = None
+        
+        podcast_files = [f for f in listdir(path) if isfile(join(path, f))]
+        
+        for file in podcast_files:
+            with open(join(path, file), 'r') as ofile:
+                #get date from file-name
+                episode= file.split("|")[0]
+                print(episode)
+                date= file.split("|")[1][0:-4]
+                
+                date_dt= datetime.datetime.strptime(date, '%Y-%m-%d')
+            
+                # Extract date components
+                month = date_dt.month
+                day = date_dt.day
+                year = date_dt.year
+                
+                data_point = PodcastDataPoint(year=year, month=month, day=day, episode=episode)
+                for line in ofile:
+                    line = line.strip()
+                    # Accumulate text content
+                    text+=line
+                data_point.text=text
+                inputs.append(data_point)
+                    
+        return inputs   

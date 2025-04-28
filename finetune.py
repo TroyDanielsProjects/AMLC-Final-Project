@@ -4,6 +4,7 @@ from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from cleanAndLoadData import DataCleaner
 from webScraper import Webscraper
+from podcastScraper import PodScraper
 
 class BuzzDataset(Dataset):
     """
@@ -98,7 +99,102 @@ class BuzzDataset(Dataset):
             'attention_mask': attention_mask,
             'labels': labels,  # Teacher forcing: labels are the same as input_ids
         }
+
+class PodCastDataset(Dataset):
+    """
+    Custom dataset for Spittin Chiclets Podcast data.
+    Formats data into prompt-response pairs for fine-tuning.
+    """
+    def __init__(self, data, tokenizer):
+        """
+        Initialize dataset with podcast data and tokenizer.
+        
+        Args:
+            data: List of Spittin Chiclets objects
+            tokenizer: HuggingFace tokenizer
+        """
+        self.data = data
+        self.tokenizer = tokenizer
+        self.max_length = None
+
+    def __len__(self):
+        """Return the total number of samples in the dataset."""
+        return len(self.data)
     
+    def set_max_length(self, max_length):
+        """
+        Set maximum sequence length for padding.
+        
+        Args:
+            max_length: Maximum token length for sequences
+        """
+        self.max_length = max_length
+    
+    def __getitem__(self, index):
+        """
+        Get a tokenized training sample at the specified index.
+        
+        Creates a prompt-response pair from hockey news data and converts
+        to model inputs with appropriate labels for teacher forcing.
+        
+        Args:
+            index: Sample index
+            
+        Returns:
+            Dict containing input_ids, attention_mask, and labels
+        """
+        # Extract data fields from the data point
+        data_point = self.data[index]
+        year = data_point.year
+        month = data_point.month
+        day = data_point.day
+        team = data_point.team
+        text = data_point.text
+        
+        # Create a prompt asking for podcast information
+        prompt = f"Today is {month}-{day}-{year}, tell me about some interesting stuff happening in the NHL."
+
+        # Tokenize the prompt separately
+        prompt_encoding = self.tokenizer(prompt, return_tensors="pt")
+        prompt_ids = prompt_encoding['input_ids'].squeeze(0)
+        prompt_attention_mask = prompt_encoding['attention_mask'].squeeze(0)
+
+        # Tokenize the response with optional padding/truncation
+        if self.max_length:
+            response_encoding = self.tokenizer(
+                text, 
+                return_tensors="pt", 
+                max_length=(self.max_length - prompt_ids.shape[0]), 
+                padding='max_length', 
+                padding_side='right'
+            )
+        else:
+            response_encoding = self.tokenizer(text, return_tensors="pt")
+            
+        input_ids = response_encoding['input_ids'].squeeze(0)
+        attention_mask = response_encoding['attention_mask'].squeeze(0)
+
+        # Concatenate prompt and response tokens
+        encoding = torch.concat((prompt_ids, input_ids), 0)
+        attention_mask = torch.concat((prompt_attention_mask, attention_mask), 0)
+        
+        # Create labels: mask prompt tokens with -100 (ignored in loss calculation)
+        labels = encoding.clone()
+        labels[:prompt_ids.shape[0]] = -100
+
+        # Truncate if exceeding maximum context length
+        if encoding.shape[0] > 8192:
+            encoding = encoding[:8192]
+            attention_mask = attention_mask[:8192]
+            labels = labels[:8192]  # Also truncate labels
+
+        return {
+            'input_ids': encoding,
+            'attention_mask': attention_mask,
+            'labels': labels,  # Teacher forcing: labels are the same as input_ids
+        }
+  
+
 class Trainer:
     """
     Handles model training for the NHL Buzz news generation task.
@@ -108,9 +204,10 @@ class Trainer:
         Initialize trainer with model, tokenizer, and optimizer.
         """
         self.device = self.determine_device()
-        self.webscrapper = Webscraper()
-        self.dataCleaner = DataCleaner()
+
         if get_data:
+            self.webscrapper = Webscraper()
+            self.dataCleaner = DataCleaner()
             # self.webscrapper.run()
             self.dataCleaner.run()
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
@@ -136,7 +233,7 @@ class Trainer:
         try:
             if torch.cuda.is_available():
                 device = "cuda"
-            elif torch.mps.is_available(): 
+            elif torch.mps.is_available() or torch.backends.mps.is_built(): 
                 device = "mps"
             else:
                 device = "cpu" 
@@ -176,6 +273,18 @@ class Trainer:
         self.dataset = BuzzDataset(DataCleaner.load_buzz_data(), self.tokenizer)
         self.dataset.set_max_length(self.largest_tokenization(self.dataset)) 
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True) 
+
+    def load_in_chiclets_data(self, batch=4):
+        """
+        Load and prepare Spittin Chiclets data for training.
+        
+        Args:
+            batch: Batch size for training
+        """
+        self.dataset = PodCastDataset(DataCleaner.load_pod_data(), self.tokenizer)
+        self.dataset.set_max_length(self.largest_tokenization(self.dataset)) 
+        print(self.dataset.set_max_length)
+        self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True)
 
     def setup_quantization(self):
         """
@@ -234,6 +343,9 @@ class Trainer:
 
 
 if __name__ == "__main__":
-    trainer = Trainer()
+    trainer = Trainer(get_data=False)
+
+    trainer.load_in_chiclets_data()
+
     trainer.load_in_buzz_data()
     trainer.train_buzz()
