@@ -1,3 +1,4 @@
 .env
 __pycache__
 /podcast_scraper/
+.DS_Store
