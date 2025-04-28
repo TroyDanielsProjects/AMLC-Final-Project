@@ -3,6 +3,7 @@ from webScraper import Webscraper
 from os import listdir
 from os.path import isfile, join
 import datetime
+from tqdm import tqdm
 
 class BuzzDataPoint:
     """
@@ -266,11 +267,10 @@ class DataCleaner:
         
         podcast_files = [f for f in listdir(path) if isfile(join(path, f))]
         
-        for file in podcast_files:
+        for file in tqdm(podcast_files[0:2], desc="Loading Files into Dataset"):
             with open(join(path, file), 'r') as ofile:
                 #get date from file-name
                 episode= file.split("|")[0]
-                print(episode)
                 date= file.split("|")[1][0:-4]
                 
                 date_dt= datetime.datetime.strptime(date, '%Y-%m-%d')
@@ -287,5 +287,4 @@ class DataCleaner:
                     text+=line
                 data_point.text=text
                 inputs.append(data_point)
-                    
         return inputs   

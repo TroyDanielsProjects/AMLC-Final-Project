@@ -5,6 +5,10 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from cleanAndLoadData import DataCleaner
 from webScraper import Webscraper
 from podcastScraper import PodScraper
+from dotenv import load_dotenv
+import os
+from huggingface_hub import login
+from tqdm import tqdm
 
 class BuzzDataset(Dataset):
     """
@@ -145,21 +149,24 @@ class PodCastDataset(Dataset):
         """
         # Extract data fields from the data point
         data_point = self.data[index]
+ 
         year = data_point.year
         month = data_point.month
         day = data_point.day
-        team = data_point.team
         text = data_point.text
         
         # Create a prompt asking for podcast information
         prompt = f"Today is {month}-{day}-{year}, tell me about some interesting stuff happening in the NHL."
 
+
         # Tokenize the prompt separately
         prompt_encoding = self.tokenizer(prompt, return_tensors="pt")
+        #squeeze to drop batch dimension
         prompt_ids = prompt_encoding['input_ids'].squeeze(0)
         prompt_attention_mask = prompt_encoding['attention_mask'].squeeze(0)
 
         # Tokenize the response with optional padding/truncation
+        # Dynamically adjusted padding to ensure uniform padding for batch
         if self.max_length:
             response_encoding = self.tokenizer(
                 text, 
@@ -170,7 +177,6 @@ class PodCastDataset(Dataset):
             )
         else:
             response_encoding = self.tokenizer(text, return_tensors="pt")
-            
         input_ids = response_encoding['input_ids'].squeeze(0)
         attention_mask = response_encoding['attention_mask'].squeeze(0)
 
@@ -233,7 +239,7 @@ class Trainer:
         try:
             if torch.cuda.is_available():
                 device = "cuda"
-            elif torch.mps.is_available() or torch.backends.mps.is_built(): 
+            elif torch.backends.mps.is_built() or torch.mps.is_available(): 
                 device = "mps"
             else:
                 device = "cpu" 
@@ -256,7 +262,7 @@ class Trainer:
             int: Maximum token length found
         """
         largest = 0
-        for i in range(len(dataset)):
+        for i in tqdm(range(len(dataset)), desc=f"Finding Max Length"):
             size = dataset[i]['input_ids'].shape[0]
             if size > largest:
                 largest = size
@@ -274,7 +280,7 @@ class Trainer:
         self.dataset.set_max_length(self.largest_tokenization(self.dataset)) 
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True) 
 
-    def load_in_chiclets_data(self, batch=4):
+    def load_in_podcast_data(self, batch=4):
         """
         Load and prepare Spittin Chiclets data for training.
         
@@ -282,9 +288,11 @@ class Trainer:
             batch: Batch size for training
         """
         self.dataset = PodCastDataset(DataCleaner.load_pod_data(), self.tokenizer)
+        print("AT LINE 294")
         self.dataset.set_max_length(self.largest_tokenization(self.dataset)) 
-        print(self.dataset.set_max_length)
+        print("AT LINE 296")
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True)
+        print("AT LINE 298")
 
     def setup_quantization(self):
         """
@@ -341,11 +349,54 @@ class Trainer:
         self.model.save_pretrained("./models/finetuned_model")
         self.tokenizer.save_pretrained("./models/finetuned_model")
 
+    def train_podcast(self, epochs=3):
+        """
+        Train the model on chiclets podcast data.
+        
+        Args:
+            epochs: Number of training epochs
+        """
+        self.model.train()
+        for epoch in range(epochs):
+            total_loss = 0
+            for i, batch in enumerate(tqdm(self.dataloader, desc=f"Epoch {epoch+1}/{epochs}")):
+                # Move batch to device
+                input_ids = batch['input_ids'].to(self.device)
+                attention_mask = batch['attention_mask'].to(self.device)
+                labels = batch['labels'].to(self.device)
+
+                # Zero gradients
+                self.optimizer.zero_grad()
+
+                # Forward pass
+                outputs = self.model(
+                    input_ids=input_ids,
+                    attention_mask=attention_mask,
+                    labels=labels 
+                )
+
+                loss = outputs.loss
+                loss.backward()  # Backward pass
+                self.optimizer.step()  # Update weights
+
+                total_loss += loss.item()
+                print(f"Finished batch: {i} - batch loss: {loss.item() / len(batch)} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
+
+            # Report epoch results
+            avg_loss = total_loss / len(self.dataloader)
+            print(f"Epoch {epoch + 1}/{epochs} - Loss: {avg_loss:.4f}")
+            
+        # Save the fine-tuned model and tokenizer
+        self.model.save_pretrained("./models/finetuned_model")
+        self.tokenizer.save_pretrained("./models/finetuned_model")
 
 if __name__ == "__main__":
+    load_dotenv()
+    access_token = os.getenv("HF_TOKEN")
+    login(token=access_token)
     trainer = Trainer(get_data=False)
 
-    trainer.load_in_chiclets_data()
-
-    trainer.load_in_buzz_data()
-    trainer.train_buzz()
+    trainer.load_in_podcast_data()
+    trainer.train_podcast()
+    #trainer.load_in_buzz_data()
+    #trainer.train_buzz()
