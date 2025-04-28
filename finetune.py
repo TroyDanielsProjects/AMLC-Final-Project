@@ -11,6 +11,8 @@ from huggingface_hub import login
 from tqdm import tqdm
 from accelerate import Accelerator
 import os
+from peft import LoraConfig
+
 
 os.environ["BNB_CUDA_VERSION"] = "123"
 
@@ -230,7 +232,8 @@ class Trainer:
         self.dataset = None
         self.dataloader = None
         # Space for LoRA implementation
-        self.lora_config = None
+        self.lora_config = LoraConfig(init_lora_weights="gaussian")
+
 
     def determine_device(self):
         """
@@ -262,9 +265,9 @@ class Trainer:
         except Exception as e:
             print(f"Failed to load model: {e}")
         if model is None:
-            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config).to(self.device)
+            #quantization_config=self.quantization_config
+            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b").to(self.device)
             print("Loading new model")
-            model.to("cpu")
             model.save_pretrained("./models/finetuned_model")
         return model
     
@@ -311,20 +314,8 @@ class Trainer:
             batch: Batch size for training
         """
         self.dataset = PodCastDataset(DataCleaner.load_pod_data(), self.tokenizer)
-        print("AT LINE 294")
         self.dataset.set_max_length(self.largest_tokenization(self.dataset)) 
-        print("AT LINE 296")
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True)
-        print("AT LINE 298")
-
-
-        
-    def setup_lora(self):
-        """
-        Set up Low-Rank Adaptation (LoRA) for parameter-efficient fine-tuning.
-        """
-        # TODO: Implement LoRA setup
-        pass
 
     def train_buzz(self, epochs=3):
         """
@@ -415,7 +406,7 @@ class Trainer:
         return response
 
     def test_inference(self):
-        response = self.infernece("What are the daily updates for the Colorado Avalanche on January-1-2025?")
+        response = self.infernece("What are the daily updates for the Colorado Avalanche on April 28-2025?")
         print(response)
 
 
