@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
-from transformers import AutoTokenizer, AutoModelForCausalLM, GPTQConfig
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from cleanAndLoadData import DataCleaner
 from webScraper import Webscraper
 
@@ -115,7 +115,7 @@ class Trainer:
             self.dataCleaner.run()
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
         # quantization implementation
-        self.quantization_config = GPTQConfig(bits=4, dataset="c4", tokenizer=self.tokenizer)
+        self.quantization_config = BitsAndBytesConfig(load_in_4bit=True)
         self.model = self.load_model()
         self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=5e-5)
         self.dataset = None
@@ -148,12 +148,12 @@ class Trainer:
     def load_model(self):
         model = None
         try:
-            model = AutoModelForCausalLM.from_pretrained("./models/finetuned_model", device_map="auto")
+            model = AutoModelForCausalLM.from_pretrained("./models/finetuned_model").to(self.device)
             print("Saved model successfully loaded")
         except Exception as e:
             print(f"Failed to load model: {e}")
         if model is None:
-            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", device_map="auto", quantization_config=self.quantization_config)
+            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config).to(self.device)
             print("Loading new model")
             model.to("cpu")
             model.save_pretrained("./models/finetuned_model")
