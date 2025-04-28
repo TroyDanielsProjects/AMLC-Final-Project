@@ -155,6 +155,9 @@ class Trainer:
         if model is None:
             model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", device_map="auto", quantization_config=self.quantization_config)
             print("Loading new model")
+            model.to("cpu")
+            model.save_pretrained("./models/finetuned_model")
+            model.tokenizer.save_pretrained("./models/finetuned_model")
         return model
     
     @staticmethod    
