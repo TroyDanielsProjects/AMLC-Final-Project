@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, GPTQConfig
 from cleanAndLoadData import DataCleaner
 from webScraper import Webscraper
 
@@ -114,14 +114,12 @@ class Trainer:
             # self.webscrapper.run()
             self.dataCleaner.run()
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
-        self.model = AutoModelForCausalLM.from_pretrained("google/gemma-2b").to(self.device)
+        # quantization implementation
+        self.quantization_config = GPTQConfig(bits=4, dataset="c4", tokenizer=self.tokenizer)
+        self.model = self.load_model()
         self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=5e-5)
         self.dataset = None
         self.dataloader = None
-        
-        # Space for quantization implementation
-        self.quantization_config = None
-        
         # Space for LoRA implementation
         self.lora_config = None
 
@@ -146,6 +144,17 @@ class Trainer:
         finally:
             print(f"using {device}")
             return device
+    
+    def load_model(self):
+        try:
+            model = AutoModelForCausalLM.from_pretrained("./models/finetuned_model", device_map="auto")
+            print("Saved model successfully loaded")
+        except Exception as e:
+            print(f"Failed to load model: {e}")
+            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", device_map="auto", quantization_config=self.quantization_config)
+            print("Loading new model")
+        finally:
+            return model
     
     @staticmethod    
     def largest_tokenization(dataset):
@@ -176,13 +185,6 @@ class Trainer:
         self.dataset = BuzzDataset(DataCleaner.load_buzz_data(), self.tokenizer)
         self.dataset.set_max_length(self.largest_tokenization(self.dataset)) 
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True) 
-
-    def setup_quantization(self):
-        """
-        Set up quantization configuration for model efficiency.
-        """
-        # TODO: Implement quantization setup
-        pass
         
     def setup_lora(self):
         """
@@ -193,7 +195,7 @@ class Trainer:
 
     def train_buzz(self, epochs=3):
         """
-        Train the model on NHL Buzz data.
+        Train the model.
         
         Args:
             epochs: Number of training epochs
@@ -229,11 +231,23 @@ class Trainer:
             print(f"Epoch {epoch + 1}/{epochs} - Loss: {avg_loss:.4f}")
             
         # Save the fine-tuned model and tokenizer
+        self.model.to("cpu")
         self.model.save_pretrained("./models/finetuned_model")
         self.tokenizer.save_pretrained("./models/finetuned_model")
+
+    def infernece(self, prompt):
+        tokenized_prompt = self.tokenizer(prompt, return_tensors="pt").to(self.device)
+        outputs = self.model.generate(**tokenized_prompt, max_length=800)
+        response = self.tokenizer.decode(outputs[0])
+        return response
+
+    def test_inference(self):
+        response = self.infernece("What are the daily updates for the Colorado Avalanche on January-1-2025?")
+        print(response)
 
 
 if __name__ == "__main__":
     trainer = Trainer()
     trainer.load_in_buzz_data()
     trainer.train_buzz()
+    trainer.test_inference()
