@@ -12,7 +12,7 @@ from tqdm import tqdm
 from accelerate import Accelerator
 import os
 from peft import LoraConfig, get_peft_model
-
+from torchsummary import summary
 
 os.environ["BNB_CUDA_VERSION"] = "123"
 
@@ -224,15 +224,15 @@ class Trainer:
             self.dataCleaner.run()
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
         # quantization implementation
-        self.quantization_config = BitsAndBytesConfig(load_in_4bit=True)
+        #self.quantization_config = BitsAndBytesConfig(load_in_4bit=True)
+        print("LAURA")
+        self.lora_config = LoraConfig(init_lora_weights="gaussian")
         self.model = self.load_model()
         self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=5e-5)
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=1, gamma=0.99)
         self.accelerator = Accelerator()
         self.dataset = None
         self.dataloader = None
-        # Space for LoRA implementation
-        self.lora_config = LoraConfig(init_lora_weights="gaussian")
 
 
     def determine_device(self):
