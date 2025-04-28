@@ -4,6 +4,9 @@ from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from cleanAndLoadData import DataCleaner
 from webScraper import Webscraper
+import os
+
+os.environ["BNB_CUDA_VERSION"] = "123"
 
 class BuzzDataset(Dataset):
     """
@@ -157,7 +160,6 @@ class Trainer:
             print("Loading new model")
             model.to("cpu")
             model.save_pretrained("./models/finetuned_model")
-            model.tokenizer.save_pretrained("./models/finetuned_model")
         return model
     
     @staticmethod    
