@@ -11,7 +11,7 @@ from huggingface_hub import login
 from tqdm import tqdm
 from accelerate import Accelerator
 import os
-from peft import LoraConfig
+from peft import LoraConfig, get_peft_model
 
 
 os.environ["BNB_CUDA_VERSION"] = "123"
@@ -266,7 +266,8 @@ class Trainer:
             print(f"Failed to load model: {e}")
         if model is None:
             #quantization_config=self.quantization_config
-            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b").to(self.device)
+            quant_model = AutoModelForCausalLM.from_pretrained("google/gemma-2b",).to(self.device)
+            model = get_peft_model(quant_model, self.lora_config)
             print("Loading new model")
             model.save_pretrained("./models/finetuned_model")
         return model
