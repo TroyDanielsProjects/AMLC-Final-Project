@@ -239,7 +239,7 @@ class Trainer:
                     task_type="CAUSAL_LM"
                 )
         self.model = self.load_model()
-        self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=1e-5)
+        self.optimizer = torch.optim.SGD(self.model.parameters(), lr=5e-5, momentum=0.99)
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=1, gamma=0.99)
         self.accelerator = Accelerator()
         self.dataset = None
@@ -277,8 +277,7 @@ class Trainer:
         except Exception as e:
             print(f"Failed to load model: {e}")
         if model is None:
-            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b",torch_dtype=torch.float16).to(self.device)
-            model.gradient_checkpointing_enable()
+            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config,torch_dtype=torch.float16).to(self.device)
             model = get_peft_model(model, self.lora_config)
             print("Loading new model")
         return model
@@ -356,7 +355,8 @@ class Trainer:
                 )
 
                 loss = outputs.loss
-                self.accelerator.backward(loss) # Backward pass
+                gradient = loss.backward()  # Backward pass
+                print(gradient)
                 self.optimizer.step()  # Update weights
 
                 total_loss += loss.item()
