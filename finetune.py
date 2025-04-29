@@ -398,6 +398,7 @@ class Trainer:
 
                 loss = outputs.loss
                 graident = loss.backward()  # Backward pass
+                print(graident)
                 self.optimizer.step()  # Update weights
 
                 total_loss += loss.item()
