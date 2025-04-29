@@ -239,7 +239,7 @@ class Trainer:
                     task_type="CAUSAL_LM"
                 )
         self.model = self.load_model()
-        self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=5e-5)
+        self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=1e-5)
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=1, gamma=0.99)
         self.accelerator = Accelerator()
         self.dataset = None
