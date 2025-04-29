@@ -11,7 +11,7 @@ from huggingface_hub import login
 from tqdm import tqdm
 from accelerate import Accelerator
 import os
-from peft import LoraConfig, get_peft_model
+from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from torchsummary import summary
 
 os.environ["BNB_CUDA_VERSION"] = "123"
@@ -231,7 +231,7 @@ class Trainer:
                                     bnb_4bit_use_double_quant=True,
                                 )
         self.lora_config = LoraConfig(
-                    r=2,                     # Rank
+                    r=4,                     # Rank
                     lora_alpha=32,           # Alpha scaling
                     target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],  # Which modules to apply LoRA to
                     lora_dropout=0.05,
@@ -239,7 +239,7 @@ class Trainer:
                     task_type="CAUSAL_LM"
                 )
         self.model = self.load_model()
-        self.optimizer = torch.optim.SGD(self.model.parameters(), lr=5e-5, momentum=0.99)
+        self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=5e-5)
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=1, gamma=0.99)
         self.accelerator = Accelerator()
         self.dataset = None
@@ -277,8 +277,10 @@ class Trainer:
         except Exception as e:
             print(f"Failed to load model: {e}")
         if model is None:
-            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config,torch_dtype=torch.float16).to(self.device)
+            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", device_map="auto", quantization_config=self.quantization_config,torch_dtype=torch.float16)
+            model = prepare_model_for_kbit_training(model ,use_gradient_checkpointing=True)
             model = get_peft_model(model, self.lora_config)
+            model.print_trainable_parameters()
             print("Loading new model")
         return model
     
