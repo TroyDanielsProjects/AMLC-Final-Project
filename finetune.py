@@ -281,7 +281,6 @@ class Trainer:
             quant_model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config,torch_dtype=torch.float16).to(self.device)
             model = get_peft_model(quant_model, self.lora_config)
             print("Loading new model")
-            model.save_pretrained("./models/finetuned_model")
         return model
     
     @staticmethod    
