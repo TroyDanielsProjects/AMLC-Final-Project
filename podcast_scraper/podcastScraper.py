@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-from collections import defaultdict
 import os
 import datetime
 import re
@@ -17,8 +16,8 @@ class PodScraper():
 
     def run(self, url, after_date=None):
         podcast_name=url.split('/')[4]
-        if not os.path.isdir(podcast_name):
-            os.makedirs(podcast_name)
+        if not os.path.isdir(f"/bucket/{podcast_name}"):
+            os.makedirs(f"/bucket/{podcast_name}")
         soup=self.get_soup(url)
         max_page= self.max_page(soup)
         print(f"We will Scrape {max_page} pages")
@@ -80,7 +79,7 @@ class PodScraper():
             #Find all the spans that contain sentences
             sentences = transcript_div.find_all('span', class_='pod_text seek_pod_segment sentence-tooltip transcript-text')
             
-            file_path = os.path.join(podcast_name, f"{episode}|{date.date()}.txt")
+            file_path = os.path.join((f"/bucket/{podcast_name}"), f"{episode}|{date.date()}.txt")
             with open(file_path, 'w') as wfile:
                 for sentence in sentences:
                     sentence_strip=sentence.contents[0].strip()

@@ -1,8 +1,2 @@
 bs4
 requests
-collections
-os
-datetime
-re
-argparse
-time
