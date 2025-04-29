@@ -356,11 +356,12 @@ class Trainer:
                 )
 
                 loss = outputs.loss
-                loss.backward()  # Backward pass
+                gradient = loss.backward()  # Backward pass
+                print(gradient)
                 self.optimizer.step()  # Update weights
 
                 total_loss += loss.item()
-                print(f"Finished batch: {i} - batch loss: {loss.item() / len(batch)} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
+                print(f"Finished batch: {i} - batch loss: {loss.item()} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
 
             # Report epoch results
             avg_loss = total_loss / len(self.dataloader)
@@ -370,43 +371,6 @@ class Trainer:
         self.model.to("cpu")
         self.model.save_pretrained("./models/finetuned_model")
         self.tokenizer.save_pretrained("./models/finetuned_model")
-
-    def train_podcast(self, epochs=3):
-        """
-        Train the model on chiclets podcast data.
-        
-        Args:
-            epochs: Number of training epochs
-        """
-        self.model.train()
-        for epoch in range(epochs):
-            total_loss = 0
-            for i, batch in enumerate(tqdm(self.dataloader, desc=f"Epoch {epoch+1}/{epochs}")):
-                # Move batch to device
-                input_ids = batch['input_ids'].to(self.device)
-                attention_mask = batch['attention_mask'].to(self.device)
-                labels = batch['labels'].to(self.device)
-
-                # Zero gradients
-                self.optimizer.zero_grad()
-                # Forward pass
-                outputs = self.model(
-                    input_ids=input_ids,
-                    attention_mask=attention_mask,
-                    labels=labels 
-                )
-
-                loss = outputs.loss
-                graident = loss.backward()  # Backward pass
-                print(graident)
-                self.optimizer.step()  # Update weights
-
-                total_loss += loss.item()
-                print(f"Finished batch: {i} - batch loss: {loss.item()} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
-
-            # Report epoch results
-            avg_loss = total_loss / len(self.dataloader)
-            print(f"Epoch {epoch + 1}/{epochs} - Loss: {avg_loss:.4f}")
             
         # Save the fine-tuned model and tokenizer
         self.model.save_pretrained("./models/finetuned_model")
