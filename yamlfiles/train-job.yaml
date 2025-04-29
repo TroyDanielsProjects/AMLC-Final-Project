@@ -1,0 +1,43 @@
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: gemma-train-job
+  namespace: default
+spec:
+  backoffLimit: 2                 
+  ttlSecondsAfterFinished: 86400  
+  template:
+    metadata:
+      annotations:
+        gke-gcsfuse/volumes: "true"    
+    spec:
+      serviceAccountName: default
+      restartPolicy: Never
+      nodeSelector:
+        cloud.google.com/gke-accelerator: nvidia-l4
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Equal"
+        value: "present"
+        effect: "NoSchedule"
+      containers:
+      - name: gemma-train
+        image: us-central1-docker.pkg.dev/amlc-school-credit/amlcfinalproject/gemma-train:latest
+        resources:
+          limits:
+            nvidia.com/gpu: "1"
+        env:                        
+        - name: MODEL_DIR
+          value: /mnt/gcs/models
+        volumeMounts:
+        - name: model-bucket
+          mountPath: /mnt/gcs
+      volumes:
+      - name: model-bucket
+        csi:
+          driver: gcsfuse.csi.storage.gke.io
+          readOnly: false
+          volumeAttributes:
+            bucketName: modelsbucket-amlc
+            mountOptions: "implicit-dirs"  
