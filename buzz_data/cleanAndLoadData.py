@@ -1,7 +1,5 @@
 import re
 from webScraper import Webscraper
-from google.cloud import storage
-
 
 class BuzzDataPoint:
     """
@@ -21,10 +19,7 @@ class BuzzDataPoint:
         self.month = month
         self.day = day
         self.text = None   
-        self.team = None
-        self.bucket_name = "modelsbucket-amlc"
-        self.storage_client = storage.Client()
-        self.bucket = self.storage_client.bucket(self.bucket_name)
+        self.team = None 
 
     def __str__(self):
         """String representation of the data point."""
@@ -71,7 +66,7 @@ class DataCleaner:
     Cleans and processes NHL Buzz data for training.
     Handles text cleaning, formatting, and data loading.
     """
-    def run(self, get=True, clean=True, load=False):
+    def run(self, clean=True, load=True):
         """
         Execute data cleaning and loading workflow.
         
@@ -83,8 +78,6 @@ class DataCleaner:
             List of BuzzDataPoint objects if load is True, None otherwise
         """
         data = None
-        if get:
-            Webscraper().run()
         if clean:
             self.proccess_nhl_buzz_data()
             self.remove_empty_dates()
@@ -100,10 +93,8 @@ class DataCleaner:
             path: Input file path
             path_to_write: Output file path
         """
-        blob = self.bucket.blob(path)
-        with blob.open("r") as ofile:
-            blob = self.bucket.blob(path_to_write)
-            with blob.open("w") as wfile:
+        with open(path, 'r') as ofile:
+            with open(path_to_write, 'w') as wfile:
                 for line in ofile:
                     text = self.clean_line(line)  # Clean each line
                     wfile.write(text + "\n")  # Write cleaned line to output file
@@ -125,8 +116,8 @@ class DataCleaner:
         """
         Clean NHL Buzz data and count tokens in the result.
         """
-        path = "./data/nhl_buzz_data.txt"
-        path_to_write = "./clean_data/clean_nhl_buzz_data.txt"
+        path = "/bucket/data/nhl_buzz_data.txt"
+        path_to_write = "/bucket/clean_data/clean_nhl_buzz_data.txt"
         self.clean_data_charaters(path, path_to_write)
         self.count_tokens(path_to_write)
 
@@ -138,14 +129,13 @@ class DataCleaner:
             path: Path to the file
         """
         total = 0
-        blob = self.bucket.blob(path)
-        with blob.open("r") as ofile:
+        with open(path, 'r') as ofile:
             for line in ofile:
                 tokens = line.split(" ")
                 total += len(tokens)
-        print(f"Total tokens found in {path}: {total}")
+        print(f"Total tokens found in {path}: {total}", flush=True)
 
-    def remove_empty_dates(self, path="./clean_data/clean_nhl_buzz_data.txt", path_to_write="./clean_data/usable_buzz_data.txt"):
+    def remove_empty_dates(self, path="/bucket/clean_data/clean_nhl_buzz_data.txt", path_to_write="/bucket/clean_data/usable_buzz_data.txt"):
         """
         Remove entries with a date but no content.
         
@@ -153,10 +143,8 @@ class DataCleaner:
             path: Input file path
             path_to_write: Output file path
         """
-        blob = self.bucket.blob(path)
-        with blob.open("r") as ofile:
-            blob = self.bucket.blob(path_to_write)
-            with blob.open("w") as wfile:
+        with open(path, 'r') as ofile:
+            with open(path_to_write, 'w') as wfile:
                 string_to_write = ""
                 for line in ofile:
                     # If line is a date pattern
@@ -169,7 +157,7 @@ class DataCleaner:
                         string_to_write = ""
     
     @staticmethod
-    def load_buzz_data(path="./clean_data/usable_buzz_data.txt"):
+    def load_buzz_data(path="/bucket/clean_data/usable_buzz_data.txt"):
         """
         Load and parse NHL Buzz data into structured objects.
         
@@ -231,5 +219,6 @@ class DataCleaner:
                 
         return inputs
 
-cleaner = DataCleaner()
-cleaner.run()
+if __name__ == "__main__":
+    Webscraper().run()
+    DataCleaner().run()

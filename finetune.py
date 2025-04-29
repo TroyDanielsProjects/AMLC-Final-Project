@@ -224,15 +224,27 @@ class Trainer:
             self.dataCleaner.run()
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
         # quantization implementation
-        self.quantization_config = BitsAndBytesConfig(load_in_4bit=True)
-        print("LAURA")
-        self.lora_config = LoraConfig(init_lora_weights="gaussian")
+        self.quantization_config = BitsAndBytesConfig(
+                                    load_in_4bit=True,
+                                    bnb_4bit_quant_type='nf4',
+                                    bnb_4bit_compute_dtype='float16',
+                                    bnb_4bit_use_double_quant=True,
+                                )
         self.model = self.load_model()
         self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=5e-5)
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=1, gamma=0.99)
         self.accelerator = Accelerator()
         self.dataset = None
         self.dataloader = None
+        # Space for LoRA implementation
+        self.lora_config = LoraConfig(
+                            r=16,                     # Rank
+                            lora_alpha=32,           # Alpha scaling
+                            target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],  # Which modules to apply LoRA to
+                            lora_dropout=0.05,
+                            bias="none",
+                            task_type="CAUSAL_LM"
+                        )
 
 
     def determine_device(self):
@@ -265,7 +277,8 @@ class Trainer:
         except Exception as e:
             print(f"Failed to load model: {e}")
         if model is None:
-            quant_model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config).to(self.device)
+            #quantization_config=self.quantization_config
+            quant_model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config,torch_dtype=torch.float16).to(self.device)
             model = get_peft_model(quant_model, self.lora_config)
             print("Loading new model")
             model.save_pretrained("./models/finetuned_model")
@@ -417,8 +430,8 @@ if __name__ == "__main__":
     login(token=access_token)
     trainer = Trainer(get_data=False)
 
-    trainer.load_in_podcast_data()
-    trainer.train_podcast()
-    #trainer.load_in_buzz_data()
-    #trainer.train_buzz()
+    # trainer.load_in_podcast_data()
+    # trainer.train_podcast()
+    trainer.load_in_buzz_data()
+    trainer.train_buzz()
     trainer.test_inference()

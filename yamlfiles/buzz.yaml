@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webscraper-deployment
+  labels:
+    app: webscraper
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webscraper
+  template:
+    metadata:
+      labels:
+        app: webscraper
+      annotations:
+        gke-gcsfuse/volumes: "true" 
+    spec:
+      serviceAccountName: ksa 
+      containers:
+      - name: buzz-container
+        image: us-central1-docker.pkg.dev/amlc-school-credit/amlcfinalproject/buzz-scraper:latest
+        resources:
+          requests:
+            memory: "3Gi"
+            cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2"
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        volumeMounts:
+        - name: gcs-fuse-csi-static
+          mountPath: /bucket
+      volumes:
+      - name: gcs-fuse-csi-static
+        persistentVolumeClaim:
+          claimName: gcs-fuse-csi-static-pvc
