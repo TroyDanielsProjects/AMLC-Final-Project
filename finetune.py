@@ -361,7 +361,7 @@ class Trainer:
                 self.optimizer.step()  # Update weights
 
                 total_loss += loss.item()
-                print(f"Finished batch: {i} - batch loss: {loss.item()} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
+                print(f"Finished batch: {i} - batch loss: {loss.item()/{len(batch)}} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
 
             # Report epoch results
             avg_loss = total_loss / len(self.dataloader)
@@ -372,17 +372,15 @@ class Trainer:
         self.model.save_pretrained("./models/finetuned_model")
         self.tokenizer.save_pretrained("./models/finetuned_model")
             
-        # Save the fine-tuned model and tokenizer
-        self.model.save_pretrained("./models/finetuned_model")
-        self.tokenizer.save_pretrained("./models/finetuned_model")
     def infernece(self, prompt):
         tokenized_prompt = self.tokenizer(prompt, return_tensors="pt").to(self.device)
+        self.model = self.model.to(self.device)
         outputs = self.model.generate(**tokenized_prompt, max_length=800)
         response = self.tokenizer.decode(outputs[0])
         return response
 
     def test_inference(self):
-        response = self.infernece("What are the daily updates for the Colorado Avalanche on April 28-2025?")
+        response = self.infernece("What are the daily updates for the Dallas Stars on April-16-2025?")
         print(response)
 
 
