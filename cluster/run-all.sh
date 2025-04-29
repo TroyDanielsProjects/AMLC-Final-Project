@@ -7,8 +7,9 @@ PROJECT_ID="amlc-449423"
 GPU="nvidia-l4"
 GPU_COUNT="1"
 GPU_POOL="gke-gpu-pool-1"
-export PROJECT_ID ZONE MACHINE_TYPE PROJECT_ID GPU GPU_COUNT GPU_POOL
+export CLUSTER_NAME ZONE MACHINE_TYPE PROJECT_ID GPU GPU_COUNT GPU_POOL
 
 
-
-bash create_cluster.sh
+bash gcloud auth login
+bash create-cluster.sh
+bash create-node-pool.sh
