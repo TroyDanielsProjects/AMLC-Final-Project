@@ -233,7 +233,7 @@ class Trainer:
         self.lora_config = LoraConfig(
                     r=4,                     # Rank
                     lora_alpha=32,           # Alpha scaling
-                    target_modules=["q_proj", "v_proj"],  # Which modules to apply LoRA to
+                    target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],  # Which modules to apply LoRA to
                     lora_dropout=0.05,
                     bias="none",
                     task_type="CAUSAL_LM"
@@ -244,7 +244,7 @@ class Trainer:
         self.accelerator = Accelerator()
         self.dataset = None
         self.dataloader = None
-        # Space for LoRA implementation
+        
 
 
     def determine_device(self):
@@ -277,10 +277,9 @@ class Trainer:
         except Exception as e:
             print(f"Failed to load model: {e}")
         if model is None:
-            #quantization_config=self.quantization_config
             model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config,torch_dtype=torch.float16).to(self.device)
             model.gradient_checkpointing_enable()
-            # model = get_peft_model(quant_model, self.lora_config)
+            # model = get_peft_model(model, self.lora_config)
             print("Loading new model")
         return model
     
@@ -390,8 +389,6 @@ class Trainer:
 
                 # Zero gradients
                 self.optimizer.zero_grad()
-                print(input_ids, attention_mask, labels)
-                print(input_ids.shape, attention_mask.shape, labels.shape)
                 # Forward pass
                 outputs = self.model(
                     input_ids=input_ids,
@@ -400,11 +397,11 @@ class Trainer:
                 )
 
                 loss = outputs.loss
-                loss.backward()  # Backward pass
+                graident = loss.backward()  # Backward pass
                 self.optimizer.step()  # Update weights
 
                 total_loss += loss.item()
-                print(f"Finished batch: {i} - batch loss: {loss.item() / len(batch)} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
+                print(f"Finished batch: {i} - batch loss: {loss.item()} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
 
             # Report epoch results
             avg_loss = total_loss / len(self.dataloader)
