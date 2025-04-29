@@ -277,9 +277,9 @@ class Trainer:
         except Exception as e:
             print(f"Failed to load model: {e}")
         if model is None:
-            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config,torch_dtype=torch.float16).to(self.device)
+            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b",torch_dtype=torch.float16).to(self.device)
             model.gradient_checkpointing_enable()
-            # model = get_peft_model(model, self.lora_config)
+            model = get_peft_model(model, self.lora_config)
             print("Loading new model")
         return model
     
