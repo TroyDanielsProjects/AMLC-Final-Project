@@ -282,6 +282,8 @@ class Trainer:
             model = get_peft_model(model, self.lora_config)
             model.print_trainable_parameters()
             print("Loading new model")
+            if not os.path.isdir("./models/finetuned_model"):
+                os.makedirs("./models/finetuned_model")
         return model
     
     @staticmethod    
