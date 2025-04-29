@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webscraper-deployment
+  name: podcast-deployment
   labels:
-    app: webscraper
+    app: podcast
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: webscraper
+      app: podcast
   template:
     metadata:
       labels:
-        app: webscraper
+        app: podcast
       annotations:
         gke-gcsfuse/volumes: "true" 
     spec:
