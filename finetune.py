@@ -231,7 +231,7 @@ class Trainer:
                                     bnb_4bit_use_double_quant=True,
                                 )
         self.lora_config = LoraConfig(
-                    r=8,                     # Rank
+                    r=4,                     # Rank
                     lora_alpha=32,           # Alpha scaling
                     target_modules=["q_proj", "v_proj"],  # Which modules to apply LoRA to
                     lora_dropout=0.05,
