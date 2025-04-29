@@ -231,7 +231,7 @@ class Trainer:
                                     bnb_4bit_use_double_quant=True,
                                 )
         self.lora_config = LoraConfig(
-                    r=4,                     # Rank
+                    r=16,                     # Rank
                     lora_alpha=32,           # Alpha scaling
                     target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],  # Which modules to apply LoRA to
                     lora_dropout=0.05,
@@ -357,8 +357,7 @@ class Trainer:
                 )
 
                 loss = outputs.loss
-                gradient = loss.backward()  # Backward pass
-                print(gradient)
+                loss.backward()  # Backward pass
                 self.optimizer.step()  # Update weights
 
                 total_loss += loss.item()
