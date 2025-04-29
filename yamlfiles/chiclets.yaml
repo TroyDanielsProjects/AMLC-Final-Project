@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: podcast-deployment
+  name: chiclets-deployment
   labels:
-    app: podcast
+    app: chiclets
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: podcast
+      app: chiclets
   template:
     metadata:
       labels:
-        app: podcast
+        app: chiclets
       annotations:
         gke-gcsfuse/volumes: "true" 
     spec:
       serviceAccountName: ksa 
       containers:
-      - name: podcast-container
+      - name: chiclets-container
         image: us-central1-docker.pkg.dev/amlc-school-credit/amlcfinalproject/podcast-scraper:latest
         resources:
           requests:
