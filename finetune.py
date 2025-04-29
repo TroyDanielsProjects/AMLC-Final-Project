@@ -230,6 +230,14 @@ class Trainer:
                                     bnb_4bit_compute_dtype='float16',
                                     bnb_4bit_use_double_quant=True,
                                 )
+        self.lora_config = LoraConfig(
+                    r=16,                     # Rank
+                    lora_alpha=32,           # Alpha scaling
+                    target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],  # Which modules to apply LoRA to
+                    lora_dropout=0.05,
+                    bias="none",
+                    task_type="CAUSAL_LM"
+                )
         self.model = self.load_model()
         self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=5e-5)
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=1, gamma=0.99)
@@ -237,14 +245,6 @@ class Trainer:
         self.dataset = None
         self.dataloader = None
         # Space for LoRA implementation
-        self.lora_config = LoraConfig(
-                            r=16,                     # Rank
-                            lora_alpha=32,           # Alpha scaling
-                            target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],  # Which modules to apply LoRA to
-                            lora_dropout=0.05,
-                            bias="none",
-                            task_type="CAUSAL_LM"
-                        )
 
 
     def determine_device(self):
