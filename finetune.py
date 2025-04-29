@@ -280,6 +280,7 @@ class Trainer:
             #quantization_config=self.quantization_config
             quant_model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config,torch_dtype=torch.float16).to(self.device)
             model = get_peft_model(quant_model, self.lora_config)
+            model.gradient_checkpointing_enable()
             print("Loading new model")
         return model
     
