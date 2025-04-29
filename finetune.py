@@ -12,7 +12,7 @@ from tqdm import tqdm
 from accelerate import Accelerator
 import os
 from peft import LoraConfig, get_peft_model
-from torchsummary import summary
+from torchinfo import summary
 
 os.environ["BNB_CUDA_VERSION"] = "123"
 
@@ -224,9 +224,19 @@ class Trainer:
             self.dataCleaner.run()
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
         # quantization implementation
-        self.quantization_config = BitsAndBytesConfig(load_in_4bit=True)
+        #self.quantization_config = BitsAndBytesConfig(load_in_4bit=True)
         print("LAURA")
-        self.lora_config = LoraConfig(init_lora_weights="gaussian")
+        self.lora_config = LoraConfig(
+            init_lora_weights="gaussian",
+            r=8,
+            target_modules=["k_proj", "v_proj"],
+            #["q_proj", "o_proj", "k_proj", "v_proj"],
+            #bias="none",
+            task_type="CAUSAL_LM",
+            #lora_alpha=16,
+            #lora_dropout=0.1
+        )
+
         self.model = self.load_model()
         self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=5e-5)
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=1, gamma=0.99)
@@ -242,7 +252,6 @@ class Trainer:
         Returns:
             str: 'cuda', 'mps', or 'cpu' device identifier
         """
-        device = "cpu"
         try:
             if torch.cuda.is_available():
                 device = "cuda"
@@ -264,13 +273,27 @@ class Trainer:
             print("Saved model successfully loaded")
         except Exception as e:
             print(f"Failed to load model: {e}")
-        if model is None:
-            quant_model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config).to(self.device)
-            model = get_peft_model(quant_model, self.lora_config)
+        if True:
+            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b").to(self.device)
+            #quant_model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", quantization_config=self.quantization_config).to(self.device)
+            model.print_trainable_parameters()
+            model = get_peft_model(model, self.lora_config)
+            model.print_trainable_parameters()            
             print("Loading new model")
             model.save_pretrained("./models/finetuned_model")
         return model
     
+    #output the parameters
+    def get_layer_params(self, model):
+        total = 0
+        for name, p in model.named_parameters():
+            if p.requires_grad:  # ❗ only count trainable ones
+                n = p.numel()
+                size_mb = n * p.element_size() / 1024**2
+                total += n
+        print(f"\nTRAINABLE params: {total/1e6:.2f} M")
+
+
     @staticmethod    
     def largest_tokenization(dataset):
         """
@@ -316,8 +339,9 @@ class Trainer:
         self.dataset = PodCastDataset(DataCleaner.load_pod_data(), self.tokenizer)
         self.dataset.set_max_length(self.largest_tokenization(self.dataset)) 
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True)
-
-    def train_buzz(self, epochs=3):
+        self.accelerator.register_for_checkpointing(self.scheduler)
+        self.accelerator.save_state(output_dir="./models/checkpoints")
+    def train(self, epochs=3):
         """
         Train the model.
         
@@ -332,7 +356,7 @@ class Trainer:
                 input_ids = batch['input_ids'].to(self.device)
                 attention_mask = batch['attention_mask'].to(self.device)
                 labels = batch['labels'].to(self.device)
-
+            
                 # Zero gradients
                 self.optimizer.zero_grad()
 
@@ -344,6 +368,7 @@ class Trainer:
                 )
 
                 loss = outputs.loss
+                breakpoint()
                 loss.backward()  # Backward pass
                 self.optimizer.step()  # Update weights
 
@@ -359,47 +384,6 @@ class Trainer:
         self.model.save_pretrained("./models/finetuned_model")
         self.tokenizer.save_pretrained("./models/finetuned_model")
 
-    def train_podcast(self, epochs=3):
-        """
-        Train the model on chiclets podcast data.
-        
-        Args:
-            epochs: Number of training epochs
-        """
-        self.model.train()
-        for epoch in range(epochs):
-            total_loss = 0
-            for i, batch in enumerate(tqdm(self.dataloader, desc=f"Epoch {epoch+1}/{epochs}")):
-                # Move batch to device
-                input_ids = batch['input_ids'].to(self.device)
-                attention_mask = batch['attention_mask'].to(self.device)
-                labels = batch['labels'].to(self.device)
-
-                # Zero gradients
-                self.optimizer.zero_grad()
-                print(input_ids, attention_mask, labels)
-                print(input_ids.shape, attention_mask.shape, labels.shape)
-                # Forward pass
-                outputs = self.model(
-                    input_ids=input_ids,
-                    attention_mask=attention_mask,
-                    labels=labels 
-                )
-
-                loss = outputs.loss
-                loss.backward()  # Backward pass
-                self.optimizer.step()  # Update weights
-
-                total_loss += loss.item()
-                print(f"Finished batch: {i} - batch loss: {loss.item() / len(batch)} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
-
-            # Report epoch results
-            avg_loss = total_loss / len(self.dataloader)
-            print(f"Epoch {epoch + 1}/{epochs} - Loss: {avg_loss:.4f}")
-            
-        # Save the fine-tuned model and tokenizer
-        self.model.save_pretrained("./models/finetuned_model")
-        self.tokenizer.save_pretrained("./models/finetuned_model")
     def infernece(self, prompt):
         tokenized_prompt = self.tokenizer(prompt, return_tensors="pt").to(self.device)
         outputs = self.model.generate(**tokenized_prompt, max_length=800)
@@ -418,7 +402,6 @@ if __name__ == "__main__":
     trainer = Trainer(get_data=False)
 
     trainer.load_in_podcast_data()
-    trainer.train_podcast()
     #trainer.load_in_buzz_data()
-    #trainer.train_buzz()
+    trainer.train()
     trainer.test_inference()
