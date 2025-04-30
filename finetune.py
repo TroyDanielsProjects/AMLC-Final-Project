@@ -294,8 +294,6 @@ class Trainer:
         blob.download_to_filename(destination_file_name)
         print(f"Downloaded {source_blob_name} to {destination_file_name}")
 
-# Example usage:
-# download_from_bucket("my-bucket", "models/model.h5", "local_model.h5")
 
 
     def download_directory_from_bucket(self, source_directory, destination_directory, bucket_name="modelsbucket-amlc"):
