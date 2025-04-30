@@ -1,0 +1,8 @@
+torch
+transformers
+python-dotenv
+huggingface-hub
+tqdm
+accelerate
+peft
+bitsandbytes
