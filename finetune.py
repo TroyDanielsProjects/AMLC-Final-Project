@@ -219,7 +219,7 @@ class Trainer:
         self.device = self.determine_device()
 
         self.download_directory_from_bucket("/models/finetuned_model", "./models/finetuned_model")
-        self.download_from_bucket("/clean_data/usable_buzz_data.txt", "./clean_data/usable_buzz_data.txt")
+        self.download_from_bucket("clean_data/usable_buzz_data.txt", "./clean_data/usable_buzz_data.txt")
         self.download_directory_from_bucket("/spittin-chiclets", "./spittin-chiclets")
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
         # quantization implementation
