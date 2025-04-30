@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: chiclets-job
+  namespace: default
+spec:
+  backoffLimit: 2                # optional: retry on failure
+  ttlSecondsAfterFinished: 86400 # optional: auto-cleanup after 1 day
+  template:
+    metadata:
+      labels:
+        app: chiclets
+      annotations:
+        gke-gcsfuse/volumes: "true"
+    spec:
+      serviceAccountName: default
+      restartPolicy: Never
+      nodeSelector:
+        cloud.google.com/gke-accelerator: "none"
+      containers:
+      - name: chiclets-container
+        image: us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/podcast-scraper:latest
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2"
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        volumeMounts:
+        - name: gcs-fuse-csi-static
+          mountPath: /bucket
+      volumes:
+      - name: gcs-fuse-csi-static
+        persistentVolumeClaim:
+          claimName: gcs-fuse-csi-static-pvc

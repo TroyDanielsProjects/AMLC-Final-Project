@@ -23,7 +23,7 @@ spec:
         effect: "NoSchedule"
       containers:
       - name: gemma-train
-        image: us-central1-docker.pkg.dev/amlc-school-credit/amlcfinalproject/gemma-train:latest
+        image: us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/gemma-train
         resources:
           limits:
             nvidia.com/gpu: "1"

@@ -1,0 +1,40 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: webscraper-job
+  namespace: default
+spec:
+  backoffLimit: 2
+  ttlSecondsAfterFinished: 86400
+  template:
+    metadata:
+      labels:
+        app: webscraper
+      annotations:
+        gke-gcsfuse/volumes: "true" 
+    spec:
+      serviceAccountName: default
+      restartPolicy: Never
+      # Optional: ensure it never tries a GPU node
+      nodeSelector:
+        cloud.google.com/gke-nodepool: default-pool      # ← adjust if your pool label differs
+      containers:
+      - name: buzz-container
+        image: us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/buzz-scraper:latest
+        resources:
+          requests:
+            cpu: "300m"          # 0.3 vCPU  → fits on 1-vCPU node
+            memory: "1.5Gi"      # + PVC driver ≈ 1.5 Gi  → fits in ~1.9 Gi free
+          limits:
+            cpu: "2"
+            memory: "4Gi"
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        volumeMounts:
+        - name: gcs-fuse-csi-static
+          mountPath: /bucket
+      volumes:
+      - name: gcs-fuse-csi-static
+        persistentVolumeClaim:
+          claimName: gcs-fuse-csi-static-pvc
