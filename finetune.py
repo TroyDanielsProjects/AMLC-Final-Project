@@ -296,39 +296,30 @@ class Trainer:
 
 
 
-    def download_directory_from_bucket(self, source_directory, destination_directory, bucket_name="modelsbucket-amlc"):
-        """
-        Downloads all files from a bucket directory to a local directory.
-        
-        Args:
-            bucket_name: Name of the GCP bucket
-            source_directory: Directory path in the bucket
-            destination_directory: Local directory to save files
-        """
-        # Ensure the destination directory exists
+    def download_directory_from_bucket(
+        self,
+        source_directory,
+        destination_directory,
+        bucket_name="modelsbucket-amlc"):
+        """Downloads all blobs under `source_directory` to `destination_directory`."""
         os.makedirs(destination_directory, exist_ok=True)
-        
-        # List all files in the directory
+
         storage_client = storage.Client()
         blobs = storage_client.list_blobs(bucket_name, prefix=source_directory)
-        
+
         for blob in blobs:
-            # Skip the directory itself if it's listed
-            if blob.name.endswith('/'):
+            if blob.name.endswith("/"):          # skip “directory” placeholders
                 continue
-                
-            # Get the relative path from the source directory
-            relative_path = blob.name[len(source_directory):]
-            
-            # Create local directory structure if needed
+
+            # make path relative and kill any leading slash
+            relative_path = blob.name[len(source_directory):].lstrip("/")
             local_file_path = os.path.join(destination_directory, relative_path)
-            local_dir = os.path.dirname(local_file_path)
-            if local_dir:
-                os.makedirs(local_dir, exist_ok=True)
-            
-            # Download the file
+
+            # ensure sub-dirs exist
+            os.makedirs(os.path.dirname(local_file_path), exist_ok=True)
+
             blob.download_to_filename(local_file_path)
-            print(f"Downloaded {blob.name} to {local_file_path}")
+            print(f"Downloaded {blob.name} → {local_file_path}")
 
     def determine_device(self):
         """
@@ -462,7 +453,7 @@ class Trainer:
             self.model.save_pretrained("./models/finetuned_model")
             self.tokenizer.save_pretrained("./models/finetuned_model")
             self.model = self.model.to(self.device)
-            self.upload_directory_to_bucket("./models/finetuned_model", "/models/finetuned_model")
+            self.upload_directory_to_bucket("./models/finetuned_model", "models/finetuned_model")
             
     def infernece(self, prompt):
         tokenized_prompt = self.tokenizer(prompt, return_tensors="pt").to(self.device)
