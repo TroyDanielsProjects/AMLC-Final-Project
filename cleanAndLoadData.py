@@ -267,7 +267,7 @@ class DataCleaner:
         
         podcast_files = [f for f in listdir(path) if isfile(join(path, f))]
         
-        for file in tqdm(podcast_files[0:2], desc="Loading Files into Dataset"):
+        for file in tqdm(podcast_files, desc="Loading Files into Dataset"):
             with open(join(path, file), 'r') as ofile:
                 #get date from file-name
                 episode= file.split("|")[0]

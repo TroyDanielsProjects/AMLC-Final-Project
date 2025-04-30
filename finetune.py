@@ -1,10 +1,8 @@
 import torch
-import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from cleanAndLoadData import DataCleaner
 from buzz_data.webScraper import Webscraper
-from podcastScraper import PodScraper
 from dotenv import load_dotenv
 import os
 from huggingface_hub import login
@@ -12,7 +10,6 @@ from tqdm import tqdm
 from accelerate import Accelerator
 import os
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
-from torchsummary import summary
 
 os.environ["BNB_CUDA_VERSION"] = "123"
 
@@ -81,6 +78,7 @@ class BuzzDataset(Dataset):
                 text, 
                 return_tensors="pt", 
                 max_length=(self.max_length - prompt_ids.shape[0]), 
+                truncation=True,
                 padding='max_length', 
                 padding_side='right'
             )
@@ -177,7 +175,8 @@ class PodCastDataset(Dataset):
             response_encoding = self.tokenizer(
                 text, 
                 return_tensors="pt", 
-                max_length=(self.max_length - prompt_ids.shape[0]), 
+                max_length=(self.max_length - prompt_ids.shape[0]),
+                truncation=True,
                 padding='max_length', 
                 padding_side='right'
             )
@@ -272,7 +271,7 @@ class Trainer:
     def load_model(self):
         model = None
         try:
-            model = AutoModelForCausalLM.from_pretrained("./models/finetuned_model").to(self.device)
+            model = AutoModelForCausalLM.from_pretrained("/bucket/models/finetuned_model").to(self.device)
             print("Saved model successfully loaded")
         except Exception as e:
             print(f"Failed to load model: {e}")
@@ -283,9 +282,8 @@ class Trainer:
             model = get_peft_model(model, self.lora_config)
             model.print_trainable_parameters()
             print("Loading new model")
-            if not os.path.isdir("./models/finetuned_model"):
-                os.makedirs("./models/finetuned_model")
-        model.save_pretrained("./models/finetuned_model")
+            if not os.path.isdir("/bucket/models/finetuned_model"):
+                os.makedirs("/bucket/models/finetuned_model")
         return model
     
     @staticmethod    
@@ -319,7 +317,7 @@ class Trainer:
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True) 
         self.model, self.optimizer, self.dataloader = self.accelerator.prepare(self.model, self.optimizer, self.dataloader)
         self.accelerator.register_for_checkpointing(self.scheduler)
-        self.accelerator.save_state(output_dir="./models/checkpoints")
+        self.accelerator.save_state(output_dir="/bucket/models/checkpoints")
         print(self.accelerator.device)
         
 
@@ -331,10 +329,14 @@ class Trainer:
             batch: Batch size for training
         """
         self.dataset = PodCastDataset(DataCleaner.load_pod_data(), self.tokenizer)
-        self.dataset.set_max_length(self.largest_tokenization(self.dataset)) 
+        self.dataset.set_max_length(816)
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True)
+        self.model, self.optimizer, self.dataloader = self.accelerator.prepare(self.model, self.optimizer, self.dataloader)
+        self.accelerator.register_for_checkpointing(self.scheduler)
+        self.accelerator.save_state(output_dir="/bucket/models/checkpoints")
+        print(self.accelerator.device)
 
-    def train(self, epochs=1):
+    def train(self, epochs=4):
         """
         Train the model.
         
@@ -371,9 +373,10 @@ class Trainer:
             avg_loss = total_loss / len(self.dataloader)
             print(f"Epoch {epoch + 1}/{epochs} - Loss: {avg_loss:.4f}")
             
-            self.model.to("cpu")
-            self.model.save_pretrained("./models/finetuned_model")
-            self.tokenizer.save_pretrained("./models/finetuned_model")
+            self.model = self.model.to("cpu")
+            self.model.save_pretrained("/bucket/models/finetuned_model")
+            self.tokenizer.save_pretrained("/bucket/models/finetuned_model")
+            self.model = self.model.to(self.device)
             
     def infernece(self, prompt):
         tokenized_prompt = self.tokenizer(prompt, return_tensors="pt").to(self.device)
