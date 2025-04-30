@@ -43,7 +43,7 @@ class Inference:
     def load_model(self):
         model = None
         try:
-            model = AutoModelForCausalLM.from_pretrained("./models/finetuned_model")
+            model = AutoModelForCausalLM.from_pretrained(".bucket/models/finetuned_model")
             print("Saved model successfully loaded")
             return model
         except Exception as e:

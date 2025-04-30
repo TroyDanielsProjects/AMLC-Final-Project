@@ -278,10 +278,10 @@ class Trainer:
             print(f"Failed to load model: {e}")
         if model is None:
             model = AutoModelForCausalLM.from_pretrained("google/gemma-2b")
-            # model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", device_map="auto", quantization_config=self.quantization_config,torch_dtype=torch.float16)
-            # model = prepare_model_for_kbit_training(model ,use_gradient_checkpointing=True)
-            # model = get_peft_model(model, self.lora_config)
-            # model.print_trainable_parameters()
+            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", device_map="auto", quantization_config=self.quantization_config,torch_dtype=torch.float16)
+            model = prepare_model_for_kbit_training(model ,use_gradient_checkpointing=True)
+            model = get_peft_model(model, self.lora_config)
+            model.print_trainable_parameters()
             print("Loading new model")
             if not os.path.isdir("./models/finetuned_model"):
                 os.makedirs("./models/finetuned_model")
@@ -334,7 +334,7 @@ class Trainer:
         self.dataset.set_max_length(self.largest_tokenization(self.dataset)) 
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True)
 
-    def train_buzz(self, epochs=3):
+    def train(self, epochs=1):
         """
         Train the model.
         
@@ -367,18 +367,13 @@ class Trainer:
                 total_loss += loss.item()
                 print(f"Finished batch: {i} - batch loss: {loss.item()/len(batch)} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
 
-                self.model.save_pretrained("./models/finetuned_model")
-                self.tokenizer.save_pretrained("./models/finetuned_model")
-                break
-
             # Report epoch results
             avg_loss = total_loss / len(self.dataloader)
             print(f"Epoch {epoch + 1}/{epochs} - Loss: {avg_loss:.4f}")
             
-        # Save the fine-tuned model and tokenizer
-        self.model.to("cpu")
-        self.model.save_pretrained("./models/finetuned_model")
-        self.tokenizer.save_pretrained("./models/finetuned_model")
+            self.model.to("cpu")
+            self.model.save_pretrained("./models/finetuned_model")
+            self.tokenizer.save_pretrained("./models/finetuned_model")
             
     def infernece(self, prompt):
         tokenized_prompt = self.tokenizer(prompt, return_tensors="pt").to(self.device)
@@ -397,9 +392,8 @@ if __name__ == "__main__":
     access_token = os.getenv("HF_TOKEN")
     login(token=access_token)
     trainer = Trainer(get_data=False)
-
-    # trainer.load_in_podcast_data()
-    # trainer.train_podcast()
     trainer.load_in_buzz_data()
-    # trainer.train_buzz()
-    # trainer.test_inference()
+    trainer.train()
+    trainer.load_in_podcast_data()
+    trainer.train()
+    trainer.test_inference()
