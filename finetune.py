@@ -10,6 +10,8 @@ from tqdm import tqdm
 from accelerate import Accelerator
 import os
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from google.cloud import storage
+import glob
 
 os.environ["BNB_CUDA_VERSION"] = "123"
 
@@ -216,11 +218,9 @@ class Trainer:
         """
         self.device = self.determine_device()
 
-        if get_data:
-            self.webscrapper = Webscraper()
-            self.dataCleaner = DataCleaner()
-            # self.webscrapper.run()
-            self.dataCleaner.run()
+        self.download_directory_from_bucket("/models/finetuned_model", "./models/finetuned_model")
+        self.download_from_bucket("/clean_data/usable_buzz_data.txt", "./clean_data/usable_buzz_data.txt")
+        self.download_directory_from_bucket("/spittin-chiclets", "./spittin-chiclets")
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
         # quantization implementation
         self.quantization_config = BitsAndBytesConfig(
@@ -245,6 +245,92 @@ class Trainer:
         self.dataloader = None
         
 
+    def upload_directory_to_bucket(self, source_directory, destination_directory, bucket_name="modelsbucket-amlc"):
+        """
+        Uploads all files from a local directory to a GCP bucket directory.
+        
+        Args:
+            bucket_name: Name of the GCP bucket
+            source_directory: Local directory path with files to upload
+            destination_directory: Destination directory path in the bucket
+        """
+        storage_client = storage.Client()
+        bucket = storage_client.bucket(bucket_name)
+        
+        # Make sure source directory ends with slash for correct path handling
+        if not source_directory.endswith('/'):
+            source_directory += '/'
+            
+        # Get all files in the directory and subdirectories
+        files = glob.glob(f"{source_directory}**", recursive=True)
+        
+        for file_path in files:
+            # Skip directories, we only want to upload files
+            if os.path.isdir(file_path):
+                continue
+                
+            # Calculate the relative path to maintain directory structure
+            relative_path = file_path.replace(source_directory, '')
+            destination_blob_name = os.path.join(destination_directory, relative_path)
+            
+            # Create blob and upload
+            blob = bucket.blob(destination_blob_name)
+            blob.upload_from_filename(file_path)
+            print(f"Uploaded {file_path} to {destination_blob_name}")
+
+    def download_from_bucket(self, source_blob_name, destination_file_name, bucket_name="modelsbucket-amlc"):
+        """
+        Downloads a file from a GCP bucket to a local destination.
+        
+        Args:
+            bucket_name: Name of the GCP bucket
+            source_blob_name: Path to the file in the bucket
+            destination_file_name: Local path where the file should be saved
+        """
+        storage_client = storage.Client()
+        bucket = storage_client.bucket(bucket_name)
+        blob = bucket.blob(source_blob_name)
+        
+        blob.download_to_filename(destination_file_name)
+        print(f"Downloaded {source_blob_name} to {destination_file_name}")
+
+# Example usage:
+# download_from_bucket("my-bucket", "models/model.h5", "local_model.h5")
+
+
+    def download_directory_from_bucket(self, source_directory, destination_directory, bucket_name="modelsbucket-amlc"):
+        """
+        Downloads all files from a bucket directory to a local directory.
+        
+        Args:
+            bucket_name: Name of the GCP bucket
+            source_directory: Directory path in the bucket
+            destination_directory: Local directory to save files
+        """
+        # Ensure the destination directory exists
+        os.makedirs(destination_directory, exist_ok=True)
+        
+        # List all files in the directory
+        storage_client = storage.Client()
+        blobs = storage_client.list_blobs(bucket_name, prefix=source_directory)
+        
+        for blob in blobs:
+            # Skip the directory itself if it's listed
+            if blob.name.endswith('/'):
+                continue
+                
+            # Get the relative path from the source directory
+            relative_path = blob.name[len(source_directory):]
+            
+            # Create local directory structure if needed
+            local_file_path = os.path.join(destination_directory, relative_path)
+            local_dir = os.path.dirname(local_file_path)
+            if local_dir:
+                os.makedirs(local_dir, exist_ok=True)
+            
+            # Download the file
+            blob.download_to_filename(local_file_path)
+            print(f"Downloaded {blob.name} to {local_file_path}")
 
     def determine_device(self):
         """
@@ -271,7 +357,7 @@ class Trainer:
     def load_model(self):
         model = None
         try:
-            model = AutoModelForCausalLM.from_pretrained("/bucket/models/finetuned_model").to(self.device)
+            model = AutoModelForCausalLM.from_pretrained("./models/finetuned_model").to(self.device)
             print("Saved model successfully loaded")
         except Exception as e:
             print(f"Failed to load model: {e}")
@@ -282,8 +368,8 @@ class Trainer:
             model = get_peft_model(model, self.lora_config)
             model.print_trainable_parameters()
             print("Loading new model")
-            if not os.path.isdir("/bucket/models/finetuned_model"):
-                os.makedirs("/bucket/models/finetuned_model")
+            if not os.path.isdir("./models/finetuned_model"):
+                os.makedirs("./models/finetuned_model")
         return model
     
     @staticmethod    
@@ -304,6 +390,7 @@ class Trainer:
                 largest = size
         print(f"The largest encoded tensor is {largest}")
         return largest
+    
 
     def load_in_buzz_data(self, batch=4):
         """
@@ -317,7 +404,7 @@ class Trainer:
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True) 
         self.model, self.optimizer, self.dataloader = self.accelerator.prepare(self.model, self.optimizer, self.dataloader)
         self.accelerator.register_for_checkpointing(self.scheduler)
-        self.accelerator.save_state(output_dir="/bucket/models/checkpoints")
+        self.accelerator.save_state(output_dir="./models/checkpoints")
         print(self.accelerator.device)
         
 
@@ -333,7 +420,7 @@ class Trainer:
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True)
         self.model, self.optimizer, self.dataloader = self.accelerator.prepare(self.model, self.optimizer, self.dataloader)
         self.accelerator.register_for_checkpointing(self.scheduler)
-        self.accelerator.save_state(output_dir="/bucket/models/checkpoints")
+        self.accelerator.save_state(output_dir="./models/checkpoints")
         print(self.accelerator.device)
 
     def train(self, epochs=4):
@@ -374,9 +461,10 @@ class Trainer:
             print(f"Epoch {epoch + 1}/{epochs} - Loss: {avg_loss:.4f}")
             
             self.model = self.model.to("cpu")
-            self.model.save_pretrained("/bucket/models/finetuned_model")
-            self.tokenizer.save_pretrained("/bucket/models/finetuned_model")
+            self.model.save_pretrained("./models/finetuned_model")
+            self.tokenizer.save_pretrained("./models/finetuned_model")
             self.model = self.model.to(self.device)
+            self.upload_directory_to_bucket("./models/finetuned_model", "/models/finetuned_model")
             
     def infernece(self, prompt):
         tokenized_prompt = self.tokenizer(prompt, return_tensors="pt").to(self.device)
