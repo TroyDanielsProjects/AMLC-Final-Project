@@ -5,3 +5,15 @@ __pycache__
 /podcast_scraper/32-thoughts-the-podcast/
 /podcast_scraper/spittin-chiclets/
 /podcast_scraper/the-sheet-with-jeff-marek/
+models/checkpoints/custom_checkpoint_0.pkl
+models/checkpoints/model.safetensors
+models/checkpoints/optimizer.bin
+models/finetuned_model/config.json
+models/finetuned_model/generation_config.json
+models/finetuned_model/model-00001-of-00003.safetensors
+models/finetuned_model/model-00002-of-00003.safetensors
+models/finetuned_model/model-00003-of-00003.safetensors
+models/finetuned_model/model.safetensors.index.json
+podcast_scraper/podscraper/.DS_Store
+podcast_scraper/podscraper/.DS_Store
+models/checkpoints/random_states_0.pkl

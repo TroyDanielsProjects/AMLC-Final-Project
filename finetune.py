@@ -277,13 +277,15 @@ class Trainer:
         except Exception as e:
             print(f"Failed to load model: {e}")
         if model is None:
-            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", device_map="auto", quantization_config=self.quantization_config,torch_dtype=torch.float16)
-            model = prepare_model_for_kbit_training(model ,use_gradient_checkpointing=True)
-            model = get_peft_model(model, self.lora_config)
-            model.print_trainable_parameters()
+            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b")
+            # model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", device_map="auto", quantization_config=self.quantization_config,torch_dtype=torch.float16)
+            # model = prepare_model_for_kbit_training(model ,use_gradient_checkpointing=True)
+            # model = get_peft_model(model, self.lora_config)
+            # model.print_trainable_parameters()
             print("Loading new model")
             if not os.path.isdir("./models/finetuned_model"):
                 os.makedirs("./models/finetuned_model")
+        model.save_pretrained("./models/finetuned_model")
         return model
     
     @staticmethod    
@@ -363,7 +365,11 @@ class Trainer:
                 self.optimizer.step()  # Update weights
 
                 total_loss += loss.item()
-                print(f"Finished batch: {i} - batch loss: {loss.item()/{len(batch)}} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
+                print(f"Finished batch: {i} - batch loss: {loss.item()/len(batch)} - Progress: { (i+1) / len(self.dataloader) * 100:.2f}%") 
+
+                self.model.save_pretrained("./models/finetuned_model")
+                self.tokenizer.save_pretrained("./models/finetuned_model")
+                break
 
             # Report epoch results
             avg_loss = total_loss / len(self.dataloader)
@@ -395,5 +401,5 @@ if __name__ == "__main__":
     # trainer.load_in_podcast_data()
     # trainer.train_podcast()
     trainer.load_in_buzz_data()
-    trainer.train_buzz()
-    trainer.test_inference()
+    # trainer.train_buzz()
+    # trainer.test_inference()

@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+  labels:
+    app: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+      annotations:
+        gke-gcsfuse/volumes: "true"      
+    spec:
+      serviceAccountName: ksa 
+      containers:
+      - name: server-container
+        image: us-east1-docker.pkg.dev/amlc-school-credit/ml-kube-repository/ml-server-amd:latest
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: gcs-fuse-csi-static
+          mountPath: /bucket
+      volumes:
+      - name: gcs-fuse-csi-static
+        persistentVolumeClaim:
+          claimName: gcs-fuse-csi-static-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-service
+spec:
+  selector:
+    app: server
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+    nodePort: 30002
