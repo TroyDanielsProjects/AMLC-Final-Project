@@ -237,10 +237,11 @@ class Trainer:
                     bias="none",
                     task_type="CAUSAL_LM"
                 )
+        self.accelerator = Accelerator()
         self.model = self.load_model()
         self.optimizer = torch.optim.AdamW(self.model.parameters(), lr=5e-5)
+        self.model, self.optimizer = self.accelerator.prepare(self.model, self.optimizer)
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=1, gamma=0.99)
-        self.accelerator = Accelerator()
         self.dataset = None
         self.dataloader = None
         
@@ -346,13 +347,16 @@ class Trainer:
     def load_model(self):
         model = None
         try:
-            model = AutoModelForCausalLM.from_pretrained("./models/finetuned_model").to(self.device)
+            model = AutoModelForCausalLM.from_pretrained("./models/finetuned_model", device_map="auto", quantization_config=self.quantization_config, torch_dtype=torch.float16)
+            model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
+            model = get_peft_model(model, self.lora_config)
+            model.print_trainable_parameters()
             print("Saved model successfully loaded")
         except Exception as e:
             print(f"Failed to load model: {e}")
         if model is None:
             model = AutoModelForCausalLM.from_pretrained("google/gemma-2b")
-            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", device_map="auto", quantization_config=self.quantization_config,torch_dtype=torch.float16)
+            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b", device_map="auto", quantization_config=self.quantization_config, torch_dtype=torch.float16)
             model = prepare_model_for_kbit_training(model ,use_gradient_checkpointing=True)
             model = get_peft_model(model, self.lora_config)
             model.print_trainable_parameters()
@@ -381,7 +385,7 @@ class Trainer:
         return largest
     
 
-    def load_in_buzz_data(self, batch=4):
+    def load_in_buzz_data(self, batch=2):
         """
         Load and prepare NHL Buzz data for training.
         
@@ -391,13 +395,13 @@ class Trainer:
         self.dataset = BuzzDataset(DataCleaner.load_buzz_data(), self.tokenizer)
         self.dataset.set_max_length(self.largest_tokenization(self.dataset)) 
         self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True) 
-        self.model, self.optimizer, self.dataloader = self.accelerator.prepare(self.model, self.optimizer, self.dataloader)
+        self.dataloader = self.accelerator.prepare(self.dataloader)
         self.accelerator.register_for_checkpointing(self.scheduler)
         self.accelerator.save_state(output_dir="./models/checkpoints")
         print(self.accelerator.device)
         
 
-    def load_in_podcast_data(self, batch=4):
+    def load_in_podcast_data(self, batch=2):
         """
         Load and prepare Spittin Chiclets data for training.
         
@@ -406,11 +410,8 @@ class Trainer:
         """
         self.dataset = PodCastDataset(DataCleaner.load_pod_data(), self.tokenizer)
         self.dataset.set_max_length(816)
-        self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True)
-        self.model, self.optimizer, self.dataloader = self.accelerator.prepare(self.model, self.optimizer, self.dataloader)
-        self.accelerator.register_for_checkpointing(self.scheduler)
-        self.accelerator.save_state(output_dir="./models/checkpoints")
-        print(self.accelerator.device)
+        self.dataloader = DataLoader(self.dataset, batch_size=batch, shuffle=True, num_workers=0, persistent_workers=False)
+        self.dataloader = self.accelerator.prepare(self.dataloader)
 
     def train(self, epochs=4):
         """
@@ -454,6 +455,7 @@ class Trainer:
             self.tokenizer.save_pretrained("./models/finetuned_model")
             self.model = self.model.to(self.device)
             self.upload_directory_to_bucket("./models/finetuned_model", "models/finetuned_model")
+            self.scheduler.step()
             
     def infernece(self, prompt):
         tokenized_prompt = self.tokenizer(prompt, return_tensors="pt").to(self.device)
