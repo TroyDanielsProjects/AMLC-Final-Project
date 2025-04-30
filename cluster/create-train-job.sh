@@ -1,4 +1,4 @@
 #!/bin/bash
 source ./env.sh
 
-kubectl apply -f train-job.yaml
+kubectl apply -f ../yamlfiles/train-job.yaml
