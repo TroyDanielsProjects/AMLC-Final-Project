@@ -4,6 +4,7 @@ from inference import Inference
 app = Flask(__name__)
 
 inference = Inference()
+original_inference = Inference(original=True)
 
 @app.route('/', methods=['GET', 'POST'])
 def get_anaylst():
@@ -12,6 +13,17 @@ def get_anaylst():
         text = request.form.get("message")
         if text:
             response = inference.inference(text)
+        else:
+            response = "Sorry I didn't get that"
+    return render_template('inference.html', response=response)
+
+@app.route('/original', methods=['GET', 'POST'])
+def get_anaylst_original():
+    response = "No opinion"
+    if request.method == 'POST':
+        text = request.form.get("message")
+        if text:
+            response = original_inference.inference(text)
         else:
             response = "Sorry I didn't get that"
     return render_template('inference.html', response=response)

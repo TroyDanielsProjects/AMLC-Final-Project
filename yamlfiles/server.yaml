@@ -18,10 +18,18 @@ spec:
     spec:
       serviceAccountName: ksa 
       containers:
-      - name: server-container
-        image: us-east1-docker.pkg.dev/amlc-school-credit/ml-kube-repository/ml-server-amd:latest
-        ports:
-        - containerPort: 8080
+      - name: buzz-container
+        image: us-central1-docker.pkg.dev/amlc-school-credit/amlcfinalproject/server:latest
+        resources:
+          requests:
+            memory: "15Gi"
+            cpu: "1"
+          limits:
+            memory: "20Gi"
+            cpu: "2"
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
         volumeMounts:
         - name: gcs-fuse-csi-static
           mountPath: /bucket

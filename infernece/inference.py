@@ -1,5 +1,5 @@
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import sys
   
 
@@ -7,12 +7,15 @@ class Inference:
     """
     Handles model training for the NHL Buzz news generation task.
     """
-    def __init__(self):
+    def __init__(self, original=False):
         """
         Initialize with model
         """
         self.device = self.determine_device()
-        self.model = self.load_model().to(self.device)
+        if original:
+            self.model = self.load_original_model().to(self.device)
+        else:
+            self.model = self.load_model().to(self.device)
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
         self.model.eval()
         
@@ -43,13 +46,35 @@ class Inference:
     def load_model(self):
         model = None
         try:
-            model = AutoModelForCausalLM.from_pretrained(".bucket/models/finetuned_model")
+
+            quantization_config = BitsAndBytesConfig(
+                                    load_in_4bit=True,
+                                    bnb_4bit_quant_type='nf4',
+                                    bnb_4bit_compute_dtype='float16',
+                                    bnb_4bit_use_double_quant=True,
+                                )
+
+            model = AutoModelForCausalLM.from_pretrained(
+                "/bucket/Saved_models/run1",
+                quantization_config=quantization_config,
+                device_map="auto",)
+
             print("Saved model successfully loaded")
             return model
         except Exception as e:
             print(f"Failed to load model: {e}")
             sys.exit()
 
+    def load_original_model(self):
+        model = None
+        try:
+
+            model = AutoModelForCausalLM.from_pretrained("google/gemma-2b")
+            print("Original model successfully loaded")
+            return model
+        except Exception as e:
+            print(f"Failed to load model: {e}")
+            sys.exit()
 
             
     def inference(self, prompt):
