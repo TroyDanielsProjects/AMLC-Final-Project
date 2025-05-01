@@ -4,6 +4,8 @@ from huggingface_hub import login
 from dotenv import load_dotenv
 import os
 
+os.environ["BNB_CUDA_VERSION"] = "123"
+
 app = Flask(__name__)
 
 inference = Inference()
@@ -35,4 +37,4 @@ if __name__ == '__main__':
     load_dotenv()
     access_token = os.getenv("HF_TOKEN")
     login(token=access_token)
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8081)
