@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request
 from inference import Inference
+from huggingface_hub import login
+from dotenv import load_dotenv
+import os
 
 app = Flask(__name__)
 
@@ -29,4 +32,7 @@ def get_anaylst_original():
     return render_template('inference.html', response=response)
 
 if __name__ == '__main__':
+    load_dotenv()
+    access_token = os.getenv("HF_TOKEN")
+    login(token=access_token)
     app.run(host='0.0.0.0', port=8080)

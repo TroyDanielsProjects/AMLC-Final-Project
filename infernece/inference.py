@@ -1,7 +1,7 @@
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from peft import AutoPeftModelForCausalLM
 import sys
-  
 
 class Inference:
     """
@@ -46,34 +46,23 @@ class Inference:
     def load_model(self):
         model = None
         try:
-
-            quantization_config = BitsAndBytesConfig(
-                                    load_in_4bit=True,
-                                    bnb_4bit_quant_type='nf4',
-                                    bnb_4bit_compute_dtype='float16',
-                                    bnb_4bit_use_double_quant=True,
-                                )
-
-            model = AutoModelForCausalLM.from_pretrained(
-                "/bucket/Saved_models/run1",
-                quantization_config=quantization_config,
-                device_map="auto",)
-
-            print("Saved model successfully loaded")
+            model = AutoPeftModelForCausalLM.from_pretrained("./model")
+            print("loaded")
+            self.tokenizer = AutoTokenizer.from_pretrained("./model")
+            print("Loaded trained model")
             return model
         except Exception as e:
-            print(f"Failed to load model: {e}")
+            print(f"Failed to trained load model: {e}")
             sys.exit()
 
     def load_original_model(self):
         model = None
         try:
-
             model = AutoModelForCausalLM.from_pretrained("google/gemma-2b")
             print("Original model successfully loaded")
             return model
         except Exception as e:
-            print(f"Failed to load model: {e}")
+            print(f"Failed to original load model: {e}")
             sys.exit()
 
             
@@ -82,7 +71,6 @@ class Inference:
         with torch.no_grad():
             outputs = self.model.generate(**tokenized_prompt, max_length=800)
         response = self.tokenizer.decode(outputs[0])
-        print(len(response))
         print(response)
         return response
 
@@ -92,8 +80,3 @@ class Inference:
 
     def test_flast(self, prompt):
         return prompt.upper()
-
-
-if __name__ == "__main__":
-    inference = Inference()
-    inference.test_inference()
