@@ -1,5 +1,4 @@
 import torch
-from torch.utils.data import Dataset
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, TrainingArguments
 from cleanAndLoadData import DataCleaner
@@ -31,8 +30,8 @@ class Trainer:
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
         self.datacleaner.create_buzz_SFTTrainer_json()
         self.datacleaner.create_pod_SFTTrainer_json()
-        # quantization implementation
-        self.quantization_config = quantization_config = BitsAndBytesConfig(
+        self.model = self.load_model()
+        self.quantization_config = BitsAndBytesConfig(
                                     load_in_4bit=True,
                                     bnb_4bit_compute_dtype=torch.float16,
                                     bnb_4bit_quant_type="nf4"
@@ -45,7 +44,6 @@ class Trainer:
                     bias="none",
                     task_type="CAUSAL_LM"
                 )
-        self.model = self.load_model()
         self.training_arguments = TrainingArguments(
             output_dir="./models/finetuned_model",
             per_device_train_batch_size=4,
@@ -176,7 +174,7 @@ class Trainer:
         if model is None:
             model = AutoModelForCausalLM.from_pretrained(
             "google/gemma-2b", 
-            quantization_config=self.uantization_config, 
+            quantization_config=self.quantization_config, 
             torch_dtype=torch.float32,
             attn_implementation="sdpa"
         )
@@ -202,7 +200,7 @@ class Trainer:
         return largest
     
 
-    def load_in_buzz_data(self, batch=2):
+    def load_in_buzz_data(self):
         """
         Load and prepare NHL Buzz data for training.
         
@@ -212,7 +210,7 @@ class Trainer:
         self.dataset = load_dataset("json", data_files="./clean_data/clean_buzz_SFT.jsonl", split="train")
         
 
-    def load_in_podcast_data(self, batch=2):
+    def load_in_podcast_data(self):
         """
         Load and prepare Spittin Chiclets data for training.
         
@@ -221,7 +219,7 @@ class Trainer:
         """
         self.dataset = load_dataset("json", data_files="./clean_data/clean_podcast_SFT.jsonl", split="train")
 
-    def train(self, epochs=4):
+    def train(self):
         """
         Train the model.
         

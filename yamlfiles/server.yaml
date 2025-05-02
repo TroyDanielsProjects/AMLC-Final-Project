@@ -18,7 +18,7 @@ spec:
     spec:
       serviceAccountName: ksa 
       containers:
-      - name: buzz-container
+      - name: server-container
         image: us-central1-docker.pkg.dev/amlc-school-credit/amlcfinalproject/server:latest
         resources:
           requests:
