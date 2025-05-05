@@ -29,10 +29,7 @@ resource "google_container_node_pool" "general" {
     labels = {
       role = "general"
     }
-    
-    metadata = {
-      disable-legacy-endpoints = "true"
-    }
+
   }
 }
 
@@ -56,6 +53,9 @@ resource "google_container_node_pool" "gpu_pool" {
     image_type = "UBUNTU_CONTAINERD"
     preemptible = false
     machine_type = var.gpu_machine
+    disk_size_gb = 100
+    disk_type = "pd-balanced"
+    local_ssd_count = 0
     service_account = google_service_account.kubernetes.email
     oauth_scopes = ["https://www.googleapis.com/auth/cloud-platform"]
     guest_accelerator {

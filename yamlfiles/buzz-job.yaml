@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: webscraper-job
-  namespace: default
+  namespace: scraping
 spec:
   backoffLimit: 2
   ttlSecondsAfterFinished: 86400
@@ -11,11 +11,11 @@ spec:
       annotations:
         gke-gcsfuse/volumes: "true" 
     spec:
-      serviceAccountName: scraper-ksa
+      serviceAccountName: scrape_service_account
       restartPolicy: Never
       # Optional: ensure it never tries a GPU node
       nodeSelector:
-        cloud.google.com/gke-nodepool: scraping
+        cloud.google.com/gke-nodepool: cpu-pool
       containers:
       - name: buzz-scraper
         image: us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/buzz-scraper:latest

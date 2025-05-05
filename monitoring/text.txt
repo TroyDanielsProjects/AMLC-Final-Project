@@ -1,0 +1,6 @@
+Add to versions if doing monitoring
+    helm = {
+      source  = "hashicorp/helm"
+      version = "~> 2.9"
+    }
+

@@ -1,6 +1,5 @@
-
 variable "project_id"{
-    type = string
+  type = string
 }
 
 variable "cluster_name" {
@@ -43,12 +42,12 @@ variable "service_acc" {
   type = string
 }
 
-variable "namespace1"{
+variable "namespace_scrape"{
     type = string
 }
-variable "namespace2"{
+variable "namespace_train"{
     type = string
 }
-variable "namespace3"{
+variable "namespace_infer"{
     type = string
 }
