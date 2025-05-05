@@ -6,4 +6,5 @@ gcloud container node-pools create $GPU_POOL \
   --machine-type=$MACHINE_TYPE \
   --num-nodes=1 \
   --location=$ZONE \
-  --cluster=$CLUSTER_NAME
+  --cluster=$CLUSTER_NAME \
+  --workload-metadata=GKE_METADATA

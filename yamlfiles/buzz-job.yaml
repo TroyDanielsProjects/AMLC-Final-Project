@@ -8,33 +8,28 @@ spec:
   ttlSecondsAfterFinished: 86400
   template:
     metadata:
-      labels:
-        app: webscraper
       annotations:
         gke-gcsfuse/volumes: "true" 
     spec:
-      serviceAccountName: default
+      serviceAccountName: scraper-ksa
       restartPolicy: Never
       # Optional: ensure it never tries a GPU node
       nodeSelector:
-        cloud.google.com/gke-nodepool: default-pool      # ← adjust if your pool label differs
+        cloud.google.com/gke-nodepool: scraping
       containers:
-      - name: buzz-container
+      - name: buzz-scraper
         image: us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/buzz-scraper:latest
-        resources:
-          requests:
-            cpu: "300m"          # 0.3 vCPU  → fits on 1-vCPU node
-            memory: "1.5Gi"      # + PVC driver ≈ 1.5 Gi  → fits in ~1.9 Gi free
-          limits:
-            cpu: "2"
-            memory: "4Gi"
         env:
-        - name: PYTHONUNBUFFERED
-          value: "1"
+        - name: podcast-chiclets
+          value: /mnt/gcs
         volumeMounts:
-        - name: gcs-fuse-csi-static
-          mountPath: /bucket
+        - name: podcast-chiclets
+          mountPath: /mnt/gcs
       volumes:
-      - name: gcs-fuse-csi-static
-        persistentVolumeClaim:
-          claimName: gcs-fuse-csi-static-pvc
+      - name: podcast-chiclets
+        csi:
+          driver: gcsfuse.csi.storage.gke.io
+          readOnly: false
+          volumeAttributes:
+            bucketName: podcast-chiclets
+            mountOptions: "implicit-dirs"  

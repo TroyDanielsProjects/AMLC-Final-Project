@@ -1,0 +1,42 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mlp-train-job
+  namespace: gke-ai-namespace
+spec:
+  backoffLimit: 2                 
+  ttlSecondsAfterFinished: 86400  
+  template:
+    metadata:
+      annotations:
+        gke-gcsfuse/volumes: "true"    
+    spec:
+      serviceAccountName: gpu-k8s-sa    
+      restartPolicy: Never
+      nodeSelector:
+        cloud.google.com/gke-accelerator: nvidia-tesla-t4
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Equal"
+        value: "present"
+        effect: "NoSchedule"
+      containers:
+      - name: mlp-train
+        image: europe-central2-docker.pkg.dev/amlc-449423/fc-mnist/mlp-train:cuda124
+        resources:
+          limits:
+            nvidia.com/gpu: "1"
+        env:                        
+        - name: MODEL_DIR
+          value: /mnt/gcs/models
+        volumeMounts:
+        - name: model-bucket
+          mountPath: /mnt/gcs
+      volumes:
+      - name: model-bucket
+        csi:
+          driver: gcsfuse.csi.storage.gke.io
+          readOnly: false
+          volumeAttributes:
+            bucketName: mlp-mnist-model    
+            mountOptions: "implicit-dirs"  
