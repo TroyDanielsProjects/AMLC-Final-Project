@@ -82,7 +82,7 @@ resource "kubernetes_persistent_volume" "gcs_fuse_pv" {
     persistent_volume_source {
       csi {
         driver        = "gcsfuse.csi.storage.gke.io"
-        volume_handle = "podcast-chiclets"  # Must be your GCS bucket name
+        volume_handle = "gemma-scraping"  # Must be your GCS bucket name
       }
     }
 
@@ -120,7 +120,7 @@ resource "kubernetes_job" "buzz_scraper_job" {
   }
 
   spec {
-    backoff_limit             = 2
+    backoff_limit             = 0
     ttl_seconds_after_finished = 86400
 
     template {
@@ -143,7 +143,7 @@ resource "kubernetes_job" "buzz_scraper_job" {
           image = "us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/buzz-scraper:latest"
 
           env {
-            name  = "PODCAST_CHICLETS"
+            name  = "GEMMA-SCRAPING"
             value = "/mnt/gcs"
           }
 
@@ -153,13 +153,72 @@ resource "kubernetes_job" "buzz_scraper_job" {
           }
 
           volume_mount {
-            name       = "podcast-chiclets"
+            name       = "gemma-scraping"
             mount_path = "/mnt/gcs"
           }
         }
 
         volume {
-          name = "podcast-chiclets"
+          name = "gemma-scraping"
+
+          persistent_volume_claim {
+            claim_name = kubernetes_persistent_volume_claim.gcs_fuse_pvc.metadata[0].name
+          }
+        }
+      }
+    }
+  }
+
+  depends_on = [kubernetes_persistent_volume_claim.gcs_fuse_pvc]
+}
+
+resource "kubernetes_job" "podcast_scraper_job" {
+  metadata {
+    name      = "podscraper-job"
+    namespace = var.namespace_scrape
+  }
+
+  spec {
+    backoff_limit             = 0
+    ttl_seconds_after_finished = 86400
+
+    template {
+      metadata {
+        annotations = {
+          "gke-gcsfuse/volumes" = "true"
+        }
+      }
+
+      spec {
+        service_account_name = "scrape-service-account"
+        restart_policy       = "Never"
+
+        node_selector = {
+          "cloud.google.com/gke-nodepool" = "cpu-pool"
+        }
+
+        container {
+          name  = "pod-scraper"
+          image = "us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/podcast-scraper:latest"
+
+          env {
+            name  = "GEMMA-SCRAPING"
+            value = "/mnt/gcs"
+          }
+
+          env {
+            name  = "PYTHONUNBUFFERED"
+            value = "1"
+          }
+
+          volume_mount {
+            name       = "gemma-scraping"
+            mount_path = "/mnt/gcs"
+          }
+        }
+
+        volume {
+          name = "gemma-scraping"
 
           persistent_volume_claim {
             claim_name = kubernetes_persistent_volume_claim.gcs_fuse_pvc.metadata[0].name

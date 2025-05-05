@@ -48,8 +48,8 @@ class Webscraper():
         for year in years:
             months = [("January", 31), ("February", 28), ("March", 31), ("April", 30), ("May", 31), ("June", 30),
                       ("July", 31), ("August", 31), ("September", 30), ("October", 31), ("November", 30), ("December", 31)]
-            os.makedirs("/mnt/gcs/data", exist_ok=True)
-            with open("/mnt/gcs/data/nhl_buzz_data.txt", 'w') as ofile:
+            os.makedirs("/mnt/gcs/buzz", exist_ok=True)
+            with open("/mnt/gcs/buzz/nhl_buzz_data.txt", 'w') as ofile:
                 for month, days_in_month in months:
                     for day in range(1, days_in_month + 1):
                         url = f"https://www.nhl.com/news/nhl-buzz-news-and-notes-{month}-{day}-{year}"
@@ -106,7 +106,7 @@ class Webscraper():
         url = "https://www.nhl.com"
         path = "/news"
         filter = "/news/topic/nhl-insider"
-        path_to_write = "/mnt/gcs/data/nhl_insider_data.txt"
+        path_to_write = "/mnt/gcs/buzz/nhl_insider_data.txt"
         html_class = "oc-c-markdown-stories"
         self.get_data(url, path, filter, path_to_write, html_class)
         self.count_tokens(path_to_write)
@@ -117,7 +117,7 @@ class Webscraper():
         url = "https://www.nhl.com"
         path = "/news"
         filter = "/news/topic/nhl-edge"
-        path_to_write = "/mnt/gcs/data/nhl_edge_data.txt"
+        path_to_write = "/mnt/gcs/buzz/nhl_edge_data.txt"
         html_class = "oc-c-markdown-stories"
         self.get_data(url, path, filter, path_to_write, html_class)
         self.count_tokens(path_to_write)
@@ -128,7 +128,7 @@ class Webscraper():
         url = "https://www.nhl.com"
         path = "/news"
         filter = "/news"
-        path_to_write = "/mnt/gcs/data/nhl_data.txt"
+        path_to_write = "/mnt/gcs/buzz/nhl_data.txt"
         html_class = "oc-c-markdown-stories"
         self.get_data(url, path, filter, path_to_write, html_class)
         self.count_tokens(path_to_write)
@@ -139,7 +139,7 @@ class Webscraper():
         url = "https://www.espn.com"
         path = "/nhl"
         filter = "/nhl"
-        path_to_write = "/mnt/gcs/data/espn_data.txt"
+        path_to_write = "/mnt/gcs/buzz/espn_data.txt"
         html_class = "article-body"
         self.get_data(url, path, filter, path_to_write, html_class)
         self.count_tokens(path_to_write)
@@ -150,7 +150,7 @@ class Webscraper():
         url = "https://www.espn.com"
         path = "/nhl"
         filter = "/nhl/story"
-        path_to_write = "/mnt/gcs/data/espn_story_data.txt"
+        path_to_write = "/mnt/gcs/buzz/espn_story_data.txt"
         html_class = "article-body"
         self.get_data(url, path, filter, path_to_write, html_class)
         self.count_tokens(path_to_write)

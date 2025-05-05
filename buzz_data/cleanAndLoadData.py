@@ -1,5 +1,6 @@
 import re
 from webScraper import Webscraper
+import os
 
 class BuzzDataPoint:
     """
@@ -78,6 +79,7 @@ class DataCleaner:
             List of BuzzDataPoint objects if load is True, None otherwise
         """
         data = None
+        os.makedirs("/mnt/gcs/buzz/clean_data", exist_ok=True)
         if clean:
             self.proccess_nhl_buzz_data()
             self.remove_empty_dates()
@@ -116,8 +118,8 @@ class DataCleaner:
         """
         Clean NHL Buzz data and count tokens in the result.
         """
-        path = "/mnt/gcs/data/nhl_buzz_data.txt"
-        path_to_write = "/mnt/gcs/clean_data/clean_nhl_buzz_data.txt"
+        path = "/mnt/gcs/buzz/nhl_buzz_data.txt"
+        path_to_write = "/mnt/gcs/buzz/clean_data/clean_nhl_buzz_data.txt"
         self.clean_data_charaters(path, path_to_write)
         self.count_tokens(path_to_write)
 
@@ -135,7 +137,7 @@ class DataCleaner:
                 total += len(tokens)
         print(f"Total tokens found in {path}: {total}", flush=True)
 
-    def remove_empty_dates(self, path="/mnt/gcs/clean_data/clean_nhl_buzz_data.txt", path_to_write="/mnt/gcs/clean_data/usable_buzz_data.txt"):
+    def remove_empty_dates(self, path="/mnt/gcs/buzz/clean_data/clean_nhl_buzz_data.txt", path_to_write="/mnt/gcs/buzz/clean_data/usable_buzz_data.txt"):
         """
         Remove entries with a date but no content.
         
@@ -157,7 +159,7 @@ class DataCleaner:
                         string_to_write = ""
     
     @staticmethod
-    def load_buzz_data(path="/mnt/gcs/clean_data/usable_buzz_data.txt"):
+    def load_buzz_data(path="/mnt/gcs/buzz/clean_data/usable_buzz_data.txt"):
         """
         Load and parse NHL Buzz data into structured objects.
         
