@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: webscraper-job
+  name: wscraper-job
   namespace: scraping
 spec:
   backoffLimit: 2
@@ -11,7 +11,7 @@ spec:
       annotations:
         gke-gcsfuse/volumes: "true" 
     spec:
-      serviceAccountName: scrape_service_account
+      serviceAccountName: scrape-service-account
       restartPolicy: Never
       # Optional: ensure it never tries a GPU node
       nodeSelector:
@@ -22,6 +22,8 @@ spec:
         env:
         - name: podcast-chiclets
           value: /mnt/gcs
+        - name: PYTHONUNBUFFERED
+          value: "1"
         volumeMounts:
         - name: podcast-chiclets
           mountPath: /mnt/gcs

@@ -17,40 +17,52 @@ resource "kubernetes_namespace" "namespaces" {
 }
 
 # Create service accounts for each namespace
-resource "kubernetes_service_account" "scrape_service_account" {
+resource "kubernetes_service_account" "scrape-service-account" {
   metadata {
     name      = "scrape-service-account"
     namespace = var.namespace_scrape
     annotations = {
-      "iam.gke.io/gcp-service-account" = google_service_account.scrape_service_account.email
+      "iam.gke.io/gcp-service-account" = google_service_account.scrape-service-account.email
     }
   }
   
   depends_on = [kubernetes_namespace.namespaces]
 }
 
-resource "kubernetes_service_account" "train_service_account" {
+resource "kubernetes_service_account" "train-service-account" {
   metadata {
     name      = "train-service-account"
     namespace = var.namespace_train
     annotations = {
-      "iam.gke.io/gcp-service-account" = google_service_account.train_service_account.email
+      "iam.gke.io/gcp-service-account" = google_service_account.train-service-account.email
     }
   }
   
   depends_on = [kubernetes_namespace.namespaces]
 }
 
-resource "kubernetes_service_account" "infer_service_account" {
+resource "kubernetes_service_account" "infer-service-account" {
   metadata {
     name      = "infer-service-account"
     namespace = var.namespace_infer
     annotations = {
-      "iam.gke.io/gcp-service-account" = google_service_account.infer_service_account.email
+      "iam.gke.io/gcp-service-account" = google_service_account.infer-service-account.email
     }
   }
   
   depends_on = [kubernetes_namespace.namespaces]
+}
+
+resource "kubernetes_storage_class" "gcsfuse" {
+  metadata {
+    name = "gcsfuse"
+  }
+
+  storage_provisioner = "gcsfuse.csi.storage.gke.io"
+
+  reclaim_policy        = "Retain"
+  volume_binding_mode   = "Immediate"
+  allow_volume_expansion = true
 }
 
 resource "kubernetes_persistent_volume" "gcs_fuse_pv" {
@@ -133,6 +145,11 @@ resource "kubernetes_job" "buzz_scraper_job" {
           env {
             name  = "PODCAST_CHICLETS"
             value = "/mnt/gcs"
+          }
+
+          env {
+            name  = "PYTHONUNBUFFERED"
+            value = "1"
           }
 
           volume_mount {
