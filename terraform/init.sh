@@ -1,5 +1,9 @@
 #!/bin/bash
 
+docker buildx build   --platform=linux/amd64   -t us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/buzz-scraper:latest   --push ./../buzz_data
+docker buildx build   --platform=linux/amd64   -t us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/podcast-scraper:latest   --push ./../podcast_scraper
+docker buildx build   --platform=linux/amd64   -t us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/gemma-train:latest   --push ./../trainer
+
 gcloud auth application-default login
 gcloud storage buckets create gs://gemma-tfstate
 gcloud storage buckets create gs://gemma-scraping
