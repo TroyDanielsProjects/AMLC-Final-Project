@@ -39,7 +39,7 @@ resource "kubernetes_service_account" "train-service-account" {
   }
   
   depends_on = [kubernetes_namespace.namespaces]
-}
+}  
 
 resource "kubernetes_service_account" "infer-service-account" {
   metadata {

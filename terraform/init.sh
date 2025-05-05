@@ -9,7 +9,7 @@ gcloud storage buckets create gs://gemma-tfstate
 gcloud storage buckets create gs://gemma-scraping
 gcloud storage rm -r gs://gemma-tfstate/terraform/state
 
-terraform init
+terraform init 
 
 #use terraform to set up cluster, node pools, pvc
 #also runs jobs (uses google beta for gcs fuse for bucket mounting)

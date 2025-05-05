@@ -12,7 +12,7 @@ resource "google_container_node_pool" "general" {
   management {
     auto_repair  = "true"
     auto_upgrade = "true"
-  }
+  } 
   
   autoscaling {
     min_node_count = 1

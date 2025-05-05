@@ -13,7 +13,7 @@ resource "google_container_cluster" "primary" {
     gcs_fuse_csi_driver_config {
       enabled = true
     }
-  }
+  } 
   # Make sure you pick a GKE version ≥ 1.24 (the driver is GA from 1.24)
   release_channel {
     channel = "REGULAR"

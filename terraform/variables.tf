@@ -16,7 +16,7 @@ variable "zone" {
 
 variable "gpu_type" {
   type = string
-}
+} 
 
 variable "gpu_count" {
   type = number

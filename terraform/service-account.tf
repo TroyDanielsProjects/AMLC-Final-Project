@@ -16,7 +16,7 @@ locals {
     "roles/storage.objectViewer",
     "roles/artifactregistry.reader",
   ]
-}
+} 
 
 #grant storage admin to service accounts
 resource "google_project_iam_member" "scrape_roles" {
