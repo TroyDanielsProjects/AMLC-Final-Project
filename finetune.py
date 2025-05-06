@@ -11,6 +11,8 @@ from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from google.cloud import storage
 import glob
 from trl import SFTTrainer
+import pandas as pd
+from datasets import Dataset
 
 os.environ["BNB_CUDA_VERSION"] = "123"
 
@@ -126,7 +128,7 @@ class Trainer:
         blobs = storage_client.list_blobs(bucket_name, prefix=source_directory)
 
         for blob in blobs:
-            if blob.name.endswith("/"):          # skip “directory” placeholders
+            if blob.name.endswith("/"):   
                 continue
 
             # make path relative and kill any leading slash
@@ -207,7 +209,8 @@ class Trainer:
         Args:
             batch: Batch size for training
         """
-        self.dataset = load_dataset("json", data_files="./clean_data/clean_buzz_SFT.jsonl", split="train")
+        dataset = pd.read_json("./clean_data/clean_buzz_SFT.jsonl", orient="records", lines=True)
+        self.dataset = Dataset.from_pandas(dataset)
         
 
     def load_in_podcast_data(self):
@@ -217,7 +220,8 @@ class Trainer:
         Args:
             batch: Batch size for training
         """
-        self.dataset = load_dataset("json", data_files="./clean_data/clean_podcast_SFT.jsonl", split="train")
+        dataset = pd.read_json("./clean_data/clean_podcast_SFT.jsonl", orient="records", lines=True)
+        self.dataset = Dataset.from_pandas(dataset)
 
     def train(self):
         """
