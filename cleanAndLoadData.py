@@ -307,7 +307,7 @@ class DataCleaner:
                 data_point.text = text
                 inputs.append(data_point)
 
-        input = input[:len(input)//100]
+        inputs = inputs[:len(input)//100]
 
         with open(path_to_write, 'w') as ofile:
             for data_point in inputs:
