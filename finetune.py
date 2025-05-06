@@ -32,7 +32,6 @@ class Trainer:
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
         self.datacleaner.create_buzz_SFTTrainer_json()
         self.datacleaner.create_pod_SFTTrainer_json()
-        self.model = self.load_model()
         self.quantization_config = BitsAndBytesConfig(
                                     load_in_4bit=True,
                                     bnb_4bit_compute_dtype=torch.float16,
@@ -46,6 +45,7 @@ class Trainer:
                     bias="none",
                     task_type="CAUSAL_LM"
                 )
+        self.model = self.load_model()
         self.training_arguments = TrainingArguments(
             output_dir="./models/finetuned_model",
             per_device_train_batch_size=4,
