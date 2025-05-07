@@ -1,20 +1,39 @@
 import torch
 from datasets import load_dataset
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, TrainingArguments
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, TrainingArguments, TrainerCallback
 from cleanAndLoadData import DataCleaner
 from dotenv import load_dotenv
 import os
 from huggingface_hub import login
 from tqdm import tqdm
 import os
+from torch.profiler import profile, record_function, ProfilerActivity
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from google.cloud import storage
 import glob
 from trl import SFTTrainer
 import pandas as pd
 from datasets import Dataset
+import datetime
 
 os.environ["BNB_CUDA_VERSION"] = "123"
+
+class ProfilerCallback(TrainerCallback):
+    def __init__(self, profiler):
+        self.profiler = profiler
+        
+    def on_train_begin(self, args, state, control, **kwargs):
+        # Optionally start the profiler here
+        if hasattr(self.profiler, "start"):
+            self.profiler.start()
+    
+    def on_step_end(self, args, state, control, **kwargs):
+        self.profiler.step()
+        
+    def on_train_end(self, args, state, control, **kwargs):
+        # Make sure to stop the profiler
+        if hasattr(self.profiler, "stop"):
+            self.profiler.stop()
 
 class Trainer:
     """
@@ -55,7 +74,7 @@ class Trainer:
             logging_steps=10,
             learning_rate=2e-4,
             max_grad_norm=0.3,
-            max_steps=1000,
+            max_steps=100,
             warmup_ratio=0.3,
             lr_scheduler_type="constant",
             gradient_checkpointing=True,
@@ -63,6 +82,21 @@ class Trainer:
             bf16=False,
         )
         self.dataset = None
+        self.log_dir = "logs/profiler/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+        self.profiler = profile(
+            schedule=torch.profiler.schedule( # this schedule will capture 3 steps throughout training process
+                wait=20,
+                warmup=4,
+                active=1,
+                repeat=4,
+            ),
+            activities=[ProfilerActivity.CPU,ProfilerActivity.CUDA],
+            profile_memory=True, # only capture the memory as the rest are too expensive
+            record_shapes=False,
+            with_flops=False,
+            with_stack=False,
+            n_trace_ready=torch.profiler.tensorboard_trace_handler(self.log_dir)
+        )
         
 
     def upload_directory_to_bucket(self, source_directory, destination_directory, bucket_name="modelsbucket-amlc"):
@@ -235,10 +269,11 @@ class Trainer:
             args=self.training_arguments,
             train_dataset=self.dataset,
             peft_config=self.lora_config,
+            callbacks=[ProfilerCallback(self.profiler)],
         )
 
         trainer.train()
-        self.upload_directory_to_bucket("./models/finetuned_model", "/bucket/models/finetuned_model")
+        # self.upload_directory_to_bucket("./models/finetuned_model", "/bucket/models/finetuned_model")
             
     def infernece(self, prompt):
         tokenized_prompt = self.tokenizer(prompt, return_tensors="pt").to(self.device)
@@ -259,6 +294,6 @@ if __name__ == "__main__":
     trainer = Trainer()
     trainer.load_in_buzz_data()
     trainer.train()
-    trainer.load_in_podcast_data()
-    trainer.train()
+    # trainer.load_in_podcast_data()
+    # trainer.train()
     trainer.test_inference()
