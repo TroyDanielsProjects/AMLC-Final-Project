@@ -239,7 +239,7 @@ resource "kubernetes_job" "gemma_train_job" {
   }
 
   spec {
-    backoff_limit              = 2
+    backoff_limit              = 0
     ttl_seconds_after_finished = 86400
 
     template {

@@ -18,3 +18,8 @@ terraform apply
 #need for kubectl
 gcloud container clusters get-credentials $(terraform output -raw cluster_name) \
   --zone $(terraform output -raw zone)
+
+#run after scraping if scraping is not done
+terraform apply -target=kubernetes_job.gemma_train_job 
+#run after training if training is not done
+terraform apply -target=kubernetes_job.gemma_inference_deployment
