@@ -12,7 +12,7 @@ from google.cloud import storage
 import glob
 from trl import SFTTrainer
 
-os.environ["BNB_CUDA_VERSION"] = "123"
+os.environ["BNB_CUDA_VERSION"] = "124"
 
 class Trainer:
     """
@@ -24,13 +24,12 @@ class Trainer:
         """
         self.device = self.determine_device()
         self.datacleaner = DataCleaner()
-        self.download_directory_from_bucket("models/finetuned_model", "./models/finetuned_model", "gemma-ft-models")
+        self.download_directory_from_bucket("models/finetuned_model", "./models/finetuned_model", "gemma-scraping")
         self.download_from_bucket("buzz/clean_data/usable_buzz_data.txt", "./buzz/clean_data/usable_buzz_data.txt", "gemma-scraping")
         self.download_directory_from_bucket("spittin-chiclets", "./spittin-chiclets", "gemma-scraping")
         self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
         self.datacleaner.create_buzz_SFTTrainer_json()
         self.datacleaner.create_pod_SFTTrainer_json()
-        self.model = self.load_model()
 
         #TODO: Change with testing
         self.quantization_config = BitsAndBytesConfig(
@@ -48,8 +47,12 @@ class Trainer:
                     bias="none",
                     task_type="CAUSAL_LM"
                 )
+        
+        #move to after configs are defined 
+        self.model = self.load_model()
+
         self.training_arguments = TrainingArguments(
-            output_dir="./models/finetuned_model",
+            output_dir="/mnt/gemma-scraping/models/finetuned_model",
             per_device_train_batch_size=4,
             gradient_accumulation_steps=4,
             optim="paged_adamw_32bit",
@@ -65,7 +68,7 @@ class Trainer:
             bf16=False,
         )
         self.dataset = None
-        
+
 
     def upload_directory_to_bucket(self, source_directory, destination_directory, bucket_name):
         """
@@ -97,6 +100,7 @@ class Trainer:
             
             # Create blob and upload
             blob = bucket.blob(destination_blob_name)
+            
             blob.upload_from_filename(file_path)
             print(f"Uploaded {file_path} to {destination_blob_name}")
 
@@ -112,7 +116,7 @@ class Trainer:
         storage_client = storage.Client()
         bucket = storage_client.bucket(bucket_name)
         blob = bucket.blob(source_blob_name)
-        
+        os.makedirs(os.path.dirname(destination_file_name), exist_ok=True)
         blob.download_to_filename(destination_file_name)
         print(f"Downloaded {source_blob_name} to {destination_file_name}")
 
@@ -168,7 +172,7 @@ class Trainer:
     def load_model(self):
         model = None
         try:
-            model = AutoModelForCausalLM.from_pretrained("./models/finetuned_model", device_map="auto", quantization_config=self.quantization_config, torch_dtype=torch.float16)
+            model = AutoModelForCausalLM.from_pretrained("/mnt/gemma-scraping/models/finetuned_model", device_map="auto", quantization_config=self.quantization_config, torch_dtype=torch.float16)
             model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
             model = get_peft_model(model, self.lora_config)
             model.print_trainable_parameters()
@@ -211,8 +215,8 @@ class Trainer:
         Args:
             batch: Batch size for training
         """
-        self.dataset = load_dataset("json", data_files="./clean_data/clean_buzz_SFT.jsonl", split="train")
-        
+        self.dataset = load_dataset("json", data_files="/mnt/gemma-scraping/buzz/clean_data/clean_buzz_SFT.jsonl", split="train")
+        print("got buzz", len(self.dataset))
 
     def load_in_podcast_data(self):
         """
@@ -221,8 +225,9 @@ class Trainer:
         Args:
             batch: Batch size for training
         """
-        self.dataset = load_dataset("json", data_files="./clean_data/clean_podcast_SFT.jsonl", split="train")
-
+        self.dataset = load_dataset("json", data_files="/mnt/gemma-scrapinig/buzz/clean_data/clean_podcast_SFT.jsonl", split="train")
+        print("got podcast", len(self.dataset))
+   
     def train(self):
         """
         Train the model.
@@ -238,9 +243,10 @@ class Trainer:
         )
 
         trainer.train()
-        self.upload_directory_to_bucket("./models/finetuned_model", "/bucket/models/finetuned_model")
-            
-    def infernece(self, prompt):
+        self.upload_directory_to_bucket("/mnt/gemma-scraping/models/finetuned_model", "/mnt/gemma-scraping/models/finetuned_model")
+        print("got model!!")
+
+    def inference(self, prompt):
         tokenized_prompt = self.tokenizer(prompt, return_tensors="pt").to(self.device)
         self.model = self.model.to(self.device)
         outputs = self.model.generate(**tokenized_prompt, max_length=800)
@@ -248,12 +254,17 @@ class Trainer:
         return response
 
     def test_inference(self):
-        response = self.infernece("What are the daily updates for the Dallas Stars on April-16-2025?")
+        response = self.inference("What are the daily updates for the Dallas Stars on April-16-2025?")
         print(response)
 
 
 if __name__ == "__main__":
     load_dotenv()
+
+    if torch.cuda.is_available():
+        print("\n WE CUDA \n")
+    else:
+        print("\n WE NEED CUDA \n")
     access_token = os.getenv("HF_TOKEN")
     login(token=access_token)
     trainer = Trainer()

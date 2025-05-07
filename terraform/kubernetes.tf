@@ -230,3 +230,84 @@ resource "kubernetes_job" "podcast_scraper_job" {
 
   depends_on = [kubernetes_persistent_volume_claim.gcs_fuse_pvc]
 }
+
+
+resource "kubernetes_job" "gemma_train_job" {
+  metadata {
+    name      = "gemma-train-job"
+    namespace = "training"
+  }
+
+  spec {
+    backoff_limit              = 2
+    ttl_seconds_after_finished = 86400
+
+    template {
+      metadata {
+        annotations = {
+          "gke-gcsfuse/volumes" = "true"
+        }
+      }
+
+      spec {
+        service_account_name = "train-service-account"
+        restart_policy       = "Never"
+
+        node_selector = {
+          "cloud.google.com/gke-nodepool" = "gke-gpu-pool-1"
+        }
+
+        toleration {
+          key      = "nvidia.com/gpu"
+          operator = "Equal"
+          value    = "present"
+          effect   = "NoSchedule"
+        }
+
+        container {
+          name  = "gemma-train"
+          image = "us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/gemma-train:latest"
+
+          resources {
+            limits = {
+              "nvidia.com/gpu" = "1"
+            }
+          }
+
+          env {
+            name  = "MODEL_DIR"
+            value = "/mnt/gemma-ft-models"
+          }
+
+          env {
+            name  = "SCRAPING_DIR"
+            value = "/mnt/gemma-scraping"
+          }
+
+          env {
+            name  = "PYTHONUNBUFFERED"
+            value = "1"
+          }
+
+          volume_mount {
+            name       = "scraping-bucket"
+            mount_path = "/mnt/gemma-scraping"
+          }
+        }
+
+        volume {
+          name = "scraping-bucket"
+
+          csi {
+            driver = "gcsfuse.csi.storage.gke.io"
+            read_only = false
+            volume_attributes = {
+              bucketName   = "gemma-scraping"
+              mountOptions = "implicit-dirs"
+            }
+          }
+        }
+      }
+    }
+  }
+}

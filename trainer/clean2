@@ -164,7 +164,7 @@ class DataCleaner:
                 total += len(tokens)
         print(f"Total tokens found in {path}: {total}")
 
-    def remove_empty_dates(self, path="/mnt/gemma-scraping/buzz/clean_data/clean_nhl_buzz_data.txt", path_to_write="/mnt/gemma-scraping/buzz/clean_data/usable_buzz_data.txt"):
+    def remove_empty_dates(self, path="/mnt/gemma-scraping/buzz/clean_data/clean_nhl_buzz_data.txt", path_to_write="./clean_data/usable_buzz_data.txt"):
         """
         Remove entries with a date but no content.
         
@@ -186,7 +186,7 @@ class DataCleaner:
                         string_to_write = ""
     
     @staticmethod
-    def load_buzz_data(path="/mnt/gemma-scraping/buzz/clean_data/usable_buzz_data.txt"):
+    def load_buzz_data(path="/mnt/buzz/clean_data/usable_buzz_data.txt"):
         """
         Load and parse NHL Buzz data into structured objects.
         
@@ -248,7 +248,7 @@ class DataCleaner:
                 
         return inputs
     
-    def create_buzz_SFTTrainer_json(self, path="/mnt/gemma-scraping/buzz/clean_data/usable_buzz_data.txt", path_to_write="/mnt/gemma-scraping/buzz/clean_data/clean_buzz_SFT.jsonl"):
+    def create_buzz_SFTTrainer_json(self, path="/mnt/buzz/clean_data/usable_buzz_data.txt", path_to_write="./clean_data/clean_buzz_SFT.jsonl"):
         """
         Load and parse NHL Buzz data into structured objects.
         
@@ -325,7 +325,7 @@ class DataCleaner:
 
 
     @staticmethod
-    def load_pod_data(path="/mnt/gemma-scraping/spittin-chiclets"):
+    def load_pod_data(path="/mnt/gemma-scraping/podcast_scraper/spittin-chiclets"):
         """
         Load and parse NHL Buzz data into structured objects.
         
@@ -367,7 +367,7 @@ class DataCleaner:
         return inputs   
     
     @staticmethod
-    def create_pod_SFTTrainer_json(path="/mnt/gemma-scraping/spittin-chiclets", path_to_write="/mnt/gemma-scraping/buzz/clean_data/clean_podcast_SFT.jsonl", max_line=1000):
+    def create_pod_SFTTrainer_json(path="/mnt/gemma-scraping/podcast_scraper/spittin-chiclets", path_to_write="./clean_data/clean_podcast_SFT.jsonl", max_line=1000):
         """
         Load and parse NHL Buzz data into structured objects.
         
