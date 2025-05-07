@@ -311,3 +311,88 @@ resource "kubernetes_job" "gemma_train_job" {
     }
   }
 }
+
+resource "kubernetes_deployment" "gemma_infer" {
+  metadata {
+    name = "gemma-infer-deployment"
+    namespace = "inference"
+
+    labels = {
+      app = "gemma-infer"
+    }
+  }
+
+  spec {
+    replicas = 1
+
+    selector {
+      match_labels = {
+        app = "gemma-infer"
+      }
+    }
+
+    template {
+      metadata {
+        labels = {
+          app = "gemma-infer"
+        }
+        annotations = {
+          "gke-gcsfuse/volumes" = "true"
+        }
+      }
+
+      spec {
+        service_account_name = "infer-service-account"
+
+        container {
+          name  = "gemma-infer-container"
+          image = "us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/gemma-infer"
+
+          port {
+            container_port = 8080
+          }
+
+          volume_mount {
+            name       = "scraping-bucket"
+            mount_path = "/mnt/gemma-scraping"
+          }
+        }
+
+        volume {
+          name = "scraping-bucket"
+
+          csi {
+            driver = "gcsfuse.csi.storage.gke.io"
+            read_only = true
+            volume_attributes = {
+              bucketName   = "gemma-scraping"
+              mountOptions = "implicit-dirs"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+resource "kubernetes_service" "gemma_infer" {
+  metadata {
+    name = "gemma-infer-service"
+    namespace = "inference"
+  }
+
+  spec {
+    selector = {
+      app = "gemma-infer"
+    }
+
+    type = "LoadBalancer"
+
+    port {
+      port        = 8080
+      target_port = 8080
+      node_port   = 30002
+      protocol    = "TCP"
+    }
+  }
+}
