@@ -12,7 +12,6 @@ from google.cloud import storage
 import glob
 from trl import SFTTrainer
 
-os.environ["BNB_CUDA_VERSION"] = "124"
 
 class Trainer:
     """
@@ -173,7 +172,7 @@ class Trainer:
         model = None
         try:
             model = AutoModelForCausalLM.from_pretrained("/mnt/gemma-scraping/models/finetuned_model", device_map="auto", quantization_config=self.quantization_config, torch_dtype=torch.float16)
-            model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
+            model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=False)
             model = get_peft_model(model, self.lora_config)
             model.print_trainable_parameters()
             print("Saved model successfully loaded")
