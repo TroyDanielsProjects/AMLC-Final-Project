@@ -95,7 +95,7 @@ class Trainer:
             record_shapes=False,
             with_flops=False,
             with_stack=False,
-            n_trace_ready=torch.profiler.tensorboard_trace_handler(self.log_dir)
+            on_trace_ready=torch.profiler.tensorboard_trace_handler(self.log_dir)
         )
         
 
