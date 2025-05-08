@@ -1,6 +1,10 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import sys
+from peft import PeftModel, PeftConfig
+from huggingface_hub import login
+from dotenv import load_dotenv
+import os
   
 
 class Inference:
@@ -43,7 +47,8 @@ class Inference:
     def load_model(self):
         model = None
         try:
-            model = AutoModelForCausalLM.from_pretrained("/mnt/gemma-scraping/models/finetuned_model")
+            base_model = AutoModelForCausalLM.from_pretrained("google/gemma-2b")
+            model = PeftModel.from_pretrained(base_model, "/mnt/gemma-scraping/models/finetuned_model/checkpoint-990")
             print("Saved model successfully loaded")
             return model
         except Exception as e:
@@ -70,5 +75,10 @@ class Inference:
 
 
 if __name__ == "__main__":
+    load_dotenv()
+    access_token = os.getenv("HF_TOKEN")
+    print("WE HAVE THE ACCESS TOKEN??? {access_token}")
+
+    login(token=access_token)
     inference = Inference()
     inference.test_inference()

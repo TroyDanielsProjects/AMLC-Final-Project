@@ -346,7 +346,7 @@ resource "kubernetes_deployment" "gemma_infer" {
 
         container {
           name  = "gemma-infer-container"
-          image = "us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/gemma-infer"
+          image = "us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/gemma-infer:latest"
 
           port {
             container_port = 8080

@@ -11,6 +11,7 @@ from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from google.cloud import storage
 import glob
 from trl import SFTTrainer
+import re
 
 
 class Trainer:
@@ -32,10 +33,15 @@ class Trainer:
 
         #TODO: Change with testing
         self.quantization_config = BitsAndBytesConfig(
-                                    load_in_4bit=True,
-                                    bnb_4bit_compute_dtype=torch.float16,
-                                    bnb_4bit_quant_type="nf4"
-                                )
+                                    load_in_8bit=True
+                                    )
+        """
+        BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_quant_type="nf4"
+        )
+        """
         
         #TODO: Change with testing...qlora?
         self.lora_config = LoraConfig(
@@ -168,16 +174,30 @@ class Trainer:
             print(f"using {device}")
             return device
     
+    def get_latest_checkpoint(self, model_dir):
+        checkpoint_dirs = [
+            d for d in os.listdir(model_dir)
+            if os.path.isdir(os.path.join(model_dir, d)) and re.match(r"checkpoint-\d+", d)
+        ]
+        
+        if not checkpoint_dirs:
+            return None
+
+        # Extract checkpoint numbers and sort
+        latest = max(checkpoint_dirs, key=lambda d: int(d.split("-")[1]))
+        return os.path.join(model_dir, latest)
+    
     def load_model(self):
-        model = None
+        model_path = self.get_latest_checkpoint("/mnt/gemma-scraping/models/finetuned_model")
         try:
-            model = AutoModelForCausalLM.from_pretrained("/mnt/gemma-scraping/models/finetuned_model", device_map="auto", quantization_config=self.quantization_config, torch_dtype=torch.float16)
-            model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=False)
+            print(f"Loading from latest checkpoint: {model_path}")
+            model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", quantization_config=self.quantization_config, torch_dtype=torch.float16)
+            model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
             model = get_peft_model(model, self.lora_config)
             model.print_trainable_parameters()
             print("Saved model successfully loaded")
         except Exception as e:
-            print(f"Failed to load model: {e}")
+            print(f"No Model Checkpoints: {e}")
         if model is None:
             model = AutoModelForCausalLM.from_pretrained(
             "google/gemma-2b", 
@@ -224,7 +244,7 @@ class Trainer:
         Args:
             batch: Batch size for training
         """
-        self.dataset = load_dataset("json", data_files="/mnt/gemma-scrapinig/buzz/clean_data/clean_podcast_SFT.jsonl", split="train")
+        self.dataset = load_dataset("json", data_files="/mnt/gemma-scraping/buzz/clean_data/clean_podcast_SFT.jsonl", split="train")
         print("got podcast", len(self.dataset))
    
     def train(self):
@@ -242,7 +262,7 @@ class Trainer:
         )
 
         trainer.train()
-        self.upload_directory_to_bucket("/mnt/gemma-scraping/models/finetuned_model", "/mnt/gemma-scraping/models/finetuned_model")
+        self.upload_directory_to_bucket("/mnt/gemma-scraping/models/finetuned_model", "/mnt/gemma-scraping/models/finetuned_model", "gemma-scraping")
         print("got model!!")
 
     def inference(self, prompt):
