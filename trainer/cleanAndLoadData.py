@@ -308,8 +308,6 @@ class DataCleaner:
                 data_point.text = text
                 inputs.append(data_point)
 
-        inputs = inputs[:len(inputs)//50]
-
         with open(path_to_write, 'w') as ofile:
             for data_point in inputs:
                 # Extract data fields from the data point
@@ -384,7 +382,6 @@ class DataCleaner:
         year = None
         line_count = 0
         podcast_files = [f for f in listdir(path) if isfile(join(path, f))]
-        podcast_files = podcast_files[:len(podcast_files)//100]
         with open(path_to_write, 'w') as wfile:
             for file in tqdm(podcast_files, desc="Loading Files into Dataset"):
                 text = ""
