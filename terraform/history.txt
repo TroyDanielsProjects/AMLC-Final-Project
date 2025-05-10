@@ -1,0 +1,546 @@
+    1  touch iam-default.sh
+    2  bash iam-default.sh 
+    3  bash iam-default.sh  
+    4  bash iam-default.sh   
+    5  bash iam-default.sh    
+    6  bash describe-
+    7  bash describe-node-pool.sh 
+    8  touch create-train-job.sh
+    9  touch describe-job.sh
+   10  cd ../buzz_data/
+   11  docker build -t buzz-scraper .
+   12  cd ../podcast_scraper/
+   13  ls
+   14  docker build -t podcast-scraper .
+   15  gcloud auth configure-docker us-east4-docker.pkg.dev
+   16  docker images
+   17  docker tag podcast-scraper us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/podcast-scraper
+   18  docker push us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/podcast-scraper
+   19  docker tag buzz-scraper us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/buzz-scraper
+   20  docke push us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/buzz-scraper
+   21  docker push us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/buzz-scraper
+   22  git pull
+   23  source podscraper/bin/activate
+   24  python pod_cast_scraper.py 
+   25  python pod_cast_scraper.py  
+   26  python pod_cast_scraper.py   
+   27  python pod_cast_scraper.py    
+   28  python pod_cast_scraper.py     
+   29  python pod_cast_scraper.py      
+   30  python pod_cast_scraper.py       
+   31  python pod_cast_scraper.py        
+   32  python pod_cast_scraper.py         
+   33  python pod_cast_scraper.py          
+   34  python pod_cast_scraper.py           
+   35  python pod_cast_scraper.py            
+   36  python pod_cast_scraper.py             
+   37  python pod_cast_scraper.py              
+   38  python pod_cast_scraper.py               
+   39  python pod_cast_scraper.py                
+   40  python pod_cast_scraper.py                 
+   41  python pod_cast_scraper.py                  
+   42  python pod_cast_scraper.py                   
+   43  python pod_cast_scraper.py                    
+   44  python pod_cast_scraper.py                     
+   45  python pod_cast_scraper.py                      
+   46  python pod_cast_scraper.py                       
+   47  python pod_cast_scraper.py                        
+   48  python pod_cast_scraper.py --help
+   49  python pod_cast_scraper.py --help 
+   50  python pod_cast_scraper.py
+   51  python pod_cast_scraper.py 
+   52  python pod_cast_scraper.py  
+   53  python pod_cast_scraper.py   
+   54  python pod_cast_scraper.py    
+   55  python pod_cast_scraper.py     
+   56  python pod_cast_scraper.py      
+   57  python pod_cast_scraper.py       
+   58  python pod_cast_scraper.py --date 2025-04-10
+   59  python pod_cast_scraper.py --date 2025-04-10 
+   60  python pod_cast_scraper.py --date 2025-04-10  
+   61  python pod_cast_scraper.py
+   62  python pod_cast_scraper.py 
+   63  git add pod_cast_scraper.py 
+   64  git commit -m "Working scraper, only scrape new podcast feature too, need to add arg comments"
+   65  git push origin -u main
+   66  ll
+   67  ll spittin-chiclets/
+   68  python pod_cast_scraper.py 
+   69  python
+   70  python 
+   71  cd ..
+   72  python cleanAndLoadData.py 
+   73  python cleanAndLoadData.py  
+   74  python cleanAndLoadData.py   
+   75  python cleanAndLoadData.py    
+   76  python cleanAndLoadData.py     
+   77  python cleanAndLoadData.py      
+   78  python cleanAndLoadData.py       
+   79  python cleanAndLoadData.py        
+   80  python cleanAndLoadData.py         
+   81  python cleanAndLoadData.py          
+   82  python cleanAndLoadData.py           
+   83  python cleanAndLoadData.py            
+   84  python cleanAndLoadData.py             
+   85  python cleanAndLoadData.py              
+   86  python cleanAndLoadData.py               
+   87  python cleanAndLoadData.py                
+   88  pip freeze > requirements.txt
+   89  python -m pip freeze > requirements.txt
+   90  python -m pip freeze > requirements.txt 
+   91  python cleanAndLoadData.py                
+   92  python cleanAndLoadData.py                 
+   93  python cleanAndLoadData.py                  
+   94  python cleanAndLoadData.py                   
+   95  python cleanAndLoadData.py                    
+   96  python cleanAndLoadData.py                     
+   97  python cleanAndLoadData.py                      
+   98  python cleanAndLoadData.py                       
+   99  python cleanAndLoadData.py                        
+  100  python cleanAndLoadData.py                         
+  101  python cleanAndLoadData.py                          
+  102  python cleanAndLoadData.py                           
+  103  python cleanAndLoadData.py                            
+  104  cat inputs.txt 
+  105  vim inputs.txt
+  106  vim inputs.txt 
+  107  python cleanAndLoadData.py 
+  108  python cleanAndLoadData.py  
+  109  python finetune.py 
+  110  pip3 install --pre torch torchvision --extra-index-url https://download.pytorch.org/whl/nightly/cpu
+  111  python finetune.py 
+  112  python finetune.py  
+  113  python finetune.py   
+  114  python finetune.py    
+  115  git status
+  116  git checkout -b fix/podcast_dataset
+  117  git add podcastScraper.py cleanAndLoadData.py finetune.py 
+  118  git commit -m "added Podcast Dataset functionality to cleanAndLoadData, working on podcast for finetune"
+  119  git push origin fix/podcast_dataset
+  120  python finetune.py 
+  121  ll
+  122  python finetune.py 
+  123  python finetune.py  
+  124  python finetune.py   
+  125  python finetune.py    
+  126  python finetune.py     
+  127  python finetune.py      
+  128  python finetune.py       
+  129  python finetune.py        
+  130  python finetune.py         
+  131  git status
+  132  git status 
+  133  python finetune.py 
+  134  python finetune.py  
+  135  python finetune.py   
+  136  python finetune.py    
+  137  python finetune.py     
+  138  python finetune.py      
+  139  python finetune.py       
+  140  python finetune.py        
+  141  pip install tqdm
+  142  python -m pip install tqdm
+  143  python -m pip install tqdm 
+  144  python finetune.py 
+  145  python finetune.py  
+  146  python finetune.py   
+  147  python finetune.py    
+  148  python finetune.py     
+  149  python finetune.py      
+  150  python finetune.py       
+  151  python finetune.py        
+  152  git fetch origin
+  153  git diff origin/main
+  154  git diff
+  155  git diff origin/main
+  156  git diff
+  157  git add finetune.py 
+  158  git commit -m "Podcasts dataset and merged with quantization/checkpoints"git add finetune.py  
+  159  git commit -m "Podcasts dataset and merged with quantization/checkpoints"
+  160  git push origin main
+  161  git pull
+  162  python finetune.py 
+  163  python -m pip install peft
+  164  python -m pip install peft 
+  165  python finetune.py 
+  166  python -m pip install google-cloud-storage
+  167  python finetune.py 
+  168  pip install bitsandbytes
+  169  python -m pip install bitsandbytes
+  170  python finetune.py 
+  171  python -m pip install -U bitsandbytes
+  172  python -m pip install Aceelerator
+  173  python -m pip install Accelerator
+  174  python finetune.py 
+  175  python -m pip install -U bitsandbytes
+  176  python finetune.py python -m pip install -U bitsandbytes 
+  177  python finetune.py 
+  178  python -m pip freeze > requirements.txt
+  179  python finetune.py 
+  180  python -m  pip install -q --no-deps xformers trl peft accelerate bitsandbytes
+  181  python -m pip install accelerate
+  182  python finetune.py 
+  183  python -m  pip install -q --no-deps xformers trl peft accelerate bitsandbytes
+  184  python finetune.py 
+  185  python finetune.pypython finetune.py  
+  186  python finetune.py 
+  187  jpython finetune.py  
+  188  jpython finetune.py   
+  189  python finetune.py   
+  190  git add finetune.py 
+  191  git commit -m "Working on Lora"
+  192  git push origin main
+  193  git push origin main 
+  194  git add finetune.py 
+  195  git commit -m "Working on Lora...again"
+  196  git push origin main 
+  197  python finetune.py   
+  198  python finetune.py    
+  199  python finetune.py     
+  200  python finetune.py      
+  201  python finetune.py       
+  202  pip install torchinfo
+  203  python -m pip install torchinfo
+  204  import torchsumary
+  205  python -m pip install torchsummary
+  206  python finetune.py 
+  207  python finetune.py  
+  208  python finetune.py   
+  209  python finetune.py    
+  210  python finetune.py     
+  211  git add finetune.py 
+  212  git commit -m "Working Lora?"
+  213  git push origin main
+  214  git push origin main 
+  215  python finetune.py 
+  216  git add finetune.py 
+  217  git commit -m "Quantum Leap"
+  218  git push
+  219  python fine
+  220  python finetune.py 
+  221  python finetune.py  
+  222  python finetune.py   
+  223  python finetune.py    
+  224  python finetune.py     
+  225  python finetune.py      
+  226  python -m pip install torch.profiler
+  227  python -m pip install torch.profiler 
+  228  python finetune.py 
+  229  python finetune.py  
+  230  python finetune.py 
+  231  python finetune.py  
+  232  python finetune.py   
+  233  python finetune.py    
+  234  python finetune.py     
+  235  python finetune.py      
+  236  python finetune.py       
+  237  python finetune.py        
+  238  python finetune.py         
+  239  python finetune.py          
+  240  python finetune.py           
+  241  python finetune.py            
+  242  python finetune.py             
+  243  python finetune.py              
+  244  python finetune.py               
+  245  python finetune.py                
+  246  python finetune.py                 
+  247  python finetune.py                  
+  248  python finetune.py                   
+  249  python finetune.py                    
+  250  python finetune.py                     
+  251  python finetune.py                      
+  252  python finetune.py                       
+  253  python finetune.py                        
+  254  python finetune.py                         
+  255  python finetune.py                          
+  256  python finetune.py                           
+  257  python -m pip install tlr
+  258  python finetune.py                           
+  259  python finetune.py                            
+  260  python finetune.py                             
+  261  git diff
+  262  cd podcast_scraper/
+  263  ll
+  264  pip list
+  265  python -m pip list
+  266  touch Dockerfile
+  267  touch .dockerignore
+  268  Docker build podcast-scraper .
+  269  Docker build -t podcast-scraper .
+  270  Docker build -t podcast-scraper . 
+  271  collections --version
+  272  python -m pip import collections
+  273  python -m pip install collections
+  274  argparse --version
+  275  ls
+  276  python podcastScraper.py 
+  277  python podcastScraper.py  
+  278  python podcastScraper.py   
+  279  python podcastScraper.py    
+  280  python podcastScraper.py     
+  281  python podcastScraper.py      
+  282  python podcastScraper.py       
+  283  python podcastScraper.py        
+  284  cd ..
+  285  ls
+  286  touch Dockerfile
+  287  touch .dockerignore
+  288  ls > .dockerignore
+  289  python -m pip freeze > reqirements.txt
+  290  python -m pip freeze > requirements.txt
+  291  python -m pip install pipreqs
+  292  pipreqs --version
+  293  pipreqs finetune.py --force
+  294  pipreqs /Users/chrisd456/Documents/Columbia Work/Spring Semester 2025/MLCloud/Term_project/code/AMLC-Final-Project/finetune.py --force
+  295  pipreqs /Users/chrisd456/Documents/Columbia\ Work/Spring\ Semester\ 2025/MLCloud/Term_project/code/AMLC-Final-Project/finetune.py --force
+  296  pipreqs ./ --force
+  297  dotenv --version
+  298  huggingface_hub --version
+  299  huggingface --version
+  300  pip freeze > requirements.txt
+  301  python -m pip freeze > requirements.txt
+  302  python -m pip install -r requirements.txt 
+  303  docker build -t gemma-train .
+  304  docker build -t gemma-train . 
+  305  docker build -t gemma-train .  
+  306  docker build -t gemma-train .   
+  307  docker push us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/gemma-train
+  308  docker images
+  309  gcloud auth configure-docker us-east4-docker.pkg.dev
+  310  docker tag gemma-train us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/gemma-train
+  311  docker push us-east4-docker.pkg.dev/amlc-449423/amlcfinalproject/gemma-train
+  312  cd cluster
+  313  bash create-train-job.sh 
+  314  bash create-train-job.sh  
+  315  kubectl describe job gemma-train
+  316  kubectl delete job gemma-train
+  317  kubectl delete job gemma-train-job
+  318  cd ../yamlfiles/
+  319  touch buzz-job.yaml
+  320  touch chiclets-job.yaml
+  321  cd ../cluster
+  322  bash describe-cluster.sh 
+  323  kubectl cluster get nodes
+  324  kubectl get nodes
+  325  kubectl node gke-gemma-sft-default-pool-c17c2d75-ksv7  start
+  326  kubectl  gke-gemma-sft-default-pool-c17c2d75-ksv7  start
+  327  gcloud compute instances start gke-gemma-sft-default-pool-c17c2d75-ksv7   --zone=us-east4-c
+  328  bash run-all.sh 
+  329  bash create-buzz-job.sh 
+  330  kubectl get job webscraper-job
+  331  kubectl get logs job webscraper-job
+  332  kubectl logs webscraper-job
+  333  kubectl get pods
+  334  kubectl delete job gemma-train
+  335  kubectl delete job gemma-train-job
+  336  bash create-chiclets-job.sh 
+  337  kubectl get pods
+  338  kubectl get job chiclets-job
+  339  kubectl delete job chiclets-job
+  340  bash create-buzz-job.sh 
+  341  kubectl get nodes
+  342  kubectl get pods
+  343  kubectl describe job webscraper-job
+  344  kubectl delete jobs
+  345  kubectl delete job webscraper-job
+  346  kubectl delete job chiclets-job
+  347  bash create-buzz-job.sh 
+  348  kubectl describe job webscraper-job
+  349  kubectl get pods
+  350  kubectl describe job webscraper-job
+  351  kubectl describe pod webscraper-job
+  352  kubectl delete job webscraper-job
+  353  kubectl get pods
+  354  bash create-buzz-job.sh 
+  355  kubectl describe pod webscraper-job
+  356  kubectl delete job webscraper-job
+  357  bash create-buzz-job.sh 
+  358  kubectl describe pod webscraper-job
+  359  kubectl describe pod webscraper-job > webjob.txt
+  360  kubectl delete job webscraper-job
+  361  bash create-buzz-job.sh 
+  362  kubectl describe pod webscraper-job > webjob.txt
+  363  kubectl describe pod webscraper-job 
+  364  kubectl describe nodes | egrep "Name:|Allocatable:|cpu|memory"
+  365  kubectl describe nodes | egrep "Name:|Allocatable:|cpu|memory" > nodes.txt
+  366  kubectl apply -f ../yamlfiles/buzz-job.yaml 
+  367  kubectl apply -f ../yamlfiles/buzz-job.yaml  
+  368  kubectl apply -f ../yamlfiles/buzz-job.yaml   
+  369  kubectl apply -f ../yamlfiles/buzz-job.yaml    
+  370  kubectl apply -f ../yamlfiles/buzz-job.yaml     
+  371  kubectl apply -f ../yamlfiles/buzz-job.yaml      
+  372  kubectl delete job webscraper-job
+  373  bash create-buzz-job.sh 
+  374  kubectl describe webscraper-job
+  375  kubectl describe pod webscraper-job 
+  376  kubectl get nodes
+  377  kubectl get jobs
+  378  bash try-buzz.sh 
+  379  kubectl get pods
+  380  kubectl describe pod webscraper-job
+  381  gcloud container clusters resize gemma-sft --node-pool=default-pool --num-nodes=2 --zone=us-east4-c
+  382  bash try-buzz.sh 
+  383  kubectl get pods
+  384  kubectl get pod webscraper-job
+  385  kubectl describe pod webscraper-job
+  386  gcloud container clusters resize gemma-sft --node-pool=default-pool --num-nodes=2 --zone=us-east4-c
+  387  bash try-buzz.sh 
+  388  kubectl describe pod webscraper-job
+  389  kubectl describe pod webscraper-job | grep -A3 "Containers:"
+  390  kubectl describe pod webscraper-job | grep -A3 "Init Containers:"
+  391  kubectl describe node <webscraper-job | egrep "Allocatable:|Non-terminated"
+  392  kubectl top nodes            
+  393  kubectl describe pod webscraper-job 
+  394  bash create-buzz-job.sh 
+  395  bash try-buzz.sh 
+  396  kubectl describe webscraper-job
+  397  kubectl get nodes
+  398  kubectl get pods
+  399  kubectl describe webscraper-job
+  400  kubectl describe pod webscraper-job
+  401  bash iam-default.sh 
+  402  bash try-buzz.sh 
+  403  kubectl describe pod webscraper-job
+  404  kubectl delete job webscraper-job
+  405  kubectl get jobs
+  406  kubectl get pods
+  407  bash try-buzz.sh 
+  408  kubectl describe pod webscraper-job
+  409  bash try-buzz.sh 
+  410  kubectl delete job webscraper-job
+  411  kubectl get volumes
+  412  kubectl get pvcs
+  413  kubectl get pv
+  414  kubectl delete pv gcs-fuse-csi-pv
+  415  kubectl delete pvc gcs-fuse-csi-static-pvc
+  416  kubectl delete pv gcs-fuse-csi-static-pv
+  417  kubectl delete pv gcs-fuse-csi-pv
+  418  kubectl get volumes
+  419  bash try-buzz.sh 
+  420  kubectl get pod
+  421  kubect describe pod webscraper-job
+  422  kubectl describe pod webscraper-job
+  423  bash iam-default.sh 
+  424  bash iam-default.sh  
+  425  kubectl delete pvc gcs-fuse-csi-static-pvc
+  426  bash try-buzz.sh 
+  427  kubectl get pvs
+  428  kubectl get pvc
+  429  kubectl get volume
+  430  kubectl get volumes
+  431  kubectl get pv
+  432  kubectl delete pv gcs-fuse-csi-pv
+  433  bash try-buzz.sh 
+  434  kubectl describe pod webscraper-job
+  435  gsutil ls -b gs://podcast-chiclets
+  436  kubectl apply -f ../yamlfiles/test.yaml 
+  437  bash try-buzz.sh 
+  438  kubectl get pods -w
+  439  kubectl exec -it $(kubectl get pod -l app=gcs-mount-test -o jsonpath='{.items[0].metadata.name}') -- /bin/bash
+  440  kubectl exec -it gcs-mount-test
+  441  kubectl exec -it gcs-mount-test --bin/bash
+  442  kubectl exec -it gcs-mount-test --bin/sh
+  443  kubectl exec -it gcs-mount-test /bin/sh
+  444  kubectl exec -it gcs-mount-test "/bin/sh"
+  445  kubectl exec -it gcs-mount-test -- "/bin/sh"
+  446  kubectl get pods
+  447  kubectl describe gcs-mount-test
+  448  kubectl describe pod gcs-mount-test
+  449  kubectl exec -it gcs-mount-test -- "/bin/sh"
+  450  kubectl exec -it gcs-mount-test-8n9zv -- /bin/sh
+  451  kubectl get pods
+  452  kubectl exec -it gcs-mount-test-tsjb8 -- /bin/sh
+  453  kubectl exec -it gcs-mount-test-tsjb8 -c test-container-- /bin/sh
+  454  kubectl exec -it gcs-mount-test-tsjb8 -c test-container -- /bin/sh
+  455  bash try-buzz.sh 
+  456  kubectl delete job gc-mount-test
+  457  kubectl delete job gc-mount-test-tsjb8
+  458  kubectl get pods
+  459  kubectl delete pod gcs-mount-test-tsjb8
+  460  kubectl describe job webscraper-job
+  461  kubectl describe pod webscraper-job
+  462  bash create-train-job.sh 
+  463  bash iam-default.sh 
+  464  bash try-buzz.sh 
+  465  kubectl describe pod webscraper-job
+  466  kubectl logs webscraper-job -c buzz-container
+  467  kubectl get pod
+  468  kubectl logs webscraper-job-wrsvk -c buzz-container
+  469  bash iam-default.sh 
+  470  bash iam-default.sh  
+  471  bash try-buzz.sh 
+  472  kubectl describe pod webscraper-job
+  473  bash try-buzz.sh 
+  474  kubectl describe pod webscraper-job
+  475  gcloud container clusters resize gemma-sft   --node-pool default-pool   --num-nodes 1   --region us-east4-c
+  476  bash try-buzz.sh 
+  477  kubectl describe pod webscraper-job
+  478  gcloud container clusters resize gemma-sft   --node-pool default-pool   --num-nodes 1   --region us-east4-c
+  479  bash try-buzz.sh 
+  480  kubectl describe pod webscraper-job
+  481  bash try-buzz.sh 
+  482  kubectl describe pod webscraper-job
+  483  cd ..
+  484  python finetune.py 
+  485  python finetune_local.py 
+  486  python finetune_local.py  
+  487  ls
+  488  ll
+  489  ls -lh 
+  490  ls -lh podcast_scraper/spittin-chiclets/
+  491  tqdm --version
+  492  gcloud storage cp gs://podcast-chiclets/spittin-chiclets gs://podcast-chiclets/test
+  493  gcloud auth login
+  494  gcloud storage ls gs://podcast-chiclets
+  495  gcloud storage mv gs://podcast-chiclets/test gs://podcast-chiclets/spittin-chiclets
+  496  gcloud storage
+  497  gcloud storage buckets
+  498  gcloud storage buckets list
+  499  terraform init
+  500  terraform apply
+  501  terraform apply 
+  502  terraform apply  
+  503  bash init.sh 
+  504  gcloud storage buckets create gs://gemma-tfstate
+  505  gcloud storage buckets create gs://gemma-tfstate 
+  506  bash init.sh 
+  507  terraform destroy
+  508  bash init.sh 
+  509  terraform apply
+  510  kubectl get pods --all-namespaces --field-selector=status.phase=Pending
+  511  kubectl get pods
+  512  gcloud container clusters get-credentials gemma-ft --zone=us-east4-c --project=amlc-449423
+  513  kubectl get pods
+  514  kubectl get pods --all-namespaces --field-selector=status.phase=Pending
+  515  kubectl get pods --all-namespaces
+  516  kubectl get hpa
+  517  kubectl get hpa -all-namespaces
+  518  kubectl get hpa --all-namespaces
+  519  kubectl describe hpa kube-state-metrics
+  520  kubectl describe hpa kube-state-metrics --all-namespaces
+  521  kubectl describe hpa gke-managed-cim
+  522  kubectl describe kube-state-metrics -n gke-managed-cim
+  523  kubectl get hpa --all-namespaces -o wide
+  524  kubectl describe hpa kube-state-metrics -n gke-managed-cim
+  525  kubectl get deployment metrics-server -n kube-system
+  526  kubectl get namespaces
+  527  kubectl get pods -n kube-system
+  528  kubectl get pod metrics-server-v1.32.0-55ff4898f4-4hp7k  -n kube-system
+  529  kubectl describe pod metrics-server-v1.32.0-55ff4898f4-4hp7k  -n kube-system
+  530  kubectl get apiservices
+  531  kubectl edit deployment -n kube-system metrics-server
+  532  kubectl edit deployment -n kube-system metrics-server-
+  533  kubectl edit deployment -n kube-system metrics-server-v1.32.0-55ff4898f4-4hp7k 
+  534  kubectl get deployments -n kube-system
+  535  kubectl edit deployment -n kube-system metrics-server-v1.32.0
+  536  kubectl rollout restart deployment metrics-server -n kube-system
+  537  kubectl rollout restart deployment metrics-server-v1.32.0 -n kube-system
+  538  kubectl top nodes
+  539  kubectl top pods
+  540  kubectl get --raw /apis/metrics.k8s.io/v1beta1/nodes
+  541  kubectl get apiservices
+  542  kubectl describe pod metrics-server-v1.32.0-55ff4898f4-4hp7k  -n kube-system
+  543  kubectl describe hpa kube-state-metrics --all-namespaces
+  544  kubectl describe hpa kube-state-metrics --kube-system
+  545  kubectl describe hpa kube-state-metrics -n kube-system
+  546  bash history > history.txt

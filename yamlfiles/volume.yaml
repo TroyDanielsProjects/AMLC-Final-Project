@@ -12,7 +12,7 @@ spec:
     - implicit-dirs
   csi:
     driver: gcsfuse.csi.storage.gke.io
-    volumeHandle: modelsbucket-amlc
+    volumeHandle: podcast-chiclets
   claimRef:
     name: gcs-fuse-csi-static-pvc
     namespace: default

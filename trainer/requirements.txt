@@ -1,4 +1,3 @@
-torch
 transformers
 python-dotenv
 huggingface-hub
@@ -6,3 +5,7 @@ tqdm
 accelerate
 peft
 bitsandbytes
+datasets
+google-cloud-storage
+glob2
+trl

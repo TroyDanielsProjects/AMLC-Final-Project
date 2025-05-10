@@ -1,4 +1,5 @@
-FROM --platform=linux/amd64 python:3.11-slim
+FROM nvcr.io/nvidia/pytorch:24.04-py3
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 
 WORKDIR /app
 

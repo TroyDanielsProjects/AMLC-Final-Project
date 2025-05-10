@@ -1,0 +1,80 @@
+  # google_container_node_pool.gpu_pool must be replaced
+-/+ resource "google_container_node_pool" "gpu_pool" {
+      ~ id                          = "projects/amlc-449423/locations/us-east4-c/clusters/gemma-ft/nodePools/gke-gpu-pool-1" -> (known after apply)
+      ~ initial_node_count          = 1 -> (known after apply)
+      ~ instance_group_urls         = [
+          - "https://www.googleapis.com/compute/v1/projects/amlc-449423/zones/us-east4-c/instanceGroupManagers/gke-gemma-ft-gke-gpu-pool-1-810b9321-grp",
+        ] -> (known after apply)
+      ~ managed_instance_group_urls = [
+          - "https://www.googleapis.com/compute/v1/projects/amlc-449423/zones/us-east4-c/instanceGroups/gke-gemma-ft-gke-gpu-pool-1-810b9321-grp",
+        ] -> (known after apply)
+      + max_pods_per_node           = (known after apply)
+        name                        = "gke-gpu-pool-1"
+      + name_prefix                 = (known after apply)
+      ~ node_locations              = [
+          - "us-east4-c",
+        ] -> (known after apply)
+      + operation                   = (known after apply)
+      ~ project                     = "amlc-449423" -> (known after apply)
+      ~ version                     = "1.32.2-gke.1182003" -> (known after apply)
+        # (3 unchanged attributes hidden)
+
+      ~ autoscaling {
+          ~ location_policy      = "BALANCED" -> (known after apply)
+          - total_max_node_count = 0 -> null
+          - total_min_node_count = 0 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      ~ network_config (known after apply)
+
+      ~ node_config {
+          ~ disk_size_gb      = 100 -> (known after apply)
+          ~ disk_type         = "pd-balanced" -> (known after apply)
+          ~ guest_accelerator = [
+              ~ {
+                  - gpu_sharing_config = []
+                    # (3 unchanged attributes hidden)
+                },
+            ]
+          ~ labels            = {} -> (known after apply)
+          ~ local_ssd_count   = 0 -> (known after apply)
+          ~ metadata          = { # forces replacement
+              - "disable-legacy-endpoints" = "true" -> null
+                # (1 unchanged element hidden)
+            }
+          + min_cpu_platform  = (known after apply)
+          - resource_labels   = {
+              - "goog-gke-accelerator-type"             = "nvidia-l4"
+              - "goog-gke-node-pool-provisioning-model" = "on-demand"
+            } -> null
+          - tags              = [] -> null
+            # (10 unchanged attributes hidden)
+
+          - kubelet_config {
+              - cpu_cfs_quota        = false -> null
+              - pod_pids_limit       = 0 -> null
+                # (2 unchanged attributes hidden)
+            }
+
+          ~ shielded_instance_config (known after apply)
+          - shielded_instance_config {
+              - enable_integrity_monitoring = true -> null
+              - enable_secure_boot          = false -> null
+            }
+
+          ~ workload_metadata_config (known after apply)
+          - workload_metadata_config {
+              - mode = "GKE_METADATA" -> null
+            }
+        }
+
+      ~ upgrade_settings (known after apply)
+      - upgrade_settings {
+          - max_surge       = 1 -> null
+          - max_unavailable = 0 -> null
+          - strategy        = "SURGE" -> null
+        }
+
+        # (1 unchanged block hidden)
+    }

@@ -1,0 +1,5 @@
+transformers
+flask
+peft
+python-dotenv
+huggingface-hub

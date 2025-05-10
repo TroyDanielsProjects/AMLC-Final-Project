@@ -17,3 +17,7 @@ models/finetuned_model/model.safetensors.index.json
 podcast_scraper/podscraper/.DS_Store
 podcast_scraper/podscraper/.DS_Store
 models/checkpoints/random_states_0.pkl
+/terraform/.terraform
+/terraform/.terraform/
+/terraform/history.txt
+/terraform/replace.txt

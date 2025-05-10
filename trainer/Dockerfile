@@ -1,9 +1,5 @@
-FROM nvidia/cuda:12.3.0-cudnn8-runtime-ubuntu22.04
-
-RUN apt-get update && \
-    apt-get install -y python3.11 python3-pip && \
-    ln -s /usr/bin/python3.11 /usr/bin/python3 && \
-    pip3 install --upgrade pip
+FROM nvcr.io/nvidia/pytorch:24.04-py3
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 
 WORKDIR /app
 
