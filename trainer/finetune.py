@@ -192,7 +192,7 @@ class Trainer:
         try:
             print(f"Loading from latest checkpoint: {model_path}")
             model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", quantization_config=self.quantization_config, torch_dtype=torch.float16)
-            model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
+            model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=False)
             model = get_peft_model(model, self.lora_config)
             model.print_trainable_parameters()
             print("Saved model successfully loaded")
